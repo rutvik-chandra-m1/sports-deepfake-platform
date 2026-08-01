@@ -1,0 +1,40 @@
+# Data acquisition / evaluation / training tooling. Deliberately a SEPARATE
+# environment from backend/requirements.txt (see ml/README.md) -- the
+# production API has no business depending on `datasets`, `diffusers`, or
+# training-only packages, and this tier has no business depending on
+# fastapi/uvicorn. Some packages (torch, numpy, pillow) overlap with the
+# backend by necessity; versions are kept in sync with backend/requirements.txt
+# where both matter (see comments), but this file is resolved independently.
+
+# ===== Core =====
+numpy==2.3.5
+pillow==12.3.0
+pandas==2.3.3
+requests==2.32.4
+tqdm==4.70.0
+
+# ===== Hugging Face (dataset streaming + model loading) =====
+# Matches backend/requirements.txt's transformers/huggingface_hub pins where
+# both are present, so cached models/auth under HF_HOME are shared cleanly.
+huggingface_hub==1.26.0
+datasets==4.4.1
+transformers==5.14.1
+safetensors==0.8.0
+
+# ===== Image generation (R2 sports-specific synthetic supplement) =====
+# CPU-only inference (this machine has no GPU) -- sd-turbo is a
+# single/few-step distilled model chosen specifically for CPU-tractable
+# generation time; see ml/data/generate_synthetic.py for the measured
+# per-image timing before any bulk run.
+diffusers==0.35.2
+accelerate==1.11.0
+
+# ===== Deep learning backend =====
+# CPU wheel, matches backend/requirements.txt's torch version. Installed
+# separately in this venv rather than shared with backend/.venv on purpose
+# (R0 principle: production and tooling dependencies stay decoupled).
+torch==2.13.0
+
+# ===== Evaluation (R3) =====
+scikit-learn==1.7.2
+matplotlib==3.11.1

@@ -1,0 +1,26 @@
+filename,source,model_id,prompt,seed,steps,generation_seconds
+synthetic_1000.png,local-diffusion,segmind/tiny-sd,"close-up portrait of a determined soccer player's face, sweat, stadium lights, photorealistic sports photography",1000,20,190.65
+synthetic_1001.png,local-diffusion,segmind/tiny-sd,"close-up of a boxer's gloved fists, intense expression, gym background, photorealistic",1001,20,208.04
+synthetic_1002.png,local-diffusion,segmind/tiny-sd,"close-up portrait of a swimmer adjusting goggles poolside, photorealistic",1002,20,209.12
+synthetic_1003.png,local-diffusion,segmind/tiny-sd,"close-up of a basketball player's hands gripping a basketball, photorealistic sports photography",1003,20,209.98
+synthetic_1004.png,local-diffusion,segmind/tiny-sd,"close-up portrait of a tennis player mid-serve, focused expression, photorealistic",1004,20,210.32
+synthetic_1005.png,local-diffusion,segmind/tiny-sd,"close-up of a runner's shoes on a track starting block, photorealistic",1005,20,209.69
+synthetic_1006.png,local-diffusion,segmind/tiny-sd,"a soccer player kicking a ball on a grass field, dynamic action shot, photorealistic sports photography",1006,20,209.18
+synthetic_1007.png,local-diffusion,segmind/tiny-sd,"a basketball player dunking during a game, arena lights, photorealistic action photo",1007,20,209.46
+synthetic_1008.png,local-diffusion,segmind/tiny-sd,"a tennis player serving on a clay court, photorealistic action photo",1008,20,210.68
+synthetic_1009.png,local-diffusion,segmind/tiny-sd,"a swimmer mid-stroke in an outdoor pool, splashing water, photorealistic sports photography",1009,20,209.77
+synthetic_1010.png,local-diffusion,segmind/tiny-sd,"a sprinter running on a track, motion blur, photorealistic action shot",1010,20,210.07
+synthetic_1011.png,local-diffusion,segmind/tiny-sd,"an American football quarterback throwing a pass, photorealistic action shot",1011,20,209.1
+synthetic_1012.png,local-diffusion,segmind/tiny-sd,"a volleyball player spiking the ball at the net, photorealistic sports photography",1012,20,249.94
+synthetic_1013.png,local-diffusion,segmind/tiny-sd,"a gymnast performing a balance beam routine, photorealistic action photo",1013,20,262.77
+synthetic_1014.png,local-diffusion,segmind/tiny-sd,"a cyclist racing on a mountain road, photorealistic action photo",1014,20,261.11
+synthetic_1015.png,local-diffusion,segmind/tiny-sd,"a baseball pitcher winding up to throw, photorealistic sports photography",1015,20,266.19
+synthetic_1016.png,local-diffusion,segmind/tiny-sd,"a wide shot of a football stadium during a match, players on the field, photorealistic",1016,20,256.85
+synthetic_1017.png,local-diffusion,segmind/tiny-sd,"a wide shot of a crowded basketball arena during a game, photorealistic sports photography",1017,20,233.65
+synthetic_1018.png,local-diffusion,segmind/tiny-sd,"a wide shot of runners competing on an athletics track, stadium crowd in background, photorealistic",1018,20,233.49
+synthetic_1019.png,local-diffusion,segmind/tiny-sd,"a wide shot of a cricket match on a green pitch, photorealistic sports photography",1019,20,233.17
+synthetic_1020.png,local-diffusion,segmind/tiny-sd,"a wide shot of a swimming competition, multiple lanes, photorealistic",1020,20,243.02
+synthetic_1021.png,local-diffusion,segmind/tiny-sd,"a wide shot of a rugby match on a muddy field, photorealistic action photo",1021,20,238.6
+synthetic_1022.png,local-diffusion,segmind/tiny-sd,"close-up portrait of a determined soccer player's face, sweat, stadium lights, photorealistic sports photography",1022,20,228.92
+synthetic_1023.png,local-diffusion,segmind/tiny-sd,"close-up of a boxer's gloved fists, intense expression, gym background, photorealistic",1023,20,232.54
+synthetic_1024.png,local-diffusion,segmind/tiny-sd,"close-up portrait of a swimmer adjusting goggles poolside, photorealistic",1024,20,227.82
