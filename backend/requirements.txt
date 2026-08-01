@@ -1,0 +1,31 @@
+# ===== Web Framework =====
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+
+# ===== Settings / Validation =====
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-dotenv==1.0.1
+
+# ===== Database =====
+SQLAlchemy==2.0.35
+
+# ===== Computer Vision =====
+opencv-python-headless==4.10.0.84
+numpy==2.1.2
+
+# ===== Deep Learning (Milestone 7) =====
+# NOTE: torch is a large download (~500MB, includes CUDA support even for
+# CPU-only use — that's fine, it just runs on CPU). If you want a smaller
+# CPU-only wheel instead, install torch separately first via:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# then run `pip install -r requirements.txt` to fill in the rest.
+torch==2.13.0
+torchvision==0.28.0
+transformers==5.14.1
+mediapipe==0.10.35
+
+# NOTE: MediaPipe (facial landmarks) added in Milestone 8.
+# NOTE: Testing/lint/type-check tools moved to requirements-dev.txt (R0) —
+# they have no place in a production install.

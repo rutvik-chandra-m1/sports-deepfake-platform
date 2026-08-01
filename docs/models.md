@@ -1,0 +1,251 @@
+# AI Models
+
+This document tracks every pretrained model the platform integrates: what it is, why it was
+chosen, what it actually reports (cited from the model's own card — we do not invent or
+independently verify accuracy numbers unless explicitly stated), its license, and its known
+limitations.
+
+## Image-level deepfake detector (Milestone 7)
+
+**Model:** [`prithivMLmods/Deep-Fake-Detector-v2-Model`](https://huggingface.co/prithivMLmods/Deep-Fake-Detector-v2-Model)
+**Architecture:** Vision Transformer (`google/vit-base-patch16-224-in21k` base), fine-tuned for
+binary classification.
+**License:** Apache-2.0
+**Input:** RGB images, resized to 224×224 by the model's own processor.
+**Output:** `Realism` vs `Deepfake` (normalized in our code to `real_probability` /
+`fake_probability`, label-order-independent).
+
+### Reported metrics (from the model card, not independently reproduced by us)
+
+```
+              precision    recall  f1-score   support
+     Realism     0.9683    0.8708    0.9170     28001
+    Deepfake     0.8826    0.9715    0.9249     28000
+    accuracy                         0.9212     56001
+```
+
+The model card describes this as evaluated on the author's own curated real/deepfake face
+dataset. We have not re-run this evaluation ourselves — treat it as the authors' reported
+number, not a platform-verified guarantee.
+
+### Why this model
+
+- Real, publicly documented fine-tuning (not just an ImageNet backbone with an untrained head)
+- Transfer learning from a well-known base (ViT-B/16, `google/vit-base-patch16-224-in21k`),
+  matching the "use pretrained models, transfer learning where appropriate" requirement
+- Permissive license (Apache-2.0) suitable for an academic project
+- Straightforward integration via `transformers.AutoImageProcessor` /
+  `AutoModelForImageClassification` — no custom architecture code to maintain
+
+### Known limitations (from the model card + our own read)
+
+- Trained on **face imagery**. Sports content that isn't a face close-up (crowd shots,
+  broadcast graphics, wide match footage) is out of this model's training distribution — its
+  output there should be treated as low-confidence until Milestone 9's fusion engine weighs it
+  against the forensic signals (Milestone 8) and, later, sports-specific checks (Milestone 12).
+- May not generalize to deepfake generation methods not represented in its training data.
+- Performance may degrade on low-resolution or heavily compressed footage — exactly the kind
+  of media a fusion engine should cross-check against compression-artifact analysis (M8).
+- Image-only; does not itself capture temporal/video-level artifacts (Milestone 11 adds that).
+
+### Runtime requirement — read this before running Milestone 7 code
+
+Weights (~330MB) download from Hugging Face Hub **the first time `predict()` runs**, cached
+under `models/pretrained/` (`MODELS_DIR` in `.env`). This needs outbound internet access.
+
+**This sandbox's own dev/test environment cannot reach Hugging Face Hub** — its network is
+allowlisted to package registries (PyPI, npm, GitHub) only, not `huggingface.co`. I confirmed
+this directly:
+
+```
+OSError: Can't load image processor for 'prithivMLmods/Deep-Fake-Detector-v2-Model'.
+If you were trying to load it from 'https://huggingface.co/models', ...
+```
+
+This is an environment restriction, not a bug — `predict()` catches it and raises a clear
+`ModelLoadError` rather than crashing (see `tests/test_image_detector.py`, which verifies this
+error handling with a locally-constructed mock model, no network required).
+
+**On your own machine (including WSL), this works normally** — you have unrestricted internet
+access. To verify it yourself:
+
+```bash
+cd backend && source .venv/bin/activate
+python3 -c "
+import cv2
+from app.services.detection.image_detector import predict
+
+image_bgr = cv2.imread('/path/to/any/photo.jpg')
+image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+result = predict(image_rgb)
+print(result)
+"
+```
+
+First run downloads the model (~330MB, one-time); subsequent runs are fast and fully offline.
+
+## Classical forensic detectors (Milestone 8)
+
+None of these use pretrained/trained weights in the machine-learning sense — they're
+well-established signal-processing/CV techniques. Their `suspicion_score` is a documented
+heuristic, not a calibrated probability; see `app/services/detection/types.py::ForensicSignal`.
+
+| Detector | Technique | External asset? |
+|---|---|---|
+| `frequency_analysis.py` | FFT radial power-spectrum "bumpiness" (periodic/GAN-upsampling artifacts show up as spectral peaks that smooth natural photos don't have) | None — pure NumPy/OpenCV |
+| `compression_analysis.py` | Error Level Analysis (ELA): block-wise coefficient of variation after JPEG re-encoding | None — pure OpenCV |
+| `lighting_analysis.py` | Face-region vs background brightness/color-balance comparison (falls back to whole-image quadrant check if no face found) | Haar cascade XML (~930KB), downloaded once from `raw.githubusercontent.com/opencv/opencv` and cached under `models/pretrained/haarcascades/` |
+| `landmark_analysis.py` | MediaPipe Face Landmarker — frame-to-frame landmark displacement ("jitter"), video only (needs 2+ frames) | Face Landmarker `.task` bundle (~a few MB), downloaded once from `storage.googleapis.com/mediapipe-models` and cached under `models/pretrained/mediapipe/` |
+
+**Environment note:** both external assets above download from domains outside this sandbox's
+allowlist (`raw.githubusercontent.com` actually *is* reachable here, so the Haar cascade was
+downloaded and tested for real; `storage.googleapis.com` is not, so `landmark_analysis.py`'s
+network path is tested via dependency injection + one real confirmed failure, the same pattern
+as Milestone 7's image detector). Both work normally on an unrestricted connection (e.g. WSL).
+
+## Fusion engine (Milestone 9)
+
+Combines the Milestone 7 DL detector output and Milestone 8's four forensic signals into one
+verdict. Implementation: `app/services/fusion_engine.py`.
+
+**Weighting scheme** (a documented design choice, not fit/calibrated against a labeled
+validation set): the DL detector gets nominal weight 0.5 (it's the only signal here with a
+published, cited evaluation — see the ViT model above); the remaining 0.5 is split evenly
+across the four forensic signal slots (0.125 each). Whichever signals are actually applicable
+have their nominal weights renormalized to sum to 1 — so a missing/unavailable signal (e.g. no
+internet for the DL model or the landmark model) doesn't leave weight on the floor; the
+remaining signals simply account for 100% of the decision. All thresholds (verdict cutoff,
+risk-level bands) are configurable via `.env` (`FUSION_*` settings), not hardcoded.
+
+**Explanation text** generated here is intentionally minimal (which signals contributed, at
+what weight, which were unavailable) — Milestone 10 replaces this with a proper natural-language
+explainability layer, reading the same `detector_breakdown` JSON this engine writes to the
+`Analysis.detector_breakdown` column.
+
+**Background processing:** `app/services/analysis_pipeline.py::run_analysis_pipeline` runs the
+whole thing (load media → DL detector → forensic analysis → fuse → persist) as a FastAPI
+`BackgroundTask`, triggered by `POST /media/upload` and by the new `POST /analysis/{id}/run`
+(for reprocessing). A record's `status` moves `pending → processing → completed`/`failed`. Any
+single detector failing (most commonly the DL model or landmark model needing network access)
+degrades that one signal to "unavailable" rather than failing the whole analysis — confirmed by
+actually running real uploads (image and video) through the full API in this sandbox, where the
+DL and landmark signals are unavailable (no Hugging Face Hub / Google storage access here) but
+the three network-free forensic signals still produce a complete, real verdict.
+
+## Planned models
+
+None currently planned — remaining milestones (13+) are frontend/infra work.
+
+## Sports-specific intelligence (Milestone 12)
+
+The layer that makes this a *sports* deepfake platform rather than a generic one — but built
+honestly within real constraints: no sports-specific pretrained models exist off-the-shelf (no
+"jersey classifier" or "stadium recognizer" you can just download), so all four are classical CV,
+like Milestone 8's forensic layer.
+
+| Detector | Technique | Scope |
+|---|---|---|
+| `jersey_analysis.py` | HSV color stability of the torso region (proxy: area below a detected face) across video frames | Video only (2+ frames) |
+| `scene_analysis.py` | Background color-histogram distance (Bhattacharyya) across consecutive frames | Video only (2+ frames) |
+| `broadcast_analysis.py` | Error Level Analysis comparing the frame's border/corner "overlay zone" (where scoreboards/logos/tickers live) against its center | Any frame |
+| `crowd_analysis.py` | Tiled cosine-similarity search for duplicated crowd-texture patches (copy-pasted stadium padding) | Any frame |
+
+Both video-only checks reuse `detection/face_detection.py`'s Haar cascade rather than
+introducing a new asset. All four check *internal self-consistency* of the uploaded media —
+none identify or verify against a real team's actual colors, a real stadium's actual appearance,
+or a real broadcaster's actual graphics package, which would require maintained reference
+databases that don't exist here.
+
+**Honest limitations found during testing, not glossed over:**
+- `crowd_analysis.py` compares tiles on a fixed, non-overlapping grid — confirmed empirically
+  that a duplicated patch is caught cleanly (similarity 1.0) when it happens to land on matching
+  grid positions, but a duplicate shifted by a few pixels off-grid is missed entirely. A
+  shift-invariant version (sliding-window or keypoint-based, e.g. ORB/SIFT) would catch more but
+  is meaningfully more expensive.
+- Fixing a real bug along the way: cosine similarity on raw (non-zero-mean) pixel tiles is
+  dominated by shared brightness, not texture — two *unrelated* random tiles of similar
+  brightness scored ~0.95 similarity before tiles were mean-centered first.
+
+**Deliberately out of scope** (would need external data this project doesn't have, rather than
+being faked):
+- **Athlete identity verification** — needs a reference-photo database of known athletes and a
+  face-recognition/embedding model to compare against; there's no such database here.
+- **Match context verification** (e.g. confirming a shown scoreline against real results) —
+  needs a live sports-data API integration and scoreboard OCR; out of scope for a CV forensics
+  module.
+
+## Fusion weighting (updated in Milestone 12)
+
+Three pools now, not two: DL (nominal 0.4), classical forensic — frequency, compression,
+lighting, landmark, optical flow, temporal consistency (nominal 0.35, split ~0.058 each), and
+sports intelligence — jersey, scene, broadcast overlay, crowd texture (nominal 0.25, split
+0.0625 each). Same renormalize-across-applicable-signals behavior as Milestone 9; all pool
+weights configurable via `.env` (`FUSION_DL_WEIGHT`, `FUSION_FORENSIC_WEIGHT`,
+`FUSION_SPORTS_WEIGHT`).
+
+## Video temporal extension (Milestone 11)
+
+Extends the DL detector and forensic layer from "judge frame 0 only" to genuinely reasoning
+across time for video:
+
+- **`image_detector.py::predict_video`** — runs the same ViT classifier (Milestone 7) across up
+  to 8 evenly-spaced sampled frames instead of just the first one. Its mean fake-probability
+  becomes the `deep_learning` fusion input for video; fails fast (one load attempt, not one per
+  frame) if the model can't be loaded.
+- **`temporal_consistency` signal** — the *standard deviation* of fake-probability across those
+  frames. A genuine, unedited clip of one identity should get fairly consistent classifier
+  confidence frame to frame; large swings can indicate localized/frame-level tampering. Video
+  only (needs 2+ analyzed frames); cascades to "unavailable" if the DL model itself couldn't
+  load, since there's nothing to compute variance over.
+- **`optical_flow_analysis.py`** — dense optical flow (Farneback) between consecutive frames;
+  measures the spatial "roughness" (Laplacian variance) of the flow-magnitude field, the same
+  idea as `frequency_analysis.py`'s spectral bumpiness applied to motion instead of pixel
+  intensity. No pretrained weights — pure OpenCV, fully testable offline.
+
+**Honest limitation, found during testing, not glossed over:** optical flow roughness responds
+to *any* spatial complexity in the flow field, including entirely natural causes — a moving
+subject's silhouette against a static background produces genuine flow discontinuities at its
+edges via ordinary occlusion, no manipulation involved. In testing, a synthetic scene with
+structured foreground objects under simple translation scored *higher* roughness than
+independent random noise. We could not construct a synthetic scenario that cleanly isolates
+manipulation-like discontinuity from ordinary scene structure — that would need labeled
+real-vs-manipulated video data, out of scope here. Treat this as the weakest, noisiest signal
+in the pipeline; it carries the same nominal fusion weight as the other forensic signals, but
+real-world tuning would likely warrant weighting it down.
+
+Fusion weighting note: with two new signal slots, the forensic pool (frequency, compression,
+lighting, landmark, optical flow, temporal consistency — 6 slots) now splits the non-DL 0.5
+weight six ways (~0.083 each nominal) instead of four ways; DL still gets nominal 0.5. Same
+renormalize-across-applicable-signals behavior as before.
+
+## Explainability layer (Milestone 10)
+
+`app/services/explainability/reasoning.py` turns the fusion engine's `detector_breakdown` into
+the natural-language verdict + reasons format that's actually shown to users
+(`Analysis.explanation`):
+
+```
+Verdict: AUTHENTIC — no significant signs of manipulation detected
+
+Reasons:
+- Lighting and color balance on the face match the surrounding scene.
+- Compression levels are consistent throughout, with no signs of splicing.
+- No frequency-domain irregularities detected — the spectral profile looks natural.
+
+Notes:
+- AI deepfake classifier was unavailable for this run — verdict relies on forensic signals only.
+- Facial landmark instability could not be assessed (needs 2+ frames with a detected face, or
+  the landmark model was unavailable).
+```
+
+Every phrase is templated from scores the fusion engine already computed — this layer adds no
+new detection logic. A signal only becomes a "reason" if its score crosses
+`settings.explanation_low_threshold` / `explanation_high_threshold` (default 0.35 / 0.65);
+scores in between are treated as inconclusive and omitted. Reasons are ordered by
+*noteworthiness × fusion weight*, so a strong, heavily-weighted signal surfaces before a weak,
+lightly-weighted one. Unavailable signals (as seen throughout this sandbox — no HF Hub/Google
+storage access) become explicit "Notes" rather than silently vanishing.
+
+The full `detector_breakdown` JSON (raw scores, weights, the technical summary, and this
+rendered report) stays on the record for anyone who wants the underlying numbers, not just the
+prose.

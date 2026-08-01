@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens for the Sports Deepfake Detection & Verification Platform.
+ *
+ * Direction: a "broadcast review console" — the visual language of an
+ * instant-replay / VAR review monitor, not a generic SaaS dashboard.
+ * Dark by default (this is a video-forensics tool, reviewed in low light
+ * next to footage), with a signal-amber accent standing in for a broadcast
+ * tally light, and dedicated verdict colors since Authentic / Suspicious
+ * is the core output of the whole product, not decoration.
+ */
+@theme {
+  --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-bg: #0a0e13;
+  --color-bg-raised: #10151d;
+  --color-surface: #141b24;
+  --color-surface-hover: #1a2330;
+  --color-border: #232c38;
+  --color-border-strong: #2f3948;
+
+  --color-text: #e8ecf1;
+  --color-text-muted: #8b96a5;
+  --color-text-faint: #5b6675;
+
+  --color-accent: #f2a93b;
+  --color-accent-dim: #7a5a24;
+
+  --color-authentic: #2fbf8f;
+  --color-authentic-dim: #163a30;
+  --color-suspicious: #f0475b;
+  --color-suspicious-dim: #401e24;
+  --color-processing: #4d8cf0;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* Signature motif: a slow horizontal scan sweep, used sparingly to signal
+   "this system is actively analyzing footage" — reused later for real
+   analysis-in-progress states, not just decoration here. */
+@keyframes scan-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.scan-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-accent) 35%, transparent),
+    transparent
+  );
+  animation: scan-sweep 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-sweep::after {
+    animation: none;
+    display: none;
+  }
+}

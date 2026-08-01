@@ -1,0 +1,31 @@
+# Tool configuration only — no [build-system]/[project] table on purpose.
+# The app is not installed as a package; it runs via `uvicorn app.main:app`
+# from backend/, and pytest resolves `app` through its own rootdir-insertion
+# (backend/ has no __init__.py, so pytest adds it to sys.path). Adding a
+# build-system here would invite `pip install -e .` drift from that assumption.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "ANN001", "BLE"]
+ignore = [
+    "ANN101", # missing type annotation for self — noise
+    "ANN102", # missing type annotation for cls — noise
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ANN001"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_ignores = true
+# Intentionally not --strict yet: the codebase predates this config and
+# hasn't been typed against it. Tighten incrementally (see R12) rather than
+# drowning the first run in unrelated findings.
