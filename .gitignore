@@ -28,6 +28,8 @@ frontend/.env
 
 # ===== Database =====
 database/*.db
+database/*.db-shm
+database/*.db-wal
 database/*.sqlite3
 database/*.sqlite3-journal
 

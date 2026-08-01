@@ -53,25 +53,40 @@ number, not a platform-verified guarantee.
 Weights (~330MB) download from Hugging Face Hub **the first time `predict()` runs**, cached
 under `models/pretrained/` (`MODELS_DIR` in `.env`). This needs outbound internet access.
 
-**This sandbox's own dev/test environment cannot reach Hugging Face Hub** — its network is
-allowlisted to package registries (PyPI, npm, GitHub) only, not `huggingface.co`. I confirmed
-this directly:
+**R1 (2026-08-01) confirmed this for real** on a Windows 11 dev machine (Python 3.14, real
+internet access — not the sandbox this project was originally built in, see history below).
+`model.safetensors` (343,223,968 bytes, matching the HF repo's listed 343MB exactly) downloaded
+and cached under `models/pretrained/models--prithivMLmods--Deep-Fake-Detector-v2-Model/`. A real
+synthetic image run through the live API produced a genuine `deep_learning` score (0.577) inside
+`detector_breakdown.signals` — not an `unavailable` entry. Total pipeline latency: ~10s
+(model already warm from the test suite's own real-download test, see below).
+
+**Windows-specific note:** `huggingface_hub`'s cache uses symlinks by default; without Developer
+Mode or an elevated shell, Windows can't create them, so it falls back to copying full files into
+`snapshots/` instead of blob+symlink (works fine, just uses more disk on repeat downloads of the
+same model at different revisions). `huggingface_hub` prints a one-time warning about this —
+harmless, silence it by setting `HF_HUB_DISABLE_SYMLINKS_WARNING=1` if it's noisy, or enable
+Developer Mode (Settings → Privacy & security → For developers) to get real symlinks.
+
+**Original sandbox history, kept for context:** this project was originally built in a sandboxed
+dev environment allowlisted to package registries only (PyPI, npm, GitHub), not `huggingface.co`
+— `predict()` would raise:
 
 ```
 OSError: Can't load image processor for 'prithivMLmods/Deep-Fake-Detector-v2-Model'.
 If you were trying to load it from 'https://huggingface.co/models', ...
 ```
 
-This is an environment restriction, not a bug — `predict()` catches it and raises a clear
+That was an environment restriction, not a bug — `predict()` catches it and raises a clear
 `ModelLoadError` rather than crashing (see `tests/test_image_detector.py`, which verifies this
-error handling with a locally-constructed mock model, no network required).
+error handling with a locally-constructed mock model, no network required). That fallback path
+is still real and still tested; it's just no longer the only evidence this pipeline works.
 
-**On your own machine (including WSL), this works normally** — you have unrestricted internet
-access. To verify it yourself:
+To verify it yourself:
 
 ```bash
-cd backend && source .venv/bin/activate
-python3 -c "
+cd backend && source .venv/bin/activate      # Windows: .venv\Scripts\Activate.ps1
+python -c "
 import cv2
 from app.services.detection.image_detector import predict
 
@@ -97,11 +112,17 @@ heuristic, not a calibrated probability; see `app/services/detection/types.py::F
 | `lighting_analysis.py` | Face-region vs background brightness/color-balance comparison (falls back to whole-image quadrant check if no face found) | Haar cascade XML (~930KB), downloaded once from `raw.githubusercontent.com/opencv/opencv` and cached under `models/pretrained/haarcascades/` |
 | `landmark_analysis.py` | MediaPipe Face Landmarker — frame-to-frame landmark displacement ("jitter"), video only (needs 2+ frames) | Face Landmarker `.task` bundle (~a few MB), downloaded once from `storage.googleapis.com/mediapipe-models` and cached under `models/pretrained/mediapipe/` |
 
-**Environment note:** both external assets above download from domains outside this sandbox's
-allowlist (`raw.githubusercontent.com` actually *is* reachable here, so the Haar cascade was
-downloaded and tested for real; `storage.googleapis.com` is not, so `landmark_analysis.py`'s
-network path is tested via dependency injection + one real confirmed failure, the same pattern
-as Milestone 7's image detector). Both work normally on an unrestricted connection (e.g. WSL).
+**Environment note:** both external assets above download from domains outside the original
+build sandbox's allowlist (`raw.githubusercontent.com` actually *was* reachable there, so the
+Haar cascade was downloaded and tested for real from day one; `storage.googleapis.com` was not,
+so `landmark_analysis.py`'s network path was originally tested only via dependency injection +
+one real confirmed failure). **R1 (2026-08-01) confirmed both work for real** on an unrestricted
+connection: `haarcascade_frontalface_default.xml` (912KB) and `face_landmarker.task` (3.6MB)
+both downloaded and cached under `models/pretrained/`. More importantly, both ran real
+*inference*, not just download — a real synthetic video pushed through the live API produced a
+genuine `landmark_instability` score (0.517) and a genuine `jersey_color_consistency` score
+(0.054) in `detector_breakdown.signals`, meaning MediaPipe's landmarker and the Haar cascade each
+detected a face and tracked it across frames for real, not just confirmed network reachability.
 
 ## Fusion engine (Milestone 9)
 

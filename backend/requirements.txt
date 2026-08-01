@@ -4,16 +4,34 @@ uvicorn[standard]==0.30.6
 python-multipart==0.0.9
 
 # ===== Settings / Validation =====
-pydantic==2.9.2
-pydantic-settings==2.5.2
+# pydantic/pydantic-settings bumped from 2.9.2/2.5.2 (R1): pydantic-core's
+# first Python 3.14 wheel lands at 2.35.0, which pydantic 2.9.2 (pinned to
+# pydantic-core==2.23.4, no 3.14 wheel) predates -- would otherwise force a
+# from-source Rust build. 2.12.5 is the earliest 2.x *minor* whose pinned
+# pydantic-core (2.41.5) has a cp314 wheel, kept close to the original pin
+# rather than jumping to the newest release. API used in this codebase
+# (BaseSettings, SettingsConfigDict, BaseModel, ConfigDict, Field) is stable
+# across this range.
+pydantic==2.12.5
+pydantic-settings==2.14.2
 python-dotenv==1.0.1
 
 # ===== Database =====
-SQLAlchemy==2.0.35
+# Bumped from 2.0.35 (R1): 2.0.35 has no compiled wheel for Python 3.14
+# either (falls back to the slower pure-Python py3-none-any wheel). 2.0.51
+# is the latest 2.0.x patch with a compiled cp314 wheel -- same minor
+# version, no API change, just restores the C-extension speedup.
+SQLAlchemy==2.0.51
 
 # ===== Computer Vision =====
 opencv-python-headless==4.10.0.84
-numpy==2.1.2
+# Bumped from 2.1.2 (R1): no numpy wheel for Python 3.14 exists before
+# 2.3.2 (would otherwise require building numpy from source, which needs a
+# Fortran/C toolchain most dev machines don't have). 2.3.5 is the latest
+# stable patch in that first cp314-compatible minor line. No declared
+# upper-bound conflict with opencv-python-headless, torch, torchvision, or
+# mediapipe (checked their requires_dist directly against PyPI).
+numpy==2.3.5
 
 # ===== Deep Learning (Milestone 7) =====
 # NOTE: torch is a large download (~500MB, includes CUDA support even for

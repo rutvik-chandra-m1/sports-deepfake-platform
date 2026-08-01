@@ -49,6 +49,21 @@ pip install -r requirements-dev.txt
 > code actually runs, it downloads a ~330MB pretrained model from Hugging Face Hub — this
 > requires normal outbound internet access (works fine on WSL). See `docs/models.md` for details.
 
+> **Note (R1, Python 3.14):** `numpy`, `pydantic`/`pydantic-settings`, and `SQLAlchemy` are
+> pinned to versions with a Python 3.14 wheel (bumped from their original pins — see comments in
+> `requirements.txt` for exact versions and why). Below 3.14 the original pins should still work,
+> but this has only been verified against 3.14 so far.
+>
+> **Known packaging quirk:** `mediapipe` pulls in `opencv-contrib-python` (unpinned) as a
+> transitive dependency, which installs into the same `cv2/` namespace as this project's own
+> `opencv-python-headless` pin. Whichever installs last wins the file collision — on the
+> Windows/Python 3.14 install this was verified against, that's `opencv-contrib-python`, so
+> `cv2.__version__` reports `5.0.0` rather than the pinned `4.10.0.84`. This has been confirmed
+> harmless for every `cv2` function this codebase actually calls (contrib is a superset), but it
+> is a real reproducibility gap worth knowing about — and `opencv-contrib-python` (unlike the
+> `-headless` variant) pulls in GUI bindings that may need extra system libraries in a minimal
+> Docker image (relevant for the Milestone 16/R14 deployment work).
+
 - API root: http://localhost:8000/
 - Interactive docs: http://localhost:8000/docs
 - Health check: http://localhost:8000/api/v1/health
