@@ -42,6 +42,7 @@ sys.path.insert(0, str(BACKEND_DIR))
 
 # Every signal the fusion engine knows about, in a stable column order.
 ALL_SIGNALS = [
+    "trained_probe",
     "deep_learning",
     "frequency_analysis",
     "compression_analysis",

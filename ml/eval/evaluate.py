@@ -38,6 +38,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 logger = logging.getLogger(__name__)
 
 SIGNALS = [
+    "trained_probe",
     "deep_learning",
     "frequency_analysis",
     "compression_analysis",
@@ -54,7 +55,10 @@ SIGNALS = [
 # From reports/dataset_audit_normalized.json -- what a classifier achieves
 # using only global image statistics (saturation/brightness/compressibility).
 # The real bar for the detector, since beating 0.50 proves nothing.
-CONTENT_STATS_BASELINE = {"ALL": 0.5797, "general": 0.6071, "sports": 0.8350}
+# Re-read these from the audit JSON whenever the dataset is rebuilt; they
+# moved from {0.5797, 0.6071} to the values below when the backbone grew
+# from 500 to ~1790 images.
+CONTENT_STATS_BASELINE = {"ALL": 0.5458, "general": 0.5323, "sports": 0.8350}
 
 
 def bootstrap_auc_ci(y_true, y_score, n_boot=2000, seed=0):

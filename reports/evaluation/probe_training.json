@@ -2,49 +2,49 @@
   "backbone": "prithivMLmods/Deep-Fake-Detector-v2-Model",
   "method": "linear probe (logistic regression) on frozen ViT CLS embeddings",
   "feature_dim": 768,
-  "chosen_n_components": 32,
-  "chosen_C": 0.046415888336127795,
-  "train_cv_auc": 0.7429,
-  "n_train": 318,
+  "chosen_n_components": 128,
+  "chosen_C": 0.01291549665014884,
+  "train_cv_auc": 0.7581,
+  "n_train": 1194,
   "splits": {
     "train": {
-      "n": 318,
-      "roc_auc": 0.8358,
+      "n": 1194,
+      "roc_auc": 0.8366,
       "roc_auc_ci95": [
-        0.7912,
-        0.8804
+        0.8138,
+        0.859
       ],
-      "accuracy_at_0.5": 0.7893
+      "accuracy_at_0.5": 0.7504
     },
     "val": {
-      "n": 113,
-      "roc_auc": 0.6202,
+      "n": 321,
+      "roc_auc": 0.7391,
       "roc_auc_ci95": [
-        0.5147,
-        0.7218
+        0.6903,
+        0.7939
       ],
-      "accuracy_at_0.5": 0.5841
+      "accuracy_at_0.5": 0.6542
     },
     "test": {
-      "n": 73,
-      "roc_auc": 0.6105,
+      "n": 275,
+      "roc_auc": 0.7534,
       "roc_auc_ci95": [
-        0.4639,
-        0.7391
+        0.6933,
+        0.8082
       ],
-      "accuracy_at_0.5": 0.5616
+      "accuracy_at_0.5": 0.72
     }
   },
-  "operating_threshold_from_val": 0.407,
-  "test_accuracy_at_val_threshold": 0.5753,
+  "operating_threshold_from_val": 0.5642,
+  "test_accuracy_at_val_threshold": 0.6982,
   "test_by_domain": {
     "general": {
-      "n": 63,
-      "roc_auc": 0.6041
+      "n": 265,
+      "roc_auc": 0.7437
     },
     "sports": {
       "n": 10,
-      "roc_auc": 0.6667
+      "roc_auc": 1.0
     }
   }
 }

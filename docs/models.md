@@ -1,5 +1,80 @@
 # AI Models
 
+## Trained linear probe — this project's own classifier (R6)
+
+**The primary detector.** Everything else on this page is a third-party model or a
+hand-written heuristic; this is the one component trained on this project's own labelled data,
+and the only one measured above chance on a held-out split.
+
+**Why it exists.** R3 measured the third-party face-tuned ViT head (below) at ROC-AUC **0.491 —
+chance** — on this dataset, exactly the out-of-distribution failure this document had warned
+about: it is trained on faces, and the data is general and sports imagery. Rather than discard
+the model, the probe keeps its **trunk** (`google/vit-base-patch16-224-in21k`, a general-purpose
+backbone) and replaces only the mismatched classification head.
+
+| Property | Value |
+|---|---|
+| Architecture | Frozen ViT-B/16 trunk → PCA(128) → L2-regularised logistic head |
+| Trained on | 1,194 images (`datasets/manifest_normalized.csv`, train split) |
+| Hyperparameters | `n_components` and `C` chosen by 5-fold CV **inside train** |
+| Artifact | `models/configs/probe_head.json` (~50KB of plain JSON) |
+| Trained by | `ml/train/train_probe.py` |
+| Served by | `backend/app/services/detection/probe_detector.py` |
+
+### Measured performance (held-out test, n=275)
+
+| Split | n | ROC-AUC | 95% CI |
+|---|---:|---:|---|
+| train | 1194 | 0.8366 | 0.814–0.859 |
+| val | 321 | 0.7391 | 0.690–0.794 |
+| **test** | **275** | **0.7534** | **0.693–0.808** |
+
+Test accuracy **0.7200** at threshold 0.5 (0.6982 at the val-selected 0.5642). The CI sits
+clearly above both chance and the 0.5458 content-statistics baseline from the dataset audit, so
+this is a real effect, not noise. Per-domain on test: general **0.7437** (n=265); the sports
+subset reports 1.0 but at **n=10 that number is meaningless** and must not be quoted.
+
+### Why training-set size mattered more than anything else
+
+| Training images | test ROC-AUC |
+|---:|---:|
+| 0 (stock face head) | 0.491 |
+| 318 | 0.611 |
+| **1194** | **0.7534** |
+
+The first attempt overfit badly (train 0.974 vs val 0.612 on 318 images). PCA plus more data
+closed that gap to 0.837 vs 0.753 — still some overfitting, so **more data remains the single
+highest-value improvement**, ahead of any architectural change.
+
+### Design decisions worth knowing
+
+- **Linear probing, not full fine-tuning.** No GPU is available (Intel i7-8665U). A frozen
+  backbone needs one forward pass per image (0.42s measured) and the head then trains in
+  milliseconds; backpropagating through ViT-B/16 on CPU is not practical. Linear probing is the
+  standard way to measure what a frozen representation already encodes.
+- **Exported as plain JSON, not a pickle.** The backend applies the head with a single numpy dot
+  product. This keeps scikit-learn out of the serving dependency tree entirely, and avoids
+  unpickling a file from disk — pickle deserialisation is arbitrary code execution.
+- **PCA and the head are algebraically collapsed** into one linear map in the original 768-d
+  space before export, and the collapse is **verified against the sklearn pipeline** (max logit
+  drift 7.1e-07) so training and serving cannot silently diverge. Independently re-verified after
+  export: the JSON reproduces val 0.7391 / test 0.7534 exactly.
+- **Degrades gracefully.** If `probe_head.json` is absent (e.g. a fresh clone before training),
+  the detector returns a non-applicable signal and the pipeline continues without it, exactly
+  like every other detector.
+
+### Limitations
+
+- Trained on 1,194 pilot-scale images. Generalisation beyond this dataset's distribution is
+  unmeasured.
+- The backbone is still face-pretrained-adjacent; a backbone pretrained on a broader corpus
+  might probe better.
+- **Sports-domain performance is effectively unmeasured** (n=10 in test).
+- Threshold 0.5642 was selected on val by Youden's J. A deployment with asymmetric costs (a false
+  accusation against a real athlete is worse than a missed fake) should re-select it against an
+  explicit cost ratio.
+
+
 This document tracks every pretrained model the platform integrates: what it is, why it was
 chosen, what it actually reports (cited from the model's own card — we do not invent or
 independently verify accuracy numbers unless explicitly stated), its license, and its known

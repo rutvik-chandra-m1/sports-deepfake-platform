@@ -10,94 +10,94 @@
     "crowd_texture_analysis"
   ],
   "coefficients": {
-    "probe": 0.9715,
-    "deep_learning": 0.0298,
-    "frequency_analysis": -0.0112,
-    "compression_analysis": -0.1516,
-    "lighting_analysis": 0.6797,
-    "broadcast_overlay_analysis": -0.687,
-    "crowd_texture_analysis": -0.2036
+    "probe": 2.908,
+    "deep_learning": -0.5403,
+    "frequency_analysis": -0.0289,
+    "compression_analysis": -0.1109,
+    "lighting_analysis": -0.8751,
+    "broadcast_overlay_analysis": -0.4454,
+    "crowd_texture_analysis": 0.0299
   },
-  "intercept": -0.958,
-  "operating_threshold_from_val": 0.3976,
+  "intercept": -0.6095,
+  "operating_threshold_from_val": 0.4454,
   "splits": {
     "val": {
-      "n": 113,
-      "n_fake": 48,
-      "roc_auc": 0.6503,
+      "n": 321,
+      "n_fake": 152,
+      "roc_auc": 0.7512,
       "roc_auc_ci95": [
-        0.5464,
-        0.7515
+        0.6995,
+        0.8037
       ],
-      "accuracy": 0.6018,
-      "predicted_fake_rate": 0.646,
-      "actual_fake_rate": 0.4248
+      "accuracy": 0.6916,
+      "predicted_fake_rate": 0.5389,
+      "actual_fake_rate": 0.4735
     },
     "test": {
-      "n": 73,
-      "n_fake": 35,
-      "roc_auc": 0.4474,
+      "n": 275,
+      "n_fake": 148,
+      "roc_auc": 0.7715,
       "roc_auc_ci95": [
-        0.3124,
-        0.5782
+        0.7162,
+        0.8241
       ],
-      "accuracy": 0.3973,
-      "predicted_fake_rate": 0.6164,
-      "actual_fake_rate": 0.4795
+      "accuracy": 0.7164,
+      "predicted_fake_rate": 0.4873,
+      "actual_fake_rate": 0.5382
     }
   },
   "per_signal_direction": {
     "probe": {
-      "standalone_test_auc": 0.6105,
-      "auc_if_flipped": 0.3895,
-      "learned_coefficient": 0.9715,
+      "standalone_test_auc": 0.7534,
+      "auc_if_flipped": 0.2466,
+      "learned_coefficient": 2.908,
       "interpretation": "learned positive weight"
     },
     "deep_learning": {
-      "standalone_test_auc": 0.491,
-      "auc_if_flipped": 0.509,
-      "learned_coefficient": 0.0298,
-      "interpretation": "learned positive weight"
+      "standalone_test_auc": 0.4467,
+      "auc_if_flipped": 0.5533,
+      "learned_coefficient": -0.5403,
+      "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
     },
     "frequency_analysis": {
-      "standalone_test_auc": 0.3391,
-      "auc_if_flipped": 0.6609,
-      "learned_coefficient": -0.0112,
+      "standalone_test_auc": 0.452,
+      "auc_if_flipped": 0.548,
+      "learned_coefficient": -0.0289,
       "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
     },
     "compression_analysis": {
-      "standalone_test_auc": 0.403,
-      "auc_if_flipped": 0.597,
-      "learned_coefficient": -0.1516,
+      "standalone_test_auc": 0.4346,
+      "auc_if_flipped": 0.5654,
+      "learned_coefficient": -0.1109,
       "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
     },
     "lighting_analysis": {
-      "standalone_test_auc": 0.2812,
-      "auc_if_flipped": 0.7188,
-      "learned_coefficient": 0.6797,
-      "interpretation": "learned positive weight"
+      "standalone_test_auc": 0.3772,
+      "auc_if_flipped": 0.6228,
+      "learned_coefficient": -0.8751,
+      "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
     },
     "broadcast_overlay_analysis": {
-      "standalone_test_auc": 0.4895,
-      "auc_if_flipped": 0.5105,
-      "learned_coefficient": -0.687,
+      "standalone_test_auc": 0.4507,
+      "auc_if_flipped": 0.5493,
+      "learned_coefficient": -0.4454,
       "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
     },
     "crowd_texture_analysis": {
-      "standalone_test_auc": 0.5259,
-      "auc_if_flipped": 0.4741,
-      "learned_coefficient": -0.2036,
-      "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
+      "standalone_test_auc": 0.4765,
+      "auc_if_flipped": 0.5235,
+      "learned_coefficient": 0.0299,
+      "interpretation": "learned positive weight"
     }
   },
   "test_by_domain": {
     "general": {
-      "n": 63,
-      "roc_auc": 0.4357
+      "n": 265,
+      "roc_auc": 0.7615
     },
     "sports": {
       "n": 10,
-      "roc_auc": 0.4762
+      "roc_auc": 1.0
     }
   }
 }

@@ -4,19 +4,31 @@ Fusion engine — combines the deep learning image detector's output
 sports-specific signals (Milestone 12) into a single verdict/confidence/
 risk_level for the Analysis record.
 
-Weighting scheme: three pools, each with a nominal top-level weight
-(settings.fusion_dl_weight / fusion_forensic_weight / fusion_sports_weight,
-default 0.4 / 0.35 / 0.25) split evenly across that pool's member signals.
-DL is weighted highest as the only signal here with a published, cited
-evaluation (see docs/models.md); sports signals are weighted lowest as the
-most experimental/heuristic pool. Whichever signals are actually applicable
-(not None, no missing-model/network failure) have their nominal weights
-renormalized to sum to 1 -- so an unavailable signal doesn't leave weight
-on the floor; the rest simply account for 100% of the decision.
+TWO combining strategies, in preference order:
 
-This weighting is a documented design choice, not a value fit/calibrated
-against a labeled validation set -- see docs/models.md for the honesty
-notes that apply to every heuristic score feeding into this engine.
+1. LEARNED CALIBRATION (default when available) -- coefficients fitted to
+   the labelled val split by ml/train/train_fusion.py, applied by
+   app/services/fusion_calibration.py. This is what makes the engine work:
+   R3 measured the hand-weighted version at ROC-AUC 0.4331, *below chance*,
+   because most classical signals are inverted (they rate real images as
+   more suspicious than fakes) and a fixed positive weight cannot express
+   that. The fitted coefficients are negative exactly where the ablation
+   says they should be. Held-out test (n=275): 0.7715, 95% CI 0.716-0.824.
+
+2. LEGACY WEIGHTED MEAN (fallback) -- three pools with nominal weights
+   (settings.fusion_trained_weight / fusion_dl_weight /
+   fusion_forensic_weight / fusion_sports_weight) split evenly across each
+   pool's members, renormalized across whichever signals are applicable so
+   an unavailable signal doesn't leave weight on the floor. Used when no
+   calibration file is present, or when a signal the calibration requires is
+   unavailable for this particular media. These pool weights are a
+   documented design choice informed by the R3 ablation -- the trained probe
+   carries most of the weight because it is the only signal measured above
+   chance -- not values fitted to data.
+
+`detector_breakdown["fusion"]["method"]` records which path produced any
+given verdict, so a stored result is self-explanatory. See
+docs/evaluation.md for the full measurement.
 
 Milestone 10 turns the `detector_breakdown` this engine produces into a
 natural-language explanation; see app/services/explainability/.
@@ -27,6 +39,7 @@ from dataclasses import asdict, dataclass, field
 
 from app.core.config import get_settings
 from app.models.analysis import RiskLevel, Verdict
+from app.services import fusion_calibration
 from app.services.detection.types import ForensicSignal, ImageDetectionResult
 
 # This project's own trained classifier (R6). Weighted as its own pool, not
@@ -142,9 +155,22 @@ def fuse(
     total_nominal = sum(applicable_nominal.values()) or 1.0
     normalized_weights = {name: w / total_nominal for name, w in applicable_nominal.items()}
 
-    fused_score = sum(scores[name] * normalized_weights[name] for name in scores)
+    # Prefer the learned combiner (weights fitted to labelled data, which can
+    # express the negative coefficients the R3 ablation showed are needed).
+    # Falls back to the legacy weighted mean if the calibration is missing or
+    # any signal it requires is unavailable for this particular media.
+    calibrated = fusion_calibration.apply_calibration(scores)
+    if calibrated is not None:
+        fused_score, verdict_threshold, calibration_detail = calibrated
+    else:
+        fused_score = sum(scores[name] * normalized_weights[name] for name in scores)
+        verdict_threshold = settings.fusion_verdict_threshold
+        calibration_detail = {
+            "method": "legacy_weighted_mean",
+            "reason": "no calibration available, or a required signal was missing",
+        }
 
-    verdict = Verdict.SUSPICIOUS if fused_score >= settings.fusion_verdict_threshold else Verdict.AUTHENTIC
+    verdict = Verdict.SUSPICIOUS if fused_score >= verdict_threshold else Verdict.AUTHENTIC
     confidence_score = round(
         (fused_score if verdict == Verdict.SUSPICIOUS else (1.0 - fused_score)) * 100, 2
     )
@@ -160,6 +186,8 @@ def fuse(
 
     breakdown = {
         "fused_suspicion_score": fused_score,
+        "fusion": calibration_detail,
+        "verdict_threshold": verdict_threshold,
         "signals": {
             name: {"score": scores[name], "weight": normalized_weights[name]} for name in scores
         },

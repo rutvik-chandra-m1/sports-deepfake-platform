@@ -1,17 +1,17 @@
 {
-  "n_probed": 504,
-  "n_manifest": 504,
+  "n_probed": 1790,
+  "n_manifest": 1790,
   "by_domain_class": {
     "general/fake": {
-      "count": 221,
+      "count": 893,
       "formats": {
-        "JPEG": 221
+        "JPEG": 893
       },
       "modes": {
-        "RGB": 221
+        "RGB": 893
       },
       "square_fraction": 1.0,
-      "grayscale_fraction": 0.0,
+      "grayscale_fraction": 0.001,
       "width_min_med_max": [
         384,
         384,
@@ -23,19 +23,19 @@
         384
       ],
       "megapixels_median": 0.147,
-      "file_size_kb_median": 42.4,
-      "channel_spread_median": 41.7
+      "file_size_kb_median": 41.3,
+      "channel_spread_median": 38.3
     },
     "general/real": {
-      "count": 218,
+      "count": 832,
       "formats": {
-        "JPEG": 218
+        "JPEG": 832
       },
       "modes": {
-        "RGB": 218
+        "RGB": 832
       },
       "square_fraction": 1.0,
-      "grayscale_fraction": 0.0,
+      "grayscale_fraction": 0.001,
       "width_min_med_max": [
         384,
         384,
@@ -47,8 +47,8 @@
         384
       ],
       "megapixels_median": 0.147,
-      "file_size_kb_median": 40.2,
-      "channel_spread_median": 31.7
+      "file_size_kb_median": 39.5,
+      "channel_spread_median": 33.0
     },
     "sports/fake": {
       "count": 25,
@@ -101,9 +101,9 @@
   },
   "container_separability": {
     "ALL": {
-      "n": 504,
-      "n_fake": 246,
-      "n_real": 258,
+      "n": 1790,
+      "n_fake": 918,
+      "n_real": 872,
       "cv_folds": 5,
       "roc_auc_mean": 0.5,
       "roc_auc_std": 0.0,
@@ -132,9 +132,9 @@
       "verdict": "OK - near chance; no container shortcut"
     },
     "general": {
-      "n": 439,
-      "n_fake": 221,
-      "n_real": 218,
+      "n": 1725,
+      "n_fake": 893,
+      "n_real": 832,
       "cv_folds": 5,
       "roc_auc_mean": 0.5,
       "roc_auc_std": 0.0,
@@ -196,58 +196,58 @@
   },
   "content_stats_baseline": {
     "ALL": {
-      "n": 504,
-      "n_fake": 246,
-      "n_real": 258,
+      "n": 1790,
+      "n_fake": 918,
+      "n_real": 872,
       "cv_folds": 5,
-      "roc_auc_mean": 0.5797,
-      "roc_auc_std": 0.0416,
+      "roc_auc_mean": 0.5458,
+      "roc_auc_std": 0.0104,
       "top_leaking_features": [
         [
-          "file_size_kb",
-          0.2373
-        ],
-        [
           "channel_spread",
-          0.2276
+          0.2844
         ],
         [
           "mean_brightness",
-          0.2257
+          0.2796
+        ],
+        [
+          "file_size_kb",
+          0.2634
         ],
         [
           "is_grayscale",
           0.0
         ]
       ],
-      "verdict": "LOW trivial baseline (0.58) - global statistics alone explain little"
+      "verdict": "LOW trivial baseline (0.55) - global statistics alone explain little"
     },
     "general": {
-      "n": 439,
-      "n_fake": 221,
-      "n_real": 218,
+      "n": 1725,
+      "n_fake": 893,
+      "n_real": 832,
       "cv_folds": 5,
-      "roc_auc_mean": 0.6071,
-      "roc_auc_std": 0.0349,
+      "roc_auc_mean": 0.5323,
+      "roc_auc_std": 0.0252,
       "top_leaking_features": [
         [
           "mean_brightness",
-          0.237
-        ],
-        [
-          "channel_spread",
-          0.2364
+          0.2808
         ],
         [
           "file_size_kb",
-          0.2268
+          0.275
+        ],
+        [
+          "channel_spread",
+          0.2715
         ],
         [
           "is_grayscale",
           0.0
         ]
       ],
-      "verdict": "LOW trivial baseline (0.61) - global statistics alone explain little"
+      "verdict": "LOW trivial baseline (0.53) - global statistics alone explain little"
     },
     "sports": {
       "n": 65,
@@ -278,7 +278,7 @@
     }
   },
   "duplicate_leakage": {
-    "n_hashed": 504,
+    "n_hashed": 1790,
     "exact_duplicate_groups": 0,
     "exact_duplicate_images": 0,
     "cross_split_exact_groups": 0,

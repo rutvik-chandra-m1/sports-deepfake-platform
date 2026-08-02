@@ -64,6 +64,25 @@ def _forensic_signals(score: float) -> list[ForensicSignal]:
     ]
 
 
+def _mock_probe(monkeypatch, score: float | None) -> None:
+    """Pin the trained probe's output.
+
+    These control-flow tests mock every other detector, and the probe carries
+    the largest fusion weight -- left unmocked it runs the real model against a
+    10x10 synthetic frame and legitimately outvotes the mocked signals, so the
+    test would be asserting on an unpinned input. `score=None` simulates an
+    untrained/unavailable probe.
+    """
+    signal = (
+        ForensicSignal(name="trained_probe", applicable=True, suspicion_score=score, summary="mocked probe")
+        if score is not None
+        else ForensicSignal(
+            name="trained_probe", applicable=False, suspicion_score=None, summary="probe unavailable (mocked)"
+        )
+    )
+    monkeypatch.setattr(pipeline_module, "analyze_trained_probe", lambda frame_rgb: signal)
+
+
 # ----- Fast, fully mocked control-flow tests -----
 
 
@@ -71,6 +90,7 @@ def test_pipeline_marks_completed_with_verdict_on_success(monkeypatch):
     analysis_id = _create_pending_record()
 
     monkeypatch.setattr(pipeline_module, "process_media", lambda path, media_type: _fake_processed_media())
+    _mock_probe(monkeypatch, 0.9)
     monkeypatch.setattr(
         pipeline_module,
         "predict_image",
@@ -137,6 +157,7 @@ def test_pipeline_degrades_gracefully_when_dl_detector_unavailable(monkeypatch):
     def _dl_boom(frame):
         raise ModelLoadError("simulated: no internet")
 
+    _mock_probe(monkeypatch, None)
     monkeypatch.setattr(pipeline_module, "predict_image", _dl_boom)
     monkeypatch.setattr(pipeline_module, "run_forensic_analysis", lambda frames: _forensic_signals(0.1))
     monkeypatch.setattr(pipeline_module, "run_sports_intelligence", lambda frames: [])
