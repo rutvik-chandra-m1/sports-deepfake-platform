@@ -109,8 +109,25 @@ def test_unavailable_signals_produce_notes():
     report = generate_report(breakdown, Verdict.AUTHENTIC, RiskLevel.LOW)
 
     assert len(report.notes) == 2
-    assert any("AI deepfake classifier was unavailable" in n for n in report.notes)
+    # "General deepfake classifier" -- the stock face-tuned model. Renamed from
+    # "AI deepfake classifier" when R6 added `trained_probe`, so the two are
+    # distinguishable to a reader of the report.
+    assert any("General deepfake classifier was unavailable" in n for n in report.notes)
     assert any("2+ frames" in n for n in report.notes)
+
+
+def test_trained_probe_has_its_own_reason_and_note_templates():
+    """The trained probe carries most of the fusion weight, so it must never
+    fall through to the generic "<name> was unavailable" fallback."""
+    high = _breakdown({"trained_probe": 0.9})
+    assert any("trained image classifier" in r for r in generate_report(high, Verdict.SUSPICIOUS, RiskLevel.HIGH).reasons)
+
+    low = _breakdown({"trained_probe": 0.05})
+    assert any("trained image classifier" in r for r in generate_report(low, Verdict.AUTHENTIC, RiskLevel.LOW).reasons)
+
+    missing = _breakdown({"frequency_analysis": 0.2}, unavailable={"trained_probe": "head not found"})
+    notes = generate_report(missing, Verdict.AUTHENTIC, RiskLevel.LOW).notes
+    assert any("trained classifier was unavailable" in n and "low confidence" in n for n in notes)
 
 
 def test_reasons_ordered_by_noteworthiness_times_weight():

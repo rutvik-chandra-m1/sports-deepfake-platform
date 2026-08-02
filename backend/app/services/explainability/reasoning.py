@@ -25,9 +25,13 @@ from app.models.analysis import RiskLevel, Verdict
 # "low" = reassuring reading supporting authenticity. Signals scoring in
 # between ("medium") are treated as inconclusive and not surfaced.
 _REASON_TEMPLATES: dict[str, dict[str, str]] = {
+    "trained_probe": {
+        "high": "Our trained image classifier rates this as likely AI-generated.",
+        "low": "Our trained image classifier found no signs of AI generation.",
+    },
     "deep_learning": {
-        "high": "The AI deepfake classifier flagged this as likely synthetic ({fake_pct:.0f}% fake probability).",
-        "low": "The AI deepfake classifier found no signs of synthetic generation ({real_pct:.0f}% real probability).",
+        "high": "A general deepfake classifier flagged this as likely synthetic ({fake_pct:.0f}% fake probability).",
+        "low": "A general deepfake classifier found no signs of synthetic generation ({real_pct:.0f}% real probability).",
     },
     "frequency_analysis": {
         "high": "Frequency-domain irregularities detected, consistent with GAN/upsampling artifacts.",
@@ -72,7 +76,11 @@ _REASON_TEMPLATES: dict[str, dict[str, str]] = {
 }
 
 _UNAVAILABLE_NOTE_TEMPLATES: dict[str, str] = {
-    "deep_learning": "AI deepfake classifier was unavailable for this run — verdict relies on forensic signals only.",
+    "trained_probe": (
+        "Our trained classifier was unavailable for this run — the verdict relies on weaker "
+        "signals and should be treated with low confidence."
+    ),
+    "deep_learning": "General deepfake classifier was unavailable for this run — verdict relies on forensic signals only.",
     "frequency_analysis": "Frequency-domain analysis was unavailable for this run.",
     "compression_analysis": "Compression analysis was unavailable for this run.",
     "lighting_analysis": "Lighting analysis was unavailable for this run.",

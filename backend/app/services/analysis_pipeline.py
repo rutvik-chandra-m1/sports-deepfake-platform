@@ -32,6 +32,7 @@ from app.models.analysis import Analysis, AnalysisStatus
 from app.services import explainability, fusion_engine
 from app.services.detection import (
     ModelLoadError,
+    analyze_trained_probe,
     predict_image,
     predict_video,
     run_forensic_analysis,
@@ -122,6 +123,16 @@ def analyze_frames(frames_bgr: list, analysis_id: int | None = None) -> Analysis
 
     forensic_signals = run_forensic_analysis(frames_bgr)
     forensic_signals.append(temporal_signal)
+
+    # This project's own trained classifier (R6). Runs on the representative
+    # first frame, like the other single-frame signals. Self-degrades to a
+    # non-applicable signal if no head has been trained yet.
+    first_frame_rgb = cv2.cvtColor(frames_bgr[0], cv2.COLOR_BGR2RGB)
+    try:
+        forensic_signals.append(analyze_trained_probe(first_frame_rgb))
+    except Exception as exc:  # noqa: BLE001 - never let one detector abort the batch
+        logger.warning("Trained probe failed for analysis id=%s: %s", analysis_id, exc)
+
     sports_signals = run_sports_intelligence(frames_bgr)
 
     result = fusion_engine.fuse(dl_result, forensic_signals, sports_signals)

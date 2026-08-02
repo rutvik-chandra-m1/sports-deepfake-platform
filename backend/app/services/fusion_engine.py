@@ -29,6 +29,12 @@ from app.core.config import get_settings
 from app.models.analysis import RiskLevel, Verdict
 from app.services.detection.types import ForensicSignal, ImageDetectionResult
 
+# This project's own trained classifier (R6). Weighted as its own pool, not
+# lumped in with the classical heuristics: it is the only signal here fitted
+# to this project's labelled data and measured on a held-out split, whereas
+# R3 measured every classical signal at or below chance on still images.
+TRAINED_SIGNAL_NAMES = ("trained_probe",)
+
 FORENSIC_SIGNAL_NAMES = (
     "frequency_analysis",
     "compression_analysis",
@@ -65,6 +71,10 @@ class FusionResult:
 
 def _nominal_weights(settings) -> dict[str, float]:
     weights = {"deep_learning": settings.fusion_dl_weight}
+
+    per_trained = settings.fusion_trained_weight / len(TRAINED_SIGNAL_NAMES)
+    for name in TRAINED_SIGNAL_NAMES:
+        weights[name] = per_trained
 
     per_forensic = settings.fusion_forensic_weight / len(FORENSIC_SIGNAL_NAMES)
     for name in FORENSIC_SIGNAL_NAMES:

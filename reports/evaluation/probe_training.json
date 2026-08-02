@@ -1,0 +1,50 @@
+{
+  "backbone": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+  "method": "linear probe (logistic regression) on frozen ViT CLS embeddings",
+  "feature_dim": 768,
+  "chosen_n_components": 32,
+  "chosen_C": 0.046415888336127795,
+  "train_cv_auc": 0.7429,
+  "n_train": 318,
+  "splits": {
+    "train": {
+      "n": 318,
+      "roc_auc": 0.8358,
+      "roc_auc_ci95": [
+        0.7912,
+        0.8804
+      ],
+      "accuracy_at_0.5": 0.7893
+    },
+    "val": {
+      "n": 113,
+      "roc_auc": 0.6202,
+      "roc_auc_ci95": [
+        0.5147,
+        0.7218
+      ],
+      "accuracy_at_0.5": 0.5841
+    },
+    "test": {
+      "n": 73,
+      "roc_auc": 0.6105,
+      "roc_auc_ci95": [
+        0.4639,
+        0.7391
+      ],
+      "accuracy_at_0.5": 0.5616
+    }
+  },
+  "operating_threshold_from_val": 0.407,
+  "test_accuracy_at_val_threshold": 0.5753,
+  "test_by_domain": {
+    "general": {
+      "n": 63,
+      "roc_auc": 0.6041
+    },
+    "sports": {
+      "n": 10,
+      "roc_auc": 0.6667
+    }
+  }
+}

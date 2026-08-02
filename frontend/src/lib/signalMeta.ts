@@ -13,7 +13,8 @@ interface SignalMeta {
 }
 
 export const SIGNAL_META: Record<string, SignalMeta> = {
-  deep_learning: { label: "AI Deepfake Classifier", group: "ai" },
+  trained_probe: { label: "Trained Classifier (ours)", group: "ai" },
+  deep_learning: { label: "General Deepfake Classifier", group: "ai" },
   frequency_analysis: { label: "Frequency Analysis", group: "forensic" },
   compression_analysis: { label: "Compression Analysis", group: "forensic" },
   lighting_analysis: { label: "Lighting Consistency", group: "forensic" },

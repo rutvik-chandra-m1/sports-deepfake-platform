@@ -1,0 +1,103 @@
+{
+  "fitted_on": "val",
+  "features": [
+    "probe",
+    "deep_learning",
+    "frequency_analysis",
+    "compression_analysis",
+    "lighting_analysis",
+    "broadcast_overlay_analysis",
+    "crowd_texture_analysis"
+  ],
+  "coefficients": {
+    "probe": 0.9715,
+    "deep_learning": 0.0298,
+    "frequency_analysis": -0.0112,
+    "compression_analysis": -0.1516,
+    "lighting_analysis": 0.6797,
+    "broadcast_overlay_analysis": -0.687,
+    "crowd_texture_analysis": -0.2036
+  },
+  "intercept": -0.958,
+  "operating_threshold_from_val": 0.3976,
+  "splits": {
+    "val": {
+      "n": 113,
+      "n_fake": 48,
+      "roc_auc": 0.6503,
+      "roc_auc_ci95": [
+        0.5464,
+        0.7515
+      ],
+      "accuracy": 0.6018,
+      "predicted_fake_rate": 0.646,
+      "actual_fake_rate": 0.4248
+    },
+    "test": {
+      "n": 73,
+      "n_fake": 35,
+      "roc_auc": 0.4474,
+      "roc_auc_ci95": [
+        0.3124,
+        0.5782
+      ],
+      "accuracy": 0.3973,
+      "predicted_fake_rate": 0.6164,
+      "actual_fake_rate": 0.4795
+    }
+  },
+  "per_signal_direction": {
+    "probe": {
+      "standalone_test_auc": 0.6105,
+      "auc_if_flipped": 0.3895,
+      "learned_coefficient": 0.9715,
+      "interpretation": "learned positive weight"
+    },
+    "deep_learning": {
+      "standalone_test_auc": 0.491,
+      "auc_if_flipped": 0.509,
+      "learned_coefficient": 0.0298,
+      "interpretation": "learned positive weight"
+    },
+    "frequency_analysis": {
+      "standalone_test_auc": 0.3391,
+      "auc_if_flipped": 0.6609,
+      "learned_coefficient": -0.0112,
+      "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
+    },
+    "compression_analysis": {
+      "standalone_test_auc": 0.403,
+      "auc_if_flipped": 0.597,
+      "learned_coefficient": -0.1516,
+      "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
+    },
+    "lighting_analysis": {
+      "standalone_test_auc": 0.2812,
+      "auc_if_flipped": 0.7188,
+      "learned_coefficient": 0.6797,
+      "interpretation": "learned positive weight"
+    },
+    "broadcast_overlay_analysis": {
+      "standalone_test_auc": 0.4895,
+      "auc_if_flipped": 0.5105,
+      "learned_coefficient": -0.687,
+      "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
+    },
+    "crowd_texture_analysis": {
+      "standalone_test_auc": 0.5259,
+      "auc_if_flipped": 0.4741,
+      "learned_coefficient": -0.2036,
+      "interpretation": "learned NEGATIVE weight -- signal is inverted, engine now flips it"
+    }
+  },
+  "test_by_domain": {
+    "general": {
+      "n": 63,
+      "roc_auc": 0.4357
+    },
+    "sports": {
+      "n": 10,
+      "roc_auc": 0.4762
+    }
+  }
+}

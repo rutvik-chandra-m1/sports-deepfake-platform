@@ -35,6 +35,8 @@ import logging
 from collections import Counter
 from pathlib import Path
 
+from PIL import Image
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
@@ -68,6 +70,13 @@ def main() -> None:
         help="skip images whose smaller side is below this; they would need upscaling at "
              "normalization time, which adds interpolation artefacts to one class only",
     )
+    parser.add_argument(
+        "--max-side", type=int, default=1600,
+        help="downscale anything larger than this on the long side before saving. OpenFake's "
+             "real images are camera-resolution (up to 6720x4480); holding those in a shuffle "
+             "buffer exhausted RAM mid-run on a 16GB machine. Still far above --min-dimension, "
+             "so normalization is unaffected.",
+    )
     args = parser.parse_args()
 
     from datasets import load_dataset
@@ -88,9 +97,18 @@ def main() -> None:
     stream = stream.shuffle(seed=args.seed, buffer_size=args.shuffle_buffer)
 
     counts = {"real": 0, "fake": 0}
-    manifest_rows = []
     skipped_too_small = 0
     generators = Counter()
+
+    # Written incrementally rather than buffered until the end. A previous run
+    # died on a MemoryError partway through and took the whole manifest with
+    # it, orphaning ~500 already-downloaded images that no downstream script
+    # could see. Streaming rows means a crash costs only the current image.
+    manifest_path = out_dir / "manifest.csv"
+    manifest_fields = ["filename", "class", "source", "source_index", "generator", "width", "height"]
+    manifest_file = manifest_path.open("w", newline="", encoding="utf-8")
+    manifest_writer = csv.DictWriter(manifest_file, fieldnames=manifest_fields)
+    manifest_writer.writeheader()
 
     for i, example in enumerate(stream):
         if counts["real"] >= args.per_class and counts["fake"] >= args.per_class:
@@ -107,6 +125,12 @@ def main() -> None:
             continue
         if image.mode != "RGB":
             image = image.convert("RGB")
+        if max(image.size) > args.max_side:
+            scale = args.max_side / max(image.size)
+            image = image.resize(
+                (max(1, int(image.width * scale)), max(1, int(image.height * scale))),
+                Image.LANCZOS,
+            )
 
         filename = f"backbone_{i}.jpg"
         dest = out_dir / cls / filename
@@ -119,7 +143,7 @@ def main() -> None:
             generators[generator] += 1
 
         counts[cls] += 1
-        manifest_rows.append(
+        manifest_writer.writerow(
             {
                 "filename": filename,
                 "class": cls,
@@ -130,17 +154,11 @@ def main() -> None:
                 "height": image.height,
             }
         )
+        manifest_file.flush()
         if sum(counts.values()) % 25 == 0:
             logger.info("Progress: real=%d fake=%d (target %d each)", counts["real"], counts["fake"], args.per_class)
 
-    manifest_path = out_dir / "manifest.csv"
-    with manifest_path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(
-            f,
-            fieldnames=["filename", "class", "source", "source_index", "generator", "width", "height"],
-        )
-        writer.writeheader()
-        writer.writerows(manifest_rows)
+    manifest_file.close()
 
     logger.info(
         "Done: real=%d fake=%d written under %s (manifest: %s)",

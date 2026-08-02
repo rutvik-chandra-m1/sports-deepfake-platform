@@ -111,9 +111,19 @@ class Settings(BaseSettings):
     # highest as the only signal with a published evaluation; sports
     # signals weighted lowest as the most experimental/heuristic), not
     # fit/calibrated against a labeled dataset -- see docs/models.md.
-    fusion_dl_weight: float = 0.4
-    fusion_forensic_weight: float = 0.35
-    fusion_sports_weight: float = 0.25
+    # Reweighted after R3/R6 measured every pool on a held-out split
+    # (docs/evaluation.md). The trained probe is this project's own
+    # classifier, fitted to its labelled data and the only signal shown to
+    # beat chance, so it carries most of the weight. The stock face-tuned DL
+    # head measured 0.491 (chance) on non-face imagery and the classical
+    # heuristics measured at or below chance with directions that were not
+    # even stable across splits -- both are kept as corroboration at low
+    # weight rather than removed, so their contribution stays visible in the
+    # breakdown, but neither can now dominate a verdict.
+    fusion_trained_weight: float = 0.60
+    fusion_dl_weight: float = 0.15
+    fusion_forensic_weight: float = 0.15
+    fusion_sports_weight: float = 0.10
     fusion_verdict_threshold: float = 0.5  # fused score >= this -> "suspicious"
     fusion_risk_low_threshold: float = 0.3  # fused score below this -> "low" risk
     fusion_risk_high_threshold: float = 0.6  # fused score at/above this -> "high" risk
