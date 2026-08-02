@@ -12,6 +12,8 @@ import logging
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
+from app.core.config import get_settings
+from app.core.security import require_api_key
 from app.db.session import get_db
 from app.models.analysis import AnalysisStatus, Verdict
 from app.schemas.analysis import AnalysisCreate, AnalysisList, AnalysisRead
@@ -20,7 +22,7 @@ from app.services.analysis_pipeline import run_analysis_pipeline
 
 logger = logging.getLogger(__name__)
 
-router = APIRouter(prefix="/analysis", tags=["Analysis"])
+router = APIRouter(prefix="/analysis", tags=["Analysis"], dependencies=[Depends(require_api_key)])
 
 
 @router.post("", response_model=AnalysisRead, status_code=status.HTTP_201_CREATED)
@@ -39,6 +41,12 @@ def list_analyses(
     status: AnalysisStatus | None = None,
     db: Session = Depends(get_db),
 ) -> AnalysisList:
+    # Clamp rather than reject: a caller asking for too much gets the maximum
+    # allowed page instead of an error, but cannot force an unbounded query.
+    max_page = get_settings().max_page_size
+    limit = max(1, min(limit, max_page))
+    offset = max(0, offset)
+
     items, total = analysis_service.list_analyses(
         db, offset=offset, limit=limit, search=search, verdict=verdict, status=status
     )

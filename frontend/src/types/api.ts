@@ -46,7 +46,8 @@ export interface AnalysisRecord {
   id: number;
   filename: string;
   media_type: MediaType;
-  file_path: string | null;
+  // `file_path` is intentionally NOT exposed by the API (R9 -- returning
+  // absolute server paths disclosed the filesystem layout for no benefit).
   status: AnalysisStatus;
   verdict: Verdict | null;
   confidence_score: number | null;

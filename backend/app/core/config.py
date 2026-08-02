@@ -137,8 +137,31 @@ class Settings(BaseSettings):
     explanation_low_threshold: float = 0.35  # score <= this -> reassuring ("no X detected")
     explanation_high_threshold: float = 0.65  # score >= this -> concerning ("X detected")
 
-    # ----- Security -----
+    # ----- Security (R9) -----
     secret_key: str = "change-me-in-production"
+
+    # Shared API key. Empty = auth disabled, which is convenient for local
+    # development and the test suite but is rejected at startup whenever
+    # app_env is not a development/test value (see
+    # app.core.security.validate_production_settings), so "unset" can never
+    # silently mean "open to the internet" in production.
+    api_key: str = ""
+
+    # Only honour X-Forwarded-For when genuinely behind a trusted proxy --
+    # the header is client-settable, so trusting it by default would let
+    # anyone spoof their identity and bypass rate limiting.
+    trust_proxy_headers: bool = False
+
+    rate_limit_requests: int = 60
+    rate_limit_window_seconds: int = 60
+    # Uploads are far more expensive than reads (full detection pipeline), so
+    # they get their own, tighter budget.
+    upload_rate_limit_requests: int = 10
+    upload_rate_limit_window_seconds: int = 60
+
+    # Cap on how many analyses a single list request may return; without it
+    # `?limit=1000000` is a valid, trivially abusable request.
+    max_page_size: int = 200
 
     @field_validator("upload_dir", "reports_dir", "models_dir")
     @classmethod

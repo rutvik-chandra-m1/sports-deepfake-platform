@@ -27,6 +27,7 @@ from datetime import datetime, timezone
 
 import cv2
 
+from app.core.security import PathNotAllowedError, assert_within_upload_dir
 from app.db.session import SessionLocal
 from app.models.analysis import Analysis, AnalysisStatus
 from app.services import explainability, fusion_engine
@@ -166,7 +167,14 @@ def run_analysis_pipeline(analysis_id: int) -> None:
             if not record.file_path:
                 raise MediaReadError("Analysis record has no file_path to analyze.")
 
-            processed = process_media(record.file_path, record.media_type)
+            # Defence in depth (R9): the schema no longer lets a client set
+            # file_path, but this is the function that actually opens the file,
+            # so it re-verifies containment rather than trusting that whatever
+            # wrote the record did the right thing. A path outside the upload
+            # directory fails the analysis instead of being read.
+            safe_path = str(assert_within_upload_dir(record.file_path))
+
+            processed = process_media(safe_path, record.media_type)
             frames_bgr = [f.image for f in processed.frames]
 
             outcome = analyze_frames(frames_bgr, analysis_id)
@@ -179,6 +187,10 @@ def run_analysis_pipeline(analysis_id: int) -> None:
             record.detector_breakdown = json.dumps(breakdown)
             record.status = AnalysisStatus.COMPLETED
 
+        except PathNotAllowedError as exc:
+            logger.error("Analysis id=%s rejected: %s", analysis_id, exc)
+            record.status = AnalysisStatus.FAILED
+            record.explanation = "Analysis failed: the stored file path is not permitted."
         except (MediaReadError, fusion_engine.FusionError) as exc:
             logger.error("Analysis id=%s failed: %s", analysis_id, exc)
             record.status = AnalysisStatus.FAILED

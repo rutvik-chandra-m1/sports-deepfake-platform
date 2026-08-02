@@ -11,6 +11,11 @@ from pathlib import Path
 from fastapi import UploadFile
 
 from app.core.config import get_settings
+from app.core.security import (
+    MAGIC_HEADER_BYTES,
+    UnsupportedFileContentError,
+    assert_content_matches_extension,
+)
 from app.models.analysis import MediaType
 from app.utils.file_validation import (
     FileTooLargeError,
@@ -49,16 +54,26 @@ async def save_upload(file: UploadFile) -> tuple[str, MediaType, int]:
     destination_path = destination_dir / unique_name
 
     size_bytes = 0
+    header = b""
     try:
         with destination_path.open("wb") as buffer:
             while chunk := await file.read(_CHUNK_SIZE):
+                # Validate the real file signature from the first chunk, before
+                # committing the rest to disk (R9). Extension alone proves
+                # nothing -- anything can be renamed .jpg, and the decoders
+                # downstream are C++.
+                if not header:
+                    header = chunk[:MAGIC_HEADER_BYTES]
+                    assert_content_matches_extension(header, Path(safe_name).suffix.lower())
+
                 size_bytes += len(chunk)
                 if size_bytes > settings.max_upload_size_bytes:
                     raise FileTooLargeError(
                         f"File exceeds the {settings.max_upload_size_mb}MB upload limit."
                     )
                 buffer.write(chunk)
-    except FileTooLargeError:
+    except (FileTooLargeError, UnsupportedFileContentError):
+        # Never leave a rejected upload on disk.
         destination_path.unlink(missing_ok=True)
         raise
     finally:

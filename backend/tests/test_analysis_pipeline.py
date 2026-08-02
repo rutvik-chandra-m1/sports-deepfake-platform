@@ -1,9 +1,11 @@
 import json
+import pathlib
 
 import numpy as np
 import pytest
 from fastapi.testclient import TestClient
 
+import app.core.security as security_module
 import app.services.analysis_pipeline as pipeline_module
 import app.services.storage_service as storage_service_module
 from app.core.config import Settings
@@ -14,13 +16,28 @@ from app.services.detection.types import ForensicSignal, ImageDetectionResult
 from app.services.media_processing import ExtractedFrame, MediaMetadata, MediaReadError, ProcessedMedia
 
 
+_TEST_UPLOAD_DIR: str | None = None
+
+
 @pytest.fixture(autouse=True)
 def _isolated_upload_dir(tmp_path, monkeypatch):
+    global _TEST_UPLOAD_DIR
     test_settings = Settings(upload_dir=str(tmp_path))
     monkeypatch.setattr(storage_service_module, "get_settings", lambda: test_settings)
+    # The pipeline's path-containment check (R9) reads settings through
+    # app.core.security, so it must see the same temp upload root -- otherwise
+    # every test record's path is (correctly) rejected as being outside it.
+    monkeypatch.setattr(security_module, "get_settings", lambda: test_settings)
+    _TEST_UPLOAD_DIR = str(tmp_path)
+    yield
+    _TEST_UPLOAD_DIR = None
 
 
-def _create_pending_record(file_path: str = "/tmp/does-not-matter.jpg") -> int:
+def _create_pending_record(file_path: str | None = None) -> int:
+    """Records default to a path INSIDE the temp upload dir; anything outside
+    is rejected by the containment check before analysis begins."""
+    if file_path is None:
+        file_path = str(pathlib.Path(_TEST_UPLOAD_DIR) / "does-not-matter.jpg")
     db = SessionLocal()
     try:
         record = Analysis(
@@ -264,19 +281,25 @@ def test_real_upload_completes_end_to_end_via_api(client: TestClient):
     json.loads(body["detector_breakdown"])
 
 
-def test_manual_run_endpoint_reprocesses_an_existing_record(client: TestClient, tmp_path):
+def test_manual_run_endpoint_reprocesses_an_existing_record(client: TestClient):
+    """Reprocessing goes through a real upload.
+
+    Rewritten for R9: this used to POST a client-chosen `file_path`, which was
+    the arbitrary-file-read vulnerability itself. `file_path` is now
+    server-assigned only, so the legitimate route to a reprocessable record is
+    to upload one.
+    """
     import cv2
 
     image = np.random.randint(0, 255, (64, 64, 3), dtype=np.uint8)
-    image_path = tmp_path / "manual.jpg"
-    cv2.imwrite(str(image_path), image)
-
-    create_response = client.post(
-        "/api/v1/analysis",
-        json={"filename": "manual.jpg", "media_type": "image", "file_path": str(image_path)},
+    ok, encoded = cv2.imencode(".jpg", image)
+    assert ok
+    upload = client.post(
+        "/api/v1/media/upload",
+        files={"file": ("manual.jpg", encoded.tobytes(), "image/jpeg")},
     )
-    assert create_response.status_code == 201
-    analysis_id = create_response.json()["id"]
+    assert upload.status_code == 201
+    analysis_id = upload.json()["id"]
 
     run_response = client.post(f"/api/v1/analysis/{analysis_id}/run")
     assert run_response.status_code == 202
