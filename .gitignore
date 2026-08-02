@@ -40,6 +40,10 @@ uploads/videos/*
 !uploads/videos/.gitkeep
 reports/*
 !reports/.gitkeep
+# Dataset audit reports ARE tracked: small JSON, and they are the evidence
+# behind docs/dataset.md's confound claims. Per-analysis user reports
+# (Milestone 13/R13 output) stay ignored.
+!reports/dataset_audit*.json
 
 # ===== AI Models (large binaries, fetched via download script) =====
 models/pretrained/*

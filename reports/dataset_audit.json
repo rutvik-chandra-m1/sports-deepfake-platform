@@ -1,0 +1,201 @@
+{
+  "n_probed": 575,
+  "n_manifest": 575,
+  "by_domain_class": {
+    "general/fake": {
+      "count": 250,
+      "formats": {
+        "JPEG": 250
+      },
+      "modes": {
+        "RGB": 250
+      },
+      "square_fraction": 1.0,
+      "grayscale_fraction": 0.04,
+      "width_min_med_max": [
+        1024,
+        1024,
+        1024
+      ],
+      "height_min_med_max": [
+        1024,
+        1024,
+        1024
+      ],
+      "megapixels_median": 1.049,
+      "file_size_kb_median": 166.5,
+      "channel_spread_median": 53.2
+    },
+    "general/real": {
+      "count": 250,
+      "formats": {
+        "JPEG": 250
+      },
+      "modes": {
+        "RGB": 250
+      },
+      "square_fraction": 0.04,
+      "grayscale_fraction": 0.084,
+      "width_min_med_max": [
+        320,
+        640,
+        640
+      ],
+      "height_min_med_max": [
+        240,
+        480,
+        640
+      ],
+      "megapixels_median": 0.274,
+      "file_size_kb_median": 69.3,
+      "channel_spread_median": 29.9
+    },
+    "sports/fake": {
+      "count": 25,
+      "formats": {
+        "PNG": 25
+      },
+      "modes": {
+        "RGB": 25
+      },
+      "square_fraction": 1.0,
+      "grayscale_fraction": 0.0,
+      "width_min_med_max": [
+        512,
+        512,
+        512
+      ],
+      "height_min_med_max": [
+        512,
+        512,
+        512
+      ],
+      "megapixels_median": 0.262,
+      "file_size_kb_median": 361.1,
+      "channel_spread_median": 32.3
+    },
+    "sports/real": {
+      "count": 50,
+      "formats": {
+        "JPEG": 47,
+        "PNG": 2,
+        "MPO": 1
+      },
+      "modes": {
+        "RGB": 45,
+        "RGBA": 2,
+        "L": 3
+      },
+      "square_fraction": 0.0,
+      "grayscale_fraction": 0.12,
+      "width_min_med_max": [
+        345,
+        1771,
+        7360
+      ],
+      "height_min_med_max": [
+        397,
+        1739,
+        5399
+      ],
+      "megapixels_median": 2.616,
+      "file_size_kb_median": 585.2,
+      "channel_spread_median": 36.6
+    }
+  },
+  "separability": {
+    "ALL": {
+      "n": 575,
+      "n_fake": 275,
+      "n_real": 300,
+      "cv_folds": 5,
+      "roc_auc_mean": 1.0,
+      "roc_auc_std": 0.0,
+      "top_leaking_features": [
+        [
+          "is_square",
+          0.0277
+        ],
+        [
+          "megapixels",
+          0.0
+        ],
+        [
+          "file_size_kb",
+          0.0
+        ],
+        [
+          "width",
+          0.0
+        ],
+        [
+          "height",
+          0.0
+        ]
+      ],
+      "verdict": "BROKEN - metadata alone nearly solves it; content-based numbers would be meaningless"
+    },
+    "general": {
+      "n": 500,
+      "n_fake": 250,
+      "n_real": 250,
+      "cv_folds": 5,
+      "roc_auc_mean": 1.0,
+      "roc_auc_std": 0.0,
+      "top_leaking_features": [
+        [
+          "width",
+          0.3971
+        ],
+        [
+          "height",
+          0.0
+        ],
+        [
+          "megapixels",
+          0.0
+        ],
+        [
+          "aspect_ratio",
+          0.0
+        ],
+        [
+          "is_square",
+          0.0
+        ]
+      ],
+      "verdict": "BROKEN - metadata alone nearly solves it; content-based numbers would be meaningless"
+    },
+    "sports": {
+      "n": 75,
+      "n_fake": 25,
+      "n_real": 50,
+      "cv_folds": 5,
+      "roc_auc_mean": 1.0,
+      "roc_auc_std": 0.0,
+      "top_leaking_features": [
+        [
+          "is_square",
+          0.474
+        ],
+        [
+          "width",
+          0.0
+        ],
+        [
+          "height",
+          0.0
+        ],
+        [
+          "megapixels",
+          0.0
+        ],
+        [
+          "aspect_ratio",
+          0.0
+        ]
+      ],
+      "verdict": "BROKEN - metadata alone nearly solves it; content-based numbers would be meaningless"
+    }
+  }
+}

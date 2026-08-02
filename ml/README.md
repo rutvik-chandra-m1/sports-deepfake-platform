@@ -11,7 +11,9 @@ ml/
 │   ├── fetch_hf_backbone.py       # general real-vs-AI-generated backbone (streamed from HF Hub)
 │   ├── fetch_wikimedia_sports.py  # real sports photos (Wikimedia Commons, CC-licensed only)
 │   ├── generate_synthetic.py      # synthetic sports scenes (local segmind/tiny-sd, no real subjects)
-│   └── build_manifest.py          # merges the three sources into datasets/manifest.csv with splits
+│   ├── build_manifest.py          # merges the three sources into datasets/manifest.csv with splits
+│   ├── audit_dataset.py           # confound audit -- RUN THIS BEFORE TRUSTING ANY METRIC
+│   └── normalize_dataset.py       # uniform transform chain + non-photograph filtering
 ├── eval/                # R3: evaluation harness (not yet built)
 └── train/               # R6: fine-tuning (not yet built)
 ```
@@ -32,8 +34,39 @@ Output lands in `../datasets/` (gitignored except manifest/attribution `*.csv` f
 
 ```bash
 cd data
-python fetch_hf_backbone.py --per-class 250
+python fetch_hf_backbone.py --per-class 350
 python fetch_wikimedia_sports.py --per-category 15
 python generate_synthetic.py --n 25          # slow on CPU: ~227s/image measured -- see docs/dataset.md
 python build_manifest.py
+
+# Audit BEFORE using the data. Then normalize, then re-audit to confirm.
+python audit_dataset.py  --json-out ../../reports/dataset_audit.json
+python normalize_dataset.py
+python audit_dataset.py  --manifest manifest_normalized.csv \
+                         --json-out ../../reports/dataset_audit_normalized.json
 ```
+
+`manifest_normalized.csv` is the one downstream work (R3 evaluation, R6 training) should use.
+
+## Why the audit step exists
+
+The first build of this dataset was **perfectly separable without looking at a single pixel** —
+a classifier on nothing but image width, squareness and file format scored **ROC-AUC 1.0000**.
+Every "real" was ≤640px wide, every general "fake" was exactly 1024×1024, and every sports
+"fake" was a 512×512 PNG while the reals were non-square JPEGs. Going straight to evaluation
+would have produced a ~99%-accuracy report that measured *nothing but file dimensions*.
+
+`audit_dataset.py` scores two tiers separately, because they mean opposite things:
+
+- **Tier 1, container** (dimensions, aspect, squareness, format) — carries zero information
+  about whether a scene was photographed or generated. Must sit near 0.50; anything higher is
+  a dataset defect to fix, not a result.
+- **Tier 2, content statistics** (saturation, brightness, compressibility) — generated imagery
+  genuinely *does* skew more saturated, more evenly exposed and smoother. This is real but
+  extremely shallow signal, so it is the **trivial baseline R3 must beat**, not a defect.
+
+`normalize_dataset.py` is the fix for Tier 1: every image goes through an identical chain
+(RGB → centre-crop square → 384×384 LANCZOS → JPEG q90), and non-photographs are dropped
+(B&W newsprint scans, 1910s line drawings — neither photographed nor AI-generated, so labelling
+them "real" teaches a detector nonsense). See `docs/dataset.md` for the measured before/after
+and the signal cost this incurs.

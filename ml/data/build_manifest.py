@@ -58,7 +58,8 @@ def load_backbone(datasets_dir: Path) -> list[dict]:
                     "split_group": row["filename"],  # per-file split OK, see docstring
                     "sport": "",
                     "framing": "",
-                    "license": "MIT",
+                    "generator": row.get("generator", ""),
+                    "license": "see source dataset card",
                     "attribution": "",
                 }
             )
@@ -82,6 +83,7 @@ def load_wikimedia(datasets_dir: Path) -> list[dict]:
                     "split_group": row["category"],  # whole category -> one split
                     "sport": row["category"].replace("Category:", ""),
                     "framing": "",
+                    "generator": "",
                     "license": row["license"],
                     "attribution": f"{attribution} (source: {row['source_url']})",
                 }
@@ -107,6 +109,7 @@ def load_synthetic(datasets_dir: Path) -> list[dict]:
                     "split_group": prompt,  # same prompt/scene -> one split
                     "sport": "",
                     "framing": framing,
+                    "generator": row.get("model_id", ""),
                     "license": "N/A (generated, no real subject)",
                     "attribution": "",
                 }
@@ -134,7 +137,10 @@ def main() -> None:
         row["split"] = _assign_split(row["split_group"])
 
     out_path = Path(args.out).resolve()
-    fieldnames = ["path", "class", "domain", "source", "sport", "framing", "license", "attribution", "split"]
+    fieldnames = [
+        "path", "class", "domain", "source", "sport", "framing",
+        "generator", "license", "attribution", "split",
+    ]
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()

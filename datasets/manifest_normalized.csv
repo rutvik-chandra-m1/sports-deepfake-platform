@@ -1,0 +1,506 @@
+path,class,domain,source,sport,framing,generator,license,attribution,split,original_path
+normalized/real/backbone_0.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_0.jpg
+normalized/fake/backbone_1.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train,backbone/fake/backbone_1.jpg
+normalized/fake/backbone_2.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-4,see source dataset card,,train,backbone/fake/backbone_2.jpg
+normalized/real/backbone_3.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_3.jpg
+normalized/fake/backbone_6.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_6.jpg
+normalized/fake/backbone_7.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,val,backbone/fake/backbone_7.jpg
+normalized/real/backbone_11.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_11.jpg
+normalized/real/backbone_12.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_12.jpg
+normalized/fake/backbone_14.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_14.jpg
+normalized/real/backbone_15.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_15.jpg
+normalized/fake/backbone_16.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,qwen-image,see source dataset card,,train,backbone/fake/backbone_16.jpg
+normalized/fake/backbone_17.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_17.jpg
+normalized/fake/backbone_18.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train,backbone/fake/backbone_18.jpg
+normalized/fake/backbone_19.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,test,backbone/fake/backbone_19.jpg
+normalized/fake/backbone_20.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_20.jpg
+normalized/fake/backbone_21.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-dev,see source dataset card,,val,backbone/fake/backbone_21.jpg
+normalized/fake/backbone_23.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train,backbone/fake/backbone_23.jpg
+normalized/real/backbone_24.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_24.jpg
+normalized/fake/backbone_27.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_27.jpg
+normalized/real/backbone_29.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_29.jpg
+normalized/real/backbone_30.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_30.jpg
+normalized/fake/backbone_31.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,test,backbone/fake/backbone_31.jpg
+normalized/fake/backbone_32.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-mvc5000,see source dataset card,,test,backbone/fake/backbone_32.jpg
+normalized/real/backbone_33.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_33.jpg
+normalized/fake/backbone_34.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train,backbone/fake/backbone_34.jpg
+normalized/fake/backbone_35.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train,backbone/fake/backbone_35.jpg
+normalized/real/backbone_36.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_36.jpg
+normalized/fake/backbone_37.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val,backbone/fake/backbone_37.jpg
+normalized/fake/backbone_38.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,grok-2-image-1212,see source dataset card,,train,backbone/fake/backbone_38.jpg
+normalized/fake/backbone_39.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,test,backbone/fake/backbone_39.jpg
+normalized/fake/backbone_40.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_40.jpg
+normalized/fake/backbone_41.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,train,backbone/fake/backbone_41.jpg
+normalized/fake/backbone_42.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_42.jpg
+normalized/fake/backbone_43.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,mystic,see source dataset card,,val,backbone/fake/backbone_43.jpg
+normalized/real/backbone_45.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_45.jpg
+normalized/real/backbone_46.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_46.jpg
+normalized/real/backbone_47.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_47.jpg
+normalized/real/backbone_48.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_48.jpg
+normalized/fake/backbone_49.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_49.jpg
+normalized/fake/backbone_50.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train,backbone/fake/backbone_50.jpg
+normalized/real/backbone_51.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_51.jpg
+normalized/fake/backbone_52.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,chroma,see source dataset card,,train,backbone/fake/backbone_52.jpg
+normalized/real/backbone_53.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_53.jpg
+normalized/fake/backbone_54.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_54.jpg
+normalized/fake/backbone_55.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,animagine-xl-4.0,see source dataset card,,train,backbone/fake/backbone_55.jpg
+normalized/real/backbone_58.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_58.jpg
+normalized/fake/backbone_59.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,seedream-v4.0,see source dataset card,,test,backbone/fake/backbone_59.jpg
+normalized/fake/backbone_60.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train,backbone/fake/backbone_60.jpg
+normalized/fake/backbone_61.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_61.jpg
+normalized/real/backbone_62.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_62.jpg
+normalized/real/backbone_64.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_64.jpg
+normalized/fake/backbone_66.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_66.jpg
+normalized/real/backbone_67.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_67.jpg
+normalized/real/backbone_68.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_68.jpg
+normalized/real/backbone_69.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_69.jpg
+normalized/real/backbone_70.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_70.jpg
+normalized/real/backbone_71.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_71.jpg
+normalized/real/backbone_72.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_72.jpg
+normalized/real/backbone_73.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_73.jpg
+normalized/fake/backbone_74.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,test,backbone/fake/backbone_74.jpg
+normalized/fake/backbone_75.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,seedream-v4.5,see source dataset card,,val,backbone/fake/backbone_75.jpg
+normalized/fake/backbone_77.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,train,backbone/fake/backbone_77.jpg
+normalized/fake/backbone_79.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train,backbone/fake/backbone_79.jpg
+normalized/real/backbone_80.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_80.jpg
+normalized/real/backbone_81.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_81.jpg
+normalized/fake/backbone_82.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train,backbone/fake/backbone_82.jpg
+normalized/fake/backbone_83.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,train,backbone/fake/backbone_83.jpg
+normalized/fake/backbone_84.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_84.jpg
+normalized/real/backbone_85.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_85.jpg
+normalized/fake/backbone_86.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,train,backbone/fake/backbone_86.jpg
+normalized/fake/backbone_87.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-5,see source dataset card,,train,backbone/fake/backbone_87.jpg
+normalized/fake/backbone_88.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train,backbone/fake/backbone_88.jpg
+normalized/real/backbone_89.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_89.jpg
+normalized/real/backbone_91.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_91.jpg
+normalized/fake/backbone_92.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_92.jpg
+normalized/fake/backbone_93.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train,backbone/fake/backbone_93.jpg
+normalized/real/backbone_94.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_94.jpg
+normalized/real/backbone_95.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_95.jpg
+normalized/real/backbone_96.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_96.jpg
+normalized/real/backbone_97.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_97.jpg
+normalized/real/backbone_98.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_98.jpg
+normalized/fake/backbone_100.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_100.jpg
+normalized/fake/backbone_101.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,train,backbone/fake/backbone_101.jpg
+normalized/real/backbone_102.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_102.jpg
+normalized/real/backbone_104.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_104.jpg
+normalized/real/backbone_105.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_105.jpg
+normalized/fake/backbone_107.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train,backbone/fake/backbone_107.jpg
+normalized/real/backbone_108.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_108.jpg
+normalized/fake/backbone_109.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train,backbone/fake/backbone_109.jpg
+normalized/real/backbone_110.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_110.jpg
+normalized/fake/backbone_112.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train,backbone/fake/backbone_112.jpg
+normalized/real/backbone_115.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_115.jpg
+normalized/fake/backbone_116.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train,backbone/fake/backbone_116.jpg
+normalized/real/backbone_118.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_118.jpg
+normalized/fake/backbone_120.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train,backbone/fake/backbone_120.jpg
+normalized/fake/backbone_121.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-turbo,see source dataset card,,train,backbone/fake/backbone_121.jpg
+normalized/real/backbone_122.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_122.jpg
+normalized/fake/backbone_124.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_124.jpg
+normalized/fake/backbone_126.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,val,backbone/fake/backbone_126.jpg
+normalized/real/backbone_127.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_127.jpg
+normalized/fake/backbone_128.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_128.jpg
+normalized/real/backbone_129.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_129.jpg
+normalized/real/backbone_131.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_131.jpg
+normalized/real/backbone_132.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_132.jpg
+normalized/real/backbone_134.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_134.jpg
+normalized/fake/backbone_138.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,test,backbone/fake/backbone_138.jpg
+normalized/fake/backbone_139.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-xl-v1.0-vae-fix,see source dataset card,,train,backbone/fake/backbone_139.jpg
+normalized/fake/backbone_140.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train,backbone/fake/backbone_140.jpg
+normalized/fake/backbone_142.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_142.jpg
+normalized/real/backbone_143.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_143.jpg
+normalized/fake/backbone_145.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train,backbone/fake/backbone_145.jpg
+normalized/real/backbone_146.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_146.jpg
+normalized/fake/backbone_147.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train,backbone/fake/backbone_147.jpg
+normalized/fake/backbone_148.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,test,backbone/fake/backbone_148.jpg
+normalized/fake/backbone_150.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train,backbone/fake/backbone_150.jpg
+normalized/fake/backbone_151.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test,backbone/fake/backbone_151.jpg
+normalized/real/backbone_152.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_152.jpg
+normalized/fake/backbone_153.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,val,backbone/fake/backbone_153.jpg
+normalized/fake/backbone_154.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train,backbone/fake/backbone_154.jpg
+normalized/fake/backbone_155.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,test,backbone/fake/backbone_155.jpg
+normalized/fake/backbone_156.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_156.jpg
+normalized/real/backbone_157.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_157.jpg
+normalized/real/backbone_158.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_158.jpg
+normalized/fake/backbone_159.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-dev,see source dataset card,,train,backbone/fake/backbone_159.jpg
+normalized/real/backbone_160.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_160.jpg
+normalized/real/backbone_162.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_162.jpg
+normalized/fake/backbone_163.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-4,see source dataset card,,train,backbone/fake/backbone_163.jpg
+normalized/real/backbone_164.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_164.jpg
+normalized/fake/backbone_166.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,test,backbone/fake/backbone_166.jpg
+normalized/fake/backbone_168.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-turbo,see source dataset card,,train,backbone/fake/backbone_168.jpg
+normalized/fake/backbone_169.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,val,backbone/fake/backbone_169.jpg
+normalized/real/backbone_170.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_170.jpg
+normalized/real/backbone_171.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_171.jpg
+normalized/fake/backbone_172.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_172.jpg
+normalized/real/backbone_174.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_174.jpg
+normalized/real/backbone_176.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_176.jpg
+normalized/fake/backbone_177.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,val,backbone/fake/backbone_177.jpg
+normalized/fake/backbone_178.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val,backbone/fake/backbone_178.jpg
+normalized/real/backbone_180.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_180.jpg
+normalized/real/backbone_181.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_181.jpg
+normalized/fake/backbone_182.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_182.jpg
+normalized/real/backbone_184.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_184.jpg
+normalized/fake/backbone_185.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-base-4b,see source dataset card,,train,backbone/fake/backbone_185.jpg
+normalized/fake/backbone_186.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val,backbone/fake/backbone_186.jpg
+normalized/real/backbone_188.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_188.jpg
+normalized/real/backbone_190.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_190.jpg
+normalized/real/backbone_191.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_191.jpg
+normalized/real/backbone_192.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_192.jpg
+normalized/fake/backbone_193.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,val,backbone/fake/backbone_193.jpg
+normalized/real/backbone_194.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_194.jpg
+normalized/real/backbone_195.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_195.jpg
+normalized/fake/backbone_196.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train,backbone/fake/backbone_196.jpg
+normalized/fake/backbone_197.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val,backbone/fake/backbone_197.jpg
+normalized/fake/backbone_198.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_198.jpg
+normalized/fake/backbone_199.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,train,backbone/fake/backbone_199.jpg
+normalized/real/backbone_200.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_200.jpg
+normalized/fake/backbone_201.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-base-4b,see source dataset card,,train,backbone/fake/backbone_201.jpg
+normalized/real/backbone_202.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_202.jpg
+normalized/fake/backbone_203.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train,backbone/fake/backbone_203.jpg
+normalized/fake/backbone_204.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train,backbone/fake/backbone_204.jpg
+normalized/fake/backbone_205.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train,backbone/fake/backbone_205.jpg
+normalized/real/backbone_207.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_207.jpg
+normalized/real/backbone_208.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_208.jpg
+normalized/fake/backbone_210.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5,see source dataset card,,val,backbone/fake/backbone_210.jpg
+normalized/real/backbone_211.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_211.jpg
+normalized/real/backbone_212.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_212.jpg
+normalized/fake/backbone_213.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val,backbone/fake/backbone_213.jpg
+normalized/real/backbone_214.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_214.jpg
+normalized/fake/backbone_215.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_215.jpg
+normalized/real/backbone_216.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_216.jpg
+normalized/fake/backbone_217.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_217.jpg
+normalized/real/backbone_218.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_218.jpg
+normalized/real/backbone_219.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_219.jpg
+normalized/real/backbone_220.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_220.jpg
+normalized/real/backbone_221.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_221.jpg
+normalized/real/backbone_222.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_222.jpg
+normalized/real/backbone_223.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_223.jpg
+normalized/fake/backbone_224.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_224.jpg
+normalized/real/backbone_226.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_226.jpg
+normalized/fake/backbone_228.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_228.jpg
+normalized/fake/backbone_229.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_229.jpg
+normalized/real/backbone_232.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_232.jpg
+normalized/fake/backbone_233.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-4b,see source dataset card,,test,backbone/fake/backbone_233.jpg
+normalized/fake/backbone_235.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train,backbone/fake/backbone_235.jpg
+normalized/real/backbone_236.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_236.jpg
+normalized/real/backbone_237.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_237.jpg
+normalized/real/backbone_238.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_238.jpg
+normalized/real/backbone_239.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_239.jpg
+normalized/fake/backbone_242.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,val,backbone/fake/backbone_242.jpg
+normalized/fake/backbone_244.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,mystic,see source dataset card,,val,backbone/fake/backbone_244.jpg
+normalized/fake/backbone_246.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-dev,see source dataset card,,val,backbone/fake/backbone_246.jpg
+normalized/real/backbone_247.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_247.jpg
+normalized/real/backbone_248.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_248.jpg
+normalized/fake/backbone_249.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_249.jpg
+normalized/fake/backbone_250.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5,see source dataset card,,train,backbone/fake/backbone_250.jpg
+normalized/fake/backbone_251.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,chroma,see source dataset card,,train,backbone/fake/backbone_251.jpg
+normalized/fake/backbone_252.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,novaanimexl_ilv140,see source dataset card,,train,backbone/fake/backbone_252.jpg
+normalized/fake/backbone_254.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train,backbone/fake/backbone_254.jpg
+normalized/fake/backbone_255.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,cyberrealistic-pony-v14.1,see source dataset card,,train,backbone/fake/backbone_255.jpg
+normalized/real/backbone_256.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_256.jpg
+normalized/real/backbone_257.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_257.jpg
+normalized/fake/backbone_258.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_258.jpg
+normalized/fake/backbone_259.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_259.jpg
+normalized/real/backbone_261.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_261.jpg
+normalized/real/backbone_262.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_262.jpg
+normalized/fake/backbone_263.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_263.jpg
+normalized/fake/backbone_265.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_265.jpg
+normalized/fake/backbone_267.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_267.jpg
+normalized/real/backbone_268.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_268.jpg
+normalized/fake/backbone_269.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,anima-preview2,see source dataset card,,val,backbone/fake/backbone_269.jpg
+normalized/real/backbone_271.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_271.jpg
+normalized/fake/backbone_272.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,val,backbone/fake/backbone_272.jpg
+normalized/fake/backbone_273.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_273.jpg
+normalized/fake/backbone_275.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,train,backbone/fake/backbone_275.jpg
+normalized/real/backbone_277.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_277.jpg
+normalized/real/backbone_279.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_279.jpg
+normalized/fake/backbone_280.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,mystic,see source dataset card,,train,backbone/fake/backbone_280.jpg
+normalized/fake/backbone_281.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-xl-v1.0-vae-fix,see source dataset card,,train,backbone/fake/backbone_281.jpg
+normalized/fake/backbone_283.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,seedream-v4.0,see source dataset card,,train,backbone/fake/backbone_283.jpg
+normalized/fake/backbone_284.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,train,backbone/fake/backbone_284.jpg
+normalized/fake/backbone_285.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train,backbone/fake/backbone_285.jpg
+normalized/fake/backbone_286.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train,backbone/fake/backbone_286.jpg
+normalized/real/backbone_287.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_287.jpg
+normalized/real/backbone_288.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_288.jpg
+normalized/fake/backbone_289.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,test,backbone/fake/backbone_289.jpg
+normalized/real/backbone_290.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_290.jpg
+normalized/fake/backbone_291.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val,backbone/fake/backbone_291.jpg
+normalized/fake/backbone_292.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_292.jpg
+normalized/real/backbone_293.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_293.jpg
+normalized/real/backbone_294.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_294.jpg
+normalized/fake/backbone_295.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,test,backbone/fake/backbone_295.jpg
+normalized/fake/backbone_296.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-mvc5000,see source dataset card,,val,backbone/fake/backbone_296.jpg
+normalized/real/backbone_298.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_298.jpg
+normalized/real/backbone_299.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_299.jpg
+normalized/fake/backbone_300.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-3.0-002,see source dataset card,,train,backbone/fake/backbone_300.jpg
+normalized/real/backbone_303.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_303.jpg
+normalized/fake/backbone_304.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_304.jpg
+normalized/fake/backbone_306.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train,backbone/fake/backbone_306.jpg
+normalized/fake/backbone_307.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,val,backbone/fake/backbone_307.jpg
+normalized/real/backbone_308.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_308.jpg
+normalized/real/backbone_310.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_310.jpg
+normalized/fake/backbone_311.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train,backbone/fake/backbone_311.jpg
+normalized/fake/backbone_312.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,val,backbone/fake/backbone_312.jpg
+normalized/real/backbone_313.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_313.jpg
+normalized/real/backbone_314.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_314.jpg
+normalized/real/backbone_315.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_315.jpg
+normalized/fake/backbone_316.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,val,backbone/fake/backbone_316.jpg
+normalized/real/backbone_317.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_317.jpg
+normalized/real/backbone_319.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_319.jpg
+normalized/fake/backbone_320.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,nano-banana,see source dataset card,,train,backbone/fake/backbone_320.jpg
+normalized/fake/backbone_321.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_321.jpg
+normalized/real/backbone_322.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_322.jpg
+normalized/real/backbone_323.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_323.jpg
+normalized/real/backbone_324.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_324.jpg
+normalized/real/backbone_325.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_325.jpg
+normalized/fake/backbone_326.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,val,backbone/fake/backbone_326.jpg
+normalized/fake/backbone_328.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train,backbone/fake/backbone_328.jpg
+normalized/real/backbone_330.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_330.jpg
+normalized/real/backbone_332.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_332.jpg
+normalized/fake/backbone_333.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train,backbone/fake/backbone_333.jpg
+normalized/real/backbone_334.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_334.jpg
+normalized/real/backbone_335.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_335.jpg
+normalized/fake/backbone_336.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train,backbone/fake/backbone_336.jpg
+normalized/real/backbone_337.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_337.jpg
+normalized/fake/backbone_338.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test,backbone/fake/backbone_338.jpg
+normalized/fake/backbone_339.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_339.jpg
+normalized/fake/backbone_341.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_341.jpg
+normalized/real/backbone_342.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_342.jpg
+normalized/fake/backbone_343.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_343.jpg
+normalized/fake/backbone_344.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,test,backbone/fake/backbone_344.jpg
+normalized/real/backbone_346.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_346.jpg
+normalized/fake/backbone_347.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,cyberrealistic-xl-v9.0,see source dataset card,,test,backbone/fake/backbone_347.jpg
+normalized/fake/backbone_348.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val,backbone/fake/backbone_348.jpg
+normalized/fake/backbone_350.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train,backbone/fake/backbone_350.jpg
+normalized/real/backbone_351.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_351.jpg
+normalized/real/backbone_354.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_354.jpg
+normalized/real/backbone_355.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_355.jpg
+normalized/fake/backbone_357.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_357.jpg
+normalized/fake/backbone_358.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train,backbone/fake/backbone_358.jpg
+normalized/fake/backbone_359.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train,backbone/fake/backbone_359.jpg
+normalized/fake/backbone_360.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5,see source dataset card,,train,backbone/fake/backbone_360.jpg
+normalized/real/backbone_361.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_361.jpg
+normalized/fake/backbone_362.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train,backbone/fake/backbone_362.jpg
+normalized/fake/backbone_363.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,val,backbone/fake/backbone_363.jpg
+normalized/real/backbone_365.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_365.jpg
+normalized/fake/backbone_366.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,one-obsession-17-red-sdxl,see source dataset card,,train,backbone/fake/backbone_366.jpg
+normalized/fake/backbone_367.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_367.jpg
+normalized/fake/backbone_368.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_368.jpg
+normalized/fake/backbone_369.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train,backbone/fake/backbone_369.jpg
+normalized/real/backbone_372.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_372.jpg
+normalized/fake/backbone_373.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train,backbone/fake/backbone_373.jpg
+normalized/fake/backbone_374.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train,backbone/fake/backbone_374.jpg
+normalized/fake/backbone_376.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_376.jpg
+normalized/fake/backbone_377.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,realistic_vision_v5.1_novae,see source dataset card,,train,backbone/fake/backbone_377.jpg
+normalized/real/backbone_378.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_378.jpg
+normalized/real/backbone_379.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_379.jpg
+normalized/real/backbone_381.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_381.jpg
+normalized/real/backbone_382.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_382.jpg
+normalized/real/backbone_383.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_383.jpg
+normalized/real/backbone_384.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_384.jpg
+normalized/fake/backbone_386.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,train,backbone/fake/backbone_386.jpg
+normalized/fake/backbone_387.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,val,backbone/fake/backbone_387.jpg
+normalized/real/backbone_388.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_388.jpg
+normalized/fake/backbone_389.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,studio-ghibli-wan2.1-t2v-14b-v1.0,see source dataset card,,train,backbone/fake/backbone_389.jpg
+normalized/fake/backbone_390.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train,backbone/fake/backbone_390.jpg
+normalized/real/backbone_391.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_391.jpg
+normalized/fake/backbone_392.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,nano-banana-2,see source dataset card,,train,backbone/fake/backbone_392.jpg
+normalized/fake/backbone_393.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_393.jpg
+normalized/fake/backbone_394.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,test,backbone/fake/backbone_394.jpg
+normalized/real/backbone_395.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_395.jpg
+normalized/fake/backbone_396.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train,backbone/fake/backbone_396.jpg
+normalized/fake/backbone_397.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_397.jpg
+normalized/fake/backbone_398.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-mvc5000,see source dataset card,,train,backbone/fake/backbone_398.jpg
+normalized/fake/backbone_399.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train,backbone/fake/backbone_399.jpg
+normalized/fake/backbone_400.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,novaanimexl_ilv140,see source dataset card,,train,backbone/fake/backbone_400.jpg
+normalized/real/backbone_401.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_401.jpg
+normalized/real/backbone_402.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_402.jpg
+normalized/fake/backbone_403.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_403.jpg
+normalized/fake/backbone_404.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,wan-video-2.2,see source dataset card,,train,backbone/fake/backbone_404.jpg
+normalized/real/backbone_406.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_406.jpg
+normalized/fake/backbone_407.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train,backbone/fake/backbone_407.jpg
+normalized/fake/backbone_408.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train,backbone/fake/backbone_408.jpg
+normalized/fake/backbone_409.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_409.jpg
+normalized/fake/backbone_410.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_410.jpg
+normalized/real/backbone_411.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_411.jpg
+normalized/real/backbone_412.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_412.jpg
+normalized/real/backbone_413.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_413.jpg
+normalized/fake/backbone_415.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,playground-v2.5-1024px-aesthetic,see source dataset card,,val,backbone/fake/backbone_415.jpg
+normalized/real/backbone_418.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_418.jpg
+normalized/fake/backbone_419.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test,backbone/fake/backbone_419.jpg
+normalized/real/backbone_420.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_420.jpg
+normalized/real/backbone_421.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_421.jpg
+normalized/fake/backbone_422.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,val,backbone/fake/backbone_422.jpg
+normalized/real/backbone_423.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_423.jpg
+normalized/fake/backbone_424.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train,backbone/fake/backbone_424.jpg
+normalized/fake/backbone_425.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val,backbone/fake/backbone_425.jpg
+normalized/fake/backbone_426.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,test,backbone/fake/backbone_426.jpg
+normalized/real/backbone_427.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_427.jpg
+normalized/real/backbone_428.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_428.jpg
+normalized/fake/backbone_429.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_429.jpg
+normalized/real/backbone_430.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_430.jpg
+normalized/fake/backbone_431.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_431.jpg
+normalized/real/backbone_432.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_432.jpg
+normalized/fake/backbone_433.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-4b,see source dataset card,,train,backbone/fake/backbone_433.jpg
+normalized/fake/backbone_434.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,test,backbone/fake/backbone_434.jpg
+normalized/fake/backbone_435.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train,backbone/fake/backbone_435.jpg
+normalized/real/backbone_436.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_436.jpg
+normalized/real/backbone_437.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_437.jpg
+normalized/fake/backbone_438.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,pony,see source dataset card,,train,backbone/fake/backbone_438.jpg
+normalized/fake/backbone_439.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train,backbone/fake/backbone_439.jpg
+normalized/fake/backbone_440.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,realistic_vision_v5.1_novae,see source dataset card,,train,backbone/fake/backbone_440.jpg
+normalized/fake/backbone_443.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,val,backbone/fake/backbone_443.jpg
+normalized/fake/backbone_444.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train,backbone/fake/backbone_444.jpg
+normalized/fake/backbone_445.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_445.jpg
+normalized/fake/backbone_446.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_446.jpg
+normalized/fake/backbone_447.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-base-4b,see source dataset card,,train,backbone/fake/backbone_447.jpg
+normalized/real/backbone_448.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_448.jpg
+normalized/fake/backbone_452.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,train,backbone/fake/backbone_452.jpg
+normalized/real/backbone_453.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_453.jpg
+normalized/real/backbone_454.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_454.jpg
+normalized/fake/backbone_455.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train,backbone/fake/backbone_455.jpg
+normalized/fake/backbone_456.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,test,backbone/fake/backbone_456.jpg
+normalized/fake/backbone_457.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val,backbone/fake/backbone_457.jpg
+normalized/fake/backbone_458.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,train,backbone/fake/backbone_458.jpg
+normalized/fake/backbone_461.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,test,backbone/fake/backbone_461.jpg
+normalized/fake/backbone_462.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train,backbone/fake/backbone_462.jpg
+normalized/fake/backbone_463.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_463.jpg
+normalized/fake/backbone_464.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test,backbone/fake/backbone_464.jpg
+normalized/fake/backbone_466.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train,backbone/fake/backbone_466.jpg
+normalized/fake/backbone_468.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train,backbone/fake/backbone_468.jpg
+normalized/fake/backbone_469.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-5,see source dataset card,,test,backbone/fake/backbone_469.jpg
+normalized/fake/backbone_470.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train,backbone/fake/backbone_470.jpg
+normalized/fake/backbone_471.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,test,backbone/fake/backbone_471.jpg
+normalized/fake/backbone_472.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,test,backbone/fake/backbone_472.jpg
+normalized/fake/backbone_473.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train,backbone/fake/backbone_473.jpg
+normalized/real/backbone_474.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_474.jpg
+normalized/fake/backbone_475.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,cyberrealistic-pony-v14.0,see source dataset card,,test,backbone/fake/backbone_475.jpg
+normalized/real/backbone_476.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_476.jpg
+normalized/fake/backbone_477.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train,backbone/fake/backbone_477.jpg
+normalized/fake/backbone_478.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,val,backbone/fake/backbone_478.jpg
+normalized/real/backbone_480.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_480.jpg
+normalized/fake/backbone_482.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train,backbone/fake/backbone_482.jpg
+normalized/real/backbone_483.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_483.jpg
+normalized/real/backbone_484.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_484.jpg
+normalized/fake/backbone_485.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,val,backbone/fake/backbone_485.jpg
+normalized/real/backbone_487.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_487.jpg
+normalized/fake/backbone_488.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,train,backbone/fake/backbone_488.jpg
+normalized/real/backbone_491.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_491.jpg
+normalized/real/backbone_492.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_492.jpg
+normalized/real/backbone_495.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_495.jpg
+normalized/real/backbone_497.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_497.jpg
+normalized/real/backbone_499.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_499.jpg
+normalized/real/backbone_500.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_500.jpg
+normalized/real/backbone_501.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_501.jpg
+normalized/real/backbone_502.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_502.jpg
+normalized/real/backbone_503.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_503.jpg
+normalized/real/backbone_507.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_507.jpg
+normalized/real/backbone_508.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_508.jpg
+normalized/real/backbone_509.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_509.jpg
+normalized/real/backbone_512.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_512.jpg
+normalized/real/backbone_514.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_514.jpg
+normalized/real/backbone_521.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_521.jpg
+normalized/real/backbone_523.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_523.jpg
+normalized/real/backbone_525.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_525.jpg
+normalized/real/backbone_526.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_526.jpg
+normalized/real/backbone_531.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_531.jpg
+normalized/real/backbone_532.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_532.jpg
+normalized/real/backbone_537.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_537.jpg
+normalized/real/backbone_539.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_539.jpg
+normalized/real/backbone_544.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_544.jpg
+normalized/real/backbone_546.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_546.jpg
+normalized/real/backbone_547.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_547.jpg
+normalized/real/backbone_549.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_549.jpg
+normalized/real/backbone_550.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_550.jpg
+normalized/real/backbone_554.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_554.jpg
+normalized/real/backbone_555.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_555.jpg
+normalized/real/backbone_558.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_558.jpg
+normalized/real/backbone_559.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_559.jpg
+normalized/real/backbone_561.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_561.jpg
+normalized/real/backbone_562.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_562.jpg
+normalized/real/backbone_563.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_563.jpg
+normalized/real/backbone_564.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_564.jpg
+normalized/real/backbone_567.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test,backbone/real/backbone_567.jpg
+normalized/real/backbone_582.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_582.jpg
+normalized/real/backbone_585.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_585.jpg
+normalized/real/backbone_586.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_586.jpg
+normalized/real/backbone_589.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_589.jpg
+normalized/real/backbone_592.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_592.jpg
+normalized/real/backbone_594.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_594.jpg
+normalized/real/backbone_596.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val,backbone/real/backbone_596.jpg
+normalized/real/backbone_597.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train,backbone/real/backbone_597.jpg
+normalized/real/backbone_598.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_598.jpg
+normalized/real/backbone_599.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_599.jpg
+normalized/real/backbone_600.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_600.jpg
+normalized/real/backbone_601.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_601.jpg
+normalized/real/backbone_602.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_602.jpg
+normalized/real/backbone_605.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test,backbone/real/backbone_605.jpg
+normalized/real/backbone_607.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val,backbone/real/backbone_607.jpg
+normalized/real/backbone_609.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train,backbone/real/backbone_609.jpg
+normalized/real/wikimedia_bb8a21895d3c.jpg,real,sports,wikimedia_commons,Football players,,,public domain,"Cumhuriyet, Son Posta ve Vakit Gazetesi (source: https://upload.wikimedia.org/wikipedia/commons/8/85/1931_10_24_Vakit_Pegnam.jpg)",val,sports_real/wikimedia_bb8a21895d3c.jpg
+normalized/real/wikimedia_2c05227e6998.jpg,real,sports,wikimedia_commons,Football players,,,public domain,"Akşam, Cumhuriyet ve Son Posta gazeteleri (source: https://upload.wikimedia.org/wikipedia/commons/4/43/1932_05_12_Aksam_Bedri_Gursoy.jpg)",val,sports_real/wikimedia_2c05227e6998.jpg
+normalized/real/wikimedia_8b1ce03e7ec5.jpg,real,sports,wikimedia_commons,Football players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/4/41/A_footballer_close_to_wall.jpg),val,sports_real/wikimedia_8b1ce03e7ec5.jpg
+normalized/real/wikimedia_d358b361feda.jpg,real,sports,wikimedia_commons,Football players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/23/Alan_Curtis.png),val,sports_real/wikimedia_d358b361feda.png
+normalized/real/wikimedia_490bc4046158.jpg,real,sports,wikimedia_commons,Football players,,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/3/36/Alfredo_Paolinetti_figurita_-_restaurada.jpg)",val,sports_real/wikimedia_490bc4046158.jpg
+normalized/real/wikimedia_0fe11ba77452.jpg,real,sports,wikimedia_commons,Football players,,,public domain,Mass Communication Specialist 1st Class Natalia Murillo (source: https://upload.wikimedia.org/wikipedia/commons/0/09/All-American_Jersey_Presentation_-_Navy_Honors_Ryan_Miret_at_Miami_Southridge_-_251010-N-RF885-1097.jpg),val,sports_real/wikimedia_0fe11ba77452.jpg
+normalized/real/wikimedia_b1e65dcc9f8d.jpg,real,sports,wikimedia_commons,Football players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/1/14/Amir_Al-Ammari_Cracovia.jpg),val,sports_real/wikimedia_b1e65dcc9f8d.jpg
+normalized/real/wikimedia_e8fd887f3e93.jpg,real,sports,wikimedia_commons,Basketball players,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/60668654@N00"">The Vintage Traveler</a> (source: https://upload.wikimedia.org/wikipedia/commons/b/bb/A_Basketball_Player_%2827375043834%29.jpg)",test,sports_real/wikimedia_e8fd887f3e93.jpg
+normalized/real/wikimedia_570bb9700d74.jpg,real,sports,wikimedia_commons,Basketball players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/8/82/A_Touch_More_Live_April_6_2024.jpg),test,sports_real/wikimedia_570bb9700d74.jpg
+normalized/real/wikimedia_26c3424ac2d2.jpg,real,sports,wikimedia_commons,Basketball players,,,public domain,VOA (source: https://upload.wikimedia.org/wikipedia/commons/e/ed/Abdoulaye_Harouna.jpg),test,sports_real/wikimedia_26c3424ac2d2.jpg
+normalized/real/wikimedia_d2702a25f478.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/3b/Michael_Kawooya.jpg),train,sports_real/wikimedia_d2702a25f478.jpg
+normalized/real/wikimedia_6b28d41aa8df.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9a/Michael_Kawooya2.jpg),train,sports_real/wikimedia_6b28d41aa8df.jpg
+normalized/real/wikimedia_8bb90d6871aa.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/6/62/Oliver_Fanshawe_at_the_2024_Queensland_Tennis_Awards.jpg),train,sports_real/wikimedia_8bb90d6871aa.jpg
+normalized/real/wikimedia_0092131ec8ac.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9f/Practicing_tennis_outdoors_2021_cloudy_day_Apartment_Building_at_2225_N_Street.jpg),train,sports_real/wikimedia_0092131ec8ac.jpg
+normalized/real/wikimedia_bee4651e9b7c.jpg,real,sports,wikimedia_commons,Sprinters,,,public domain,"<a href=""//commons.wikimedia.org/wiki/User:Miaow_Miaow"" title=""User:Miaow Miaow"">User:Miaow Miaow</a> (source: https://upload.wikimedia.org/wikipedia/commons/b/b3/200mW_at_Josef_Odlozil_Memorial_in_Prague_14June2010_064.jpg)",val,sports_real/wikimedia_bee4651e9b7c.jpg
+normalized/real/wikimedia_c7b252e893a2.jpg,real,sports,wikimedia_commons,Sprinters,,,public domain,"<a href=""//commons.wikimedia.org/wiki/User:Miaow_Miaow"" title=""User:Miaow Miaow"">User:Miaow Miaow</a> (source: https://upload.wikimedia.org/wikipedia/commons/0/03/200mW_at_Josef_Odlozil_Memorial_in_Prague_14June2010_065.jpg)",val,sports_real/wikimedia_c7b252e893a2.jpg
+normalized/real/wikimedia_60e0801f6780.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/a/ac/ABDELMALICK_LAHOULOU_3e_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val,sports_real/wikimedia_60e0801f6780.jpg
+normalized/real/wikimedia_2dc114c24c39.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/5/59/ABDELMALICK_LAHOULOU_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val,sports_real/wikimedia_2dc114c24c39.jpg
+normalized/real/wikimedia_15cc0218c0b1.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/e/e7/BIENVENU_W._SAWADOGO_triste_a_la_finale.jpg),val,sports_real/wikimedia_15cc0218c0b1.jpg
+normalized/real/wikimedia_9a350eb8333e.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/5/58/ELMEHDI_DEMOCRATI_7e_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val,sports_real/wikimedia_9a350eb8333e.jpg
+normalized/real/wikimedia_8c463e524662.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/e/e7/ELMEHDI_DEMOCRATI_du_400_m%C3%A8tres_haies.jpg),val,sports_real/wikimedia_8c463e524662.jpg
+normalized/real/wikimedia_5f7422cda209.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/b/b6/Erriyon_Knighton_%28cropped%29_Eugene_2022.jpg),val,sports_real/wikimedia_5f7422cda209.jpg
+normalized/real/wikimedia_5a172280055f.jpg,real,sports,wikimedia_commons,Sprinters,,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/3/33/Ethel_Smith_Fanny_Rosenfeld_1928_Olympics.jpg)",val,sports_real/wikimedia_5a172280055f.jpg
+normalized/real/wikimedia_9d5ec3137de9.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/d/d8/Healthy-person-woman-sport_%2824242974791%29.jpg),val,sports_real/wikimedia_9d5ec3137de9.jpg
+normalized/real/wikimedia_c612b5918a34.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/a/a2/LINDUKHLE_GORA_sud_africain_finaliste.jpg),val,sports_real/wikimedia_c612b5918a34.jpg
+normalized/real/wikimedia_61663412b8fc.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/34/SHIRLEY_NEKHUBUI_400_METRE_FEMME_FINALE.jpg),val,sports_real/wikimedia_61663412b8fc.jpg
+normalized/real/wikimedia_2e42b86da6cf.jpg,real,sports,wikimedia_commons,Swimmers,,,public domain,"<div class=""fn value"">
+Unknown photographer<span style=""display: none;"">Unknown photographer</span></div> (source: https://upload.wikimedia.org/wikipedia/commons/c/ca/Alki_Beach_swimming_beach_and_bathhouse%2C_West_Seattle%2C_probably_between_1908_and_1930_%28SEATTLE_1994%29.jpg)",train,sports_real/wikimedia_2e42b86da6cf.jpg
+normalized/real/wikimedia_0d44fbcc6cb4.jpg,real,sports,wikimedia_commons,Swimmers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/2f/Jack_Kelly.jpg),train,sports_real/wikimedia_0d44fbcc6cb4.jpg
+normalized/real/wikimedia_58621b40084b.jpg,real,sports,wikimedia_commons,Swimmers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/3d/Nadadora_de_%C3%A1guas_abertas_em_Fernando_de_Noronha.jpg),train,sports_real/wikimedia_58621b40084b.jpg
+normalized/real/wikimedia_c0943c70ea50.jpg,real,sports,wikimedia_commons,Swimmers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/8/83/Nadadores_em_%C3%A1guas_abertas.jpg),train,sports_real/wikimedia_c0943c70ea50.jpg
+normalized/real/wikimedia_1efbbc60a8a7.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,Stanley Scott Collection (source: https://upload.wikimedia.org/wikipedia/commons/8/85/024_Scott_playing_volleyball_-_USACE-p15141coll5-9519.jpeg),val,sports_real/wikimedia_1efbbc60a8a7.jpg
+normalized/real/wikimedia_534b0767e85a.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,Stanley Scott Collection (source: https://upload.wikimedia.org/wikipedia/commons/a/ad/026_Scott_playing_volleyball_-_USACE-p15141coll5-9405.jpeg),val,sports_real/wikimedia_534b0767e85a.jpg
+normalized/real/wikimedia_990a6262f9ca.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/40927340@N03"">Marines</a> from Arlington, VA, United States (source: https://upload.wikimedia.org/wikipedia/commons/7/7e/At_Your_Service_%286922190385%29.jpg)",val,sports_real/wikimedia_990a6262f9ca.jpg
+normalized/real/wikimedia_f01b3346a23c.jpg,real,sports,wikimedia_commons,Volleyball players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/7/7a/Costa_Rica_Langosta_Beach_near_Tamarindo_0208.jpg),val,sports_real/wikimedia_f01b3346a23c.jpg
+normalized/real/wikimedia_774468b4ff9e.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/0/07/Early_1900s_image_of_gymnasium_volleyball.jpg)",val,sports_real/wikimedia_774468b4ff9e.jpg
+normalized/real/wikimedia_aa8b16c6b857.jpg,real,sports,wikimedia_commons,Volleyball players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/b/bc/Equipo_de_Volleyball_Femenino_de_Quezaltepeque.jpg),val,sports_real/wikimedia_aa8b16c6b857.jpg
+normalized/real/wikimedia_57d1828cedd5.jpg,real,sports,wikimedia_commons,Cricketers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/0/03/Benalla_Distric_Cricket_players_practise.jpg),val,sports_real/wikimedia_57d1828cedd5.jpg
+normalized/real/wikimedia_61bf5c53d52f.jpg,real,sports,wikimedia_commons,Cricketers,,,public domain,"unknown employee of ""Sports and General"" photography agency (source: https://upload.wikimedia.org/wikipedia/commons/c/cf/Dar_Lyon_and_Tom_Lowry.jpg)",val,sports_real/wikimedia_61bf5c53d52f.jpg
+normalized/real/wikimedia_c7f2f54d0623.jpg,real,sports,wikimedia_commons,Cricketers,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/9364837@N06"">U.S. Department of State</a> from United States (source: https://upload.wikimedia.org/wikipedia/commons/f/fe/Deputy_Secretary_Verma_Hosts_Cricket_Event_%2853788984088%29.jpg)",val,sports_real/wikimedia_c7f2f54d0623.jpg
+normalized/real/wikimedia_8b354b91fc05.jpg,real,sports,wikimedia_commons,Cricketers,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/9364837@N06"">U.S. Department of State</a> from United States (source: https://upload.wikimedia.org/wikipedia/commons/d/d9/Deputy_Secretary_Verma_Hosts_Cricket_Event_-_53787828247.jpg)",val,sports_real/wikimedia_8b354b91fc05.jpg
+normalized/fake/synthetic_1000.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1000.png
+normalized/fake/synthetic_1001.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test,sports_fake/synthetic_1001.png
+normalized/fake/synthetic_1002.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test,sports_fake/synthetic_1002.png
+normalized/fake/synthetic_1003.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1003.png
+normalized/fake/synthetic_1004.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1004.png
+normalized/fake/synthetic_1005.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1005.png
+normalized/fake/synthetic_1006.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1006.png
+normalized/fake/synthetic_1007.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1007.png
+normalized/fake/synthetic_1008.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1008.png
+normalized/fake/synthetic_1009.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,test,sports_fake/synthetic_1009.png
+normalized/fake/synthetic_1010.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1010.png
+normalized/fake/synthetic_1011.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,test,sports_fake/synthetic_1011.png
+normalized/fake/synthetic_1012.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1012.png
+normalized/fake/synthetic_1013.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,test,sports_fake/synthetic_1013.png
+normalized/fake/synthetic_1014.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1014.png
+normalized/fake/synthetic_1015.jpg,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1015.png
+normalized/fake/synthetic_1016.jpg,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val,sports_fake/synthetic_1016.png
+normalized/fake/synthetic_1017.jpg,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val,sports_fake/synthetic_1017.png
+normalized/fake/synthetic_1018.jpg,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1018.png
+normalized/fake/synthetic_1019.jpg,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val,sports_fake/synthetic_1019.png
+normalized/fake/synthetic_1020.jpg,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val,sports_fake/synthetic_1020.png
+normalized/fake/synthetic_1021.jpg,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1021.png
+normalized/fake/synthetic_1022.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train,sports_fake/synthetic_1022.png
+normalized/fake/synthetic_1023.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test,sports_fake/synthetic_1023.png
+normalized/fake/synthetic_1024.jpg,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test,sports_fake/synthetic_1024.png

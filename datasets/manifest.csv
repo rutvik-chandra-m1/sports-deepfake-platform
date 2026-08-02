@@ -1,577 +1,577 @@
-path,class,domain,source,sport,framing,license,attribution,split
-backbone/real/backbone_0.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_1.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_2.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_3.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_4.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_5.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_6.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_7.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_8.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_9.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_10.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_11.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_12.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_13.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_14.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_15.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_16.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_17.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_18.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_19.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_20.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_21.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_22.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_23.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_24.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_25.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_26.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_27.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_28.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_29.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_30.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_31.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_32.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_33.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_34.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_35.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_36.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_37.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_38.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_39.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_40.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_41.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_42.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_43.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_44.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_45.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_46.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_47.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_48.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_49.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_50.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_51.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_52.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_53.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_54.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_55.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_56.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_57.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_58.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_59.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_60.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_61.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_62.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_63.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_64.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_65.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_66.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_67.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_68.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_69.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_70.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_71.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_72.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_73.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_74.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_75.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_76.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_77.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_78.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_79.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_80.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_81.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_82.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_83.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_84.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_85.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_86.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_87.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_88.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_89.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_90.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_91.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_92.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_93.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_94.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_95.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_96.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_97.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_98.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_99.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_100.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_101.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_102.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_103.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_104.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_105.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_106.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_107.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_108.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_109.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_110.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_111.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_112.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_113.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_114.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_115.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_116.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_117.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_118.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_119.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_120.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_121.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_122.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_123.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_124.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_125.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_126.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_127.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_128.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_129.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_130.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_131.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_132.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_133.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_134.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_135.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_136.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_137.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_138.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_139.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_140.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_141.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_142.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_143.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_144.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_145.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_146.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_147.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_148.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_149.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_150.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_151.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_152.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_153.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_154.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_155.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_156.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_157.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_158.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_159.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_160.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_161.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_162.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_163.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_164.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_165.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_166.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_167.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_168.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_169.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_170.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_171.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_172.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_173.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_174.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_175.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_176.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_177.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_178.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_179.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_180.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_181.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_182.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_183.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_184.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_185.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_186.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_187.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_188.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_189.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_190.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_191.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_192.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_193.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_194.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_195.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_196.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_197.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_198.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_199.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_200.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_201.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_202.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_203.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_204.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_205.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_206.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_207.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_208.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_209.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_210.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_211.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_212.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_213.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_214.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_215.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_216.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_217.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_218.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_219.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_220.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_221.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_222.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_223.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_224.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_225.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_226.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_227.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_228.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_229.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_230.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_231.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_232.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_233.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_234.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_235.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_236.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_237.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_238.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_239.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_240.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/real/backbone_241.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_242.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_243.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_244.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_245.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_246.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/real/backbone_247.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_248.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/real/backbone_249.jpg,real,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4000.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4001.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4002.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4003.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4004.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4005.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4006.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4007.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4008.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4009.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4010.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4011.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4012.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4013.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4014.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4015.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4016.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4017.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4018.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4019.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4020.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4021.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4022.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4023.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4024.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4025.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4026.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4027.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4028.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4029.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4030.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4031.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4032.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4033.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4034.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4035.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4036.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4037.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4038.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4039.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4040.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4041.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4042.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4043.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4044.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4045.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4046.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4047.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4048.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4049.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4050.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4051.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4052.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4053.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4054.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4055.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4056.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4057.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4058.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4059.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4060.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4061.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4062.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4063.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4064.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4065.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4066.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4067.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4068.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4069.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4070.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4071.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4072.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4073.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4074.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4075.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4076.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4077.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4078.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4079.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4080.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4081.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4082.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4083.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4084.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4085.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4086.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4087.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4088.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4089.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4090.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4091.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4092.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4093.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4094.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4095.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4096.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4097.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4098.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4099.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4100.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4101.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4102.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4103.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4104.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4105.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4106.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4107.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4108.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4109.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4110.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4111.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4112.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4113.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4114.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4115.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4116.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4117.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4118.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4119.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4120.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4121.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4122.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4123.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4124.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4125.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4126.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4127.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4128.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4129.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4130.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4131.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4132.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4133.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4134.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4135.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4136.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4137.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4138.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4139.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4140.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4141.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4142.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4143.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4144.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4145.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4146.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4147.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4148.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4149.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4150.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4151.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4152.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4153.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4154.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4155.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4156.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4157.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4158.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4159.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4160.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4161.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4162.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4163.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4164.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4165.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4166.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4167.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4168.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4169.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4170.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4171.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4172.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4173.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4174.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4175.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4176.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4177.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4178.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4179.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4180.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4181.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4182.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4183.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4184.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4185.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4186.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4187.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4188.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4189.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4190.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4191.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4192.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4193.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4194.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4195.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4196.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4197.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4198.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4199.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4200.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4201.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4202.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4203.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4204.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4205.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4206.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4207.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4208.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4209.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4210.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4211.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4212.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4213.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4214.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4215.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4216.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4217.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4218.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4219.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4220.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4221.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4222.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4223.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4224.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4225.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4226.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4227.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4228.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4229.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4230.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4231.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4232.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4233.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4234.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4235.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4236.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4237.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4238.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4239.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4240.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4241.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4242.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4243.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4244.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4245.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4246.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,test
-backbone/fake/backbone_4247.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,val
-backbone/fake/backbone_4248.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-backbone/fake/backbone_4249.jpg,fake,general,hf:Parveshiiii/AI-vs-Real,,,MIT,,train
-sports_real/wikimedia_bb8a21895d3c.jpg,real,sports,wikimedia_commons,Football players,,public domain,"Cumhuriyet, Son Posta ve Vakit Gazetesi (source: https://upload.wikimedia.org/wikipedia/commons/8/85/1931_10_24_Vakit_Pegnam.jpg)",val
-sports_real/wikimedia_26cd82f2a625.jpg,real,sports,wikimedia_commons,Football players,,public domain,Akşam Gazetesi (source: https://upload.wikimedia.org/wikipedia/commons/0/09/1932_04_30_Aksam_Refik_Osman_Top.jpg),val
-sports_real/wikimedia_2c05227e6998.jpg,real,sports,wikimedia_commons,Football players,,public domain,"Akşam, Cumhuriyet ve Son Posta gazeteleri (source: https://upload.wikimedia.org/wikipedia/commons/4/43/1932_05_12_Aksam_Bedri_Gursoy.jpg)",val
-sports_real/wikimedia_8b1ce03e7ec5.jpg,real,sports,wikimedia_commons,Football players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/4/41/A_footballer_close_to_wall.jpg),val
-sports_real/wikimedia_d358b361feda.png,real,sports,wikimedia_commons,Football players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/23/Alan_Curtis.png),val
-sports_real/wikimedia_490bc4046158.jpg,real,sports,wikimedia_commons,Football players,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/3/36/Alfredo_Paolinetti_figurita_-_restaurada.jpg)",val
-sports_real/wikimedia_0fe11ba77452.jpg,real,sports,wikimedia_commons,Football players,,public domain,Mass Communication Specialist 1st Class Natalia Murillo (source: https://upload.wikimedia.org/wikipedia/commons/0/09/All-American_Jersey_Presentation_-_Navy_Honors_Ryan_Miret_at_Miami_Southridge_-_251010-N-RF885-1097.jpg),val
-sports_real/wikimedia_b1e65dcc9f8d.jpg,real,sports,wikimedia_commons,Football players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/1/14/Amir_Al-Ammari_Cracovia.jpg),val
-sports_real/wikimedia_e8fd887f3e93.jpg,real,sports,wikimedia_commons,Basketball players,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/60668654@N00"">The Vintage Traveler</a> (source: https://upload.wikimedia.org/wikipedia/commons/b/bb/A_Basketball_Player_%2827375043834%29.jpg)",test
-sports_real/wikimedia_570bb9700d74.jpg,real,sports,wikimedia_commons,Basketball players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/8/82/A_Touch_More_Live_April_6_2024.jpg),test
-sports_real/wikimedia_26c3424ac2d2.jpg,real,sports,wikimedia_commons,Basketball players,,public domain,VOA (source: https://upload.wikimedia.org/wikipedia/commons/e/ed/Abdoulaye_Harouna.jpg),test
-sports_real/wikimedia_30a281f94133.jpg,real,sports,wikimedia_commons,Tennis players,,public domain,National Photo Company Collection (source: https://upload.wikimedia.org/wikipedia/commons/a/a8/J.J._Broderick%2C_%287-24-22%29_LOC_npcc.06740.jpg),train
-sports_real/wikimedia_89e84d4ec5d1.jpg,real,sports,wikimedia_commons,Tennis players,,public domain,Manuel Rosenberg (source: https://upload.wikimedia.org/wikipedia/commons/6/6d/Jose_Alonso_1927.jpg),train
-sports_real/wikimedia_d2702a25f478.jpg,real,sports,wikimedia_commons,Tennis players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/3b/Michael_Kawooya.jpg),train
-sports_real/wikimedia_6b28d41aa8df.jpg,real,sports,wikimedia_commons,Tennis players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9a/Michael_Kawooya2.jpg),train
-sports_real/wikimedia_8bb90d6871aa.jpg,real,sports,wikimedia_commons,Tennis players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/6/62/Oliver_Fanshawe_at_the_2024_Queensland_Tennis_Awards.jpg),train
-sports_real/wikimedia_0092131ec8ac.jpg,real,sports,wikimedia_commons,Tennis players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9f/Practicing_tennis_outdoors_2021_cloudy_day_Apartment_Building_at_2225_N_Street.jpg),train
-sports_real/wikimedia_265c445e4a7d.jpg,real,sports,wikimedia_commons,Sprinters,,public domain,Le Miroir des sports (source: https://upload.wikimedia.org/wikipedia/commons/b/b1/1888%2C_premier_d%C3%A9part_d%27une_course_de_sprint_%27%C3%A0_l%27am%C3%A9ricaine%27.jpg),val
-sports_real/wikimedia_bee4651e9b7c.jpg,real,sports,wikimedia_commons,Sprinters,,public domain,"<a href=""//commons.wikimedia.org/wiki/User:Miaow_Miaow"" title=""User:Miaow Miaow"">User:Miaow Miaow</a> (source: https://upload.wikimedia.org/wikipedia/commons/b/b3/200mW_at_Josef_Odlozil_Memorial_in_Prague_14June2010_064.jpg)",val
-sports_real/wikimedia_c7b252e893a2.jpg,real,sports,wikimedia_commons,Sprinters,,public domain,"<a href=""//commons.wikimedia.org/wiki/User:Miaow_Miaow"" title=""User:Miaow Miaow"">User:Miaow Miaow</a> (source: https://upload.wikimedia.org/wikipedia/commons/0/03/200mW_at_Josef_Odlozil_Memorial_in_Prague_14June2010_065.jpg)",val
-sports_real/wikimedia_60e0801f6780.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/a/ac/ABDELMALICK_LAHOULOU_3e_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val
-sports_real/wikimedia_2dc114c24c39.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/5/59/ABDELMALICK_LAHOULOU_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val
-sports_real/wikimedia_15cc0218c0b1.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/e/e7/BIENVENU_W._SAWADOGO_triste_a_la_finale.jpg),val
-sports_real/wikimedia_9a350eb8333e.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/5/58/ELMEHDI_DEMOCRATI_7e_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val
-sports_real/wikimedia_8c463e524662.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/e/e7/ELMEHDI_DEMOCRATI_du_400_m%C3%A8tres_haies.jpg),val
-sports_real/wikimedia_7bf31538a488.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9a/Erriyon_Knighton_%28USA%29_2022.jpg),val
-sports_real/wikimedia_5f7422cda209.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/b/b6/Erriyon_Knighton_%28cropped%29_Eugene_2022.jpg),val
-sports_real/wikimedia_5a172280055f.jpg,real,sports,wikimedia_commons,Sprinters,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/3/33/Ethel_Smith_Fanny_Rosenfeld_1928_Olympics.jpg)",val
-sports_real/wikimedia_9d5ec3137de9.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/d/d8/Healthy-person-woman-sport_%2824242974791%29.jpg),val
-sports_real/wikimedia_aeb7fb242dae.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/22/Image_from_page_318_of_%22Greek_athletic_sports_and_festivals%22_%281910%29.jpg),val
-sports_real/wikimedia_c612b5918a34.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/a/a2/LINDUKHLE_GORA_sud_africain_finaliste.jpg),val
-sports_real/wikimedia_61663412b8fc.jpg,real,sports,wikimedia_commons,Sprinters,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/34/SHIRLEY_NEKHUBUI_400_METRE_FEMME_FINALE.jpg),val
-sports_real/wikimedia_2e42b86da6cf.jpg,real,sports,wikimedia_commons,Swimmers,,public domain,"<div class=""fn value"">
+path,class,domain,source,sport,framing,generator,license,attribution,split
+backbone/real/backbone_0.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_1.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train
+backbone/fake/backbone_2.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-4,see source dataset card,,train
+backbone/real/backbone_3.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_6.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_7.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,val
+backbone/real/backbone_11.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_12.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_13.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_14.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/real/backbone_15.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_16.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,qwen-image,see source dataset card,,train
+backbone/fake/backbone_17.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/fake/backbone_18.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train
+backbone/fake/backbone_19.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,test
+backbone/fake/backbone_20.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_21.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-dev,see source dataset card,,val
+backbone/fake/backbone_22.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,anima-preview,see source dataset card,,train
+backbone/fake/backbone_23.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train
+backbone/real/backbone_24.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_25.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_27.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_29.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_30.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_31.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,test
+backbone/fake/backbone_32.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-mvc5000,see source dataset card,,test
+backbone/real/backbone_33.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_34.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train
+backbone/fake/backbone_35.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train
+backbone/real/backbone_36.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_37.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val
+backbone/fake/backbone_38.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,grok-2-image-1212,see source dataset card,,train
+backbone/fake/backbone_39.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,test
+backbone/fake/backbone_40.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_41.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,train
+backbone/fake/backbone_42.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/fake/backbone_43.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,mystic,see source dataset card,,val
+backbone/real/backbone_45.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_46.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_47.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_48.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_49.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_50.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train
+backbone/real/backbone_51.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/fake/backbone_52.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,chroma,see source dataset card,,train
+backbone/real/backbone_53.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_54.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_55.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,animagine-xl-4.0,see source dataset card,,train
+backbone/real/backbone_58.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_59.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,seedream-v4.0,see source dataset card,,test
+backbone/fake/backbone_60.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train
+backbone/fake/backbone_61.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/real/backbone_62.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_64.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_65.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,train
+backbone/fake/backbone_66.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/real/backbone_67.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_68.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_69.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_70.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_71.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_72.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_73.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_74.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,test
+backbone/fake/backbone_75.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,seedream-v4.5,see source dataset card,,val
+backbone/fake/backbone_76.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_77.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,train
+backbone/fake/backbone_78.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,val
+backbone/fake/backbone_79.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train
+backbone/real/backbone_80.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_81.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_82.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train
+backbone/fake/backbone_83.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,train
+backbone/fake/backbone_84.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_85.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_86.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,train
+backbone/fake/backbone_87.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-5,see source dataset card,,train
+backbone/fake/backbone_88.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train
+backbone/real/backbone_89.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_90.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_91.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_92.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_93.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train
+backbone/real/backbone_94.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_95.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_96.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_97.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_98.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_99.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_100.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_101.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,train
+backbone/real/backbone_102.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_103.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_104.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_105.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_107.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train
+backbone/real/backbone_108.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_109.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train
+backbone/real/backbone_110.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_111.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_112.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train
+backbone/fake/backbone_113.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/real/backbone_115.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_116.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train
+backbone/fake/backbone_117.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train
+backbone/real/backbone_118.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_119.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_120.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train
+backbone/fake/backbone_121.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-turbo,see source dataset card,,train
+backbone/real/backbone_122.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_123.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/fake/backbone_124.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_126.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,val
+backbone/real/backbone_127.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_128.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/real/backbone_129.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_130.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_131.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_132.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_133.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_134.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_135.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_138.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,test
+backbone/fake/backbone_139.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-xl-v1.0-vae-fix,see source dataset card,,train
+backbone/fake/backbone_140.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train
+backbone/real/backbone_141.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_142.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_143.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_145.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train
+backbone/real/backbone_146.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_147.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train
+backbone/fake/backbone_148.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,test
+backbone/real/backbone_149.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_150.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train
+backbone/fake/backbone_151.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test
+backbone/real/backbone_152.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_153.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,val
+backbone/fake/backbone_154.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train
+backbone/fake/backbone_155.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,test
+backbone/fake/backbone_156.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_157.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_158.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_159.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-dev,see source dataset card,,train
+backbone/real/backbone_160.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_161.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_162.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_163.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-4,see source dataset card,,train
+backbone/real/backbone_164.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_165.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/fake/backbone_166.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,test
+backbone/fake/backbone_167.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,train
+backbone/fake/backbone_168.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-turbo,see source dataset card,,train
+backbone/fake/backbone_169.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,val
+backbone/real/backbone_170.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_171.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_172.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_173.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_174.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_176.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_177.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,val
+backbone/fake/backbone_178.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val
+backbone/fake/backbone_179.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_180.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_181.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_182.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/real/backbone_184.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_185.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-base-4b,see source dataset card,,train
+backbone/fake/backbone_186.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val
+backbone/real/backbone_188.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_189.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/real/backbone_190.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_191.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_192.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_193.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,val
+backbone/real/backbone_194.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_195.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_196.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train
+backbone/fake/backbone_197.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val
+backbone/fake/backbone_198.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_199.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,train
+backbone/real/backbone_200.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_201.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-base-4b,see source dataset card,,train
+backbone/real/backbone_202.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_203.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train
+backbone/fake/backbone_204.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train
+backbone/fake/backbone_205.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train
+backbone/real/backbone_207.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_208.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_210.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5,see source dataset card,,val
+backbone/real/backbone_211.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_212.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_213.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val
+backbone/real/backbone_214.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_215.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_216.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_217.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_218.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_219.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_220.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_221.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_222.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_223.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_224.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_226.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_227.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,test
+backbone/fake/backbone_228.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_229.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/real/backbone_232.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_233.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-4b,see source dataset card,,test
+backbone/real/backbone_234.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_235.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train
+backbone/real/backbone_236.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_237.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_238.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_239.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_240.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,test
+backbone/fake/backbone_242.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,val
+backbone/fake/backbone_244.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,mystic,see source dataset card,,val
+backbone/fake/backbone_246.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-dev,see source dataset card,,val
+backbone/real/backbone_247.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_248.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_249.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_250.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5,see source dataset card,,train
+backbone/fake/backbone_251.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,chroma,see source dataset card,,train
+backbone/fake/backbone_252.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,novaanimexl_ilv140,see source dataset card,,train
+backbone/real/backbone_253.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_254.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train
+backbone/fake/backbone_255.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,cyberrealistic-pony-v14.1,see source dataset card,,train
+backbone/real/backbone_256.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_257.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/fake/backbone_258.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_259.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_260.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-4,see source dataset card,,test
+backbone/real/backbone_261.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_262.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_263.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_265.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/real/backbone_266.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/fake/backbone_267.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/real/backbone_268.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_269.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,anima-preview2,see source dataset card,,val
+backbone/real/backbone_271.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_272.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,val
+backbone/fake/backbone_273.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_275.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,train
+backbone/real/backbone_277.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_278.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,val
+backbone/real/backbone_279.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/fake/backbone_280.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,mystic,see source dataset card,,train
+backbone/fake/backbone_281.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-xl-v1.0-vae-fix,see source dataset card,,train
+backbone/fake/backbone_283.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,seedream-v4.0,see source dataset card,,train
+backbone/fake/backbone_284.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,train
+backbone/fake/backbone_285.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train
+backbone/fake/backbone_286.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train
+backbone/real/backbone_287.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_288.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_289.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,test
+backbone/real/backbone_290.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_291.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val
+backbone/fake/backbone_292.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_293.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_294.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_295.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,test
+backbone/fake/backbone_296.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-mvc5000,see source dataset card,,val
+backbone/real/backbone_298.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_299.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_300.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-3.0-002,see source dataset card,,train
+backbone/real/backbone_303.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_304.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_306.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train
+backbone/fake/backbone_307.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,val
+backbone/real/backbone_308.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_310.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_311.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train
+backbone/fake/backbone_312.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,val
+backbone/real/backbone_313.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_314.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_315.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_316.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,val
+backbone/real/backbone_317.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_318.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,test
+backbone/real/backbone_319.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_320.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,nano-banana,see source dataset card,,train
+backbone/fake/backbone_321.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_322.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_323.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_324.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_325.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_326.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,val
+backbone/fake/backbone_328.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train
+backbone/fake/backbone_329.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_330.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_331.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,test
+backbone/real/backbone_332.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_333.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train
+backbone/real/backbone_334.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_335.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_336.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,midjourney-6,see source dataset card,,train
+backbone/real/backbone_337.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_338.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test
+backbone/fake/backbone_339.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_341.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/real/backbone_342.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_343.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_344.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,test
+backbone/fake/backbone_345.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train
+backbone/real/backbone_346.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_347.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,cyberrealistic-xl-v9.0,see source dataset card,,test
+backbone/fake/backbone_348.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,val
+backbone/fake/backbone_350.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train
+backbone/real/backbone_351.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_352.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,test
+backbone/real/backbone_353.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/real/backbone_354.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_355.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_356.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_357.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_358.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train
+backbone/fake/backbone_359.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train
+backbone/fake/backbone_360.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5,see source dataset card,,train
+backbone/real/backbone_361.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_362.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train
+backbone/fake/backbone_363.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,val
+backbone/fake/backbone_364.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-4,see source dataset card,,test
+backbone/real/backbone_365.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_366.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,one-obsession-17-red-sdxl,see source dataset card,,train
+backbone/fake/backbone_367.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_368.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_369.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train
+backbone/real/backbone_371.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_372.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_373.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train
+backbone/fake/backbone_374.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,train
+backbone/fake/backbone_375.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,dalle-3,see source dataset card,,train
+backbone/fake/backbone_376.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_377.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,realistic_vision_v5.1_novae,see source dataset card,,train
+backbone/real/backbone_378.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_379.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_381.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_382.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_383.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_384.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_385.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_386.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,train
+backbone/fake/backbone_387.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,val
+backbone/real/backbone_388.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_389.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,studio-ghibli-wan2.1-t2v-14b-v1.0,see source dataset card,,train
+backbone/fake/backbone_390.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train
+backbone/real/backbone_391.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_392.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,nano-banana-2,see source dataset card,,train
+backbone/fake/backbone_393.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_394.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,ideogram-3.0,see source dataset card,,test
+backbone/real/backbone_395.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_396.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train
+backbone/fake/backbone_397.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_398.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-mvc5000,see source dataset card,,train
+backbone/fake/backbone_399.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train
+backbone/fake/backbone_400.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,novaanimexl_ilv140,see source dataset card,,train
+backbone/real/backbone_401.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_402.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/fake/backbone_403.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_404.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,wan-video-2.2,see source dataset card,,train
+backbone/fake/backbone_405.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_406.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_407.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-realvis-v5,see source dataset card,,train
+backbone/fake/backbone_408.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,gpt-image-1,see source dataset card,,train
+backbone/fake/backbone_409.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_410.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/real/backbone_411.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_412.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_413.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_414.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/fake/backbone_415.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,playground-v2.5-1024px-aesthetic,see source dataset card,,val
+backbone/real/backbone_417.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_418.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_419.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test
+backbone/real/backbone_420.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_421.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_422.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,val
+backbone/real/backbone_423.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_424.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-epicdream,see source dataset card,,train
+backbone/fake/backbone_425.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,val
+backbone/fake/backbone_426.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,test
+backbone/real/backbone_427.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_428.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_429.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/real/backbone_430.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_431.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_432.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_433.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-4b,see source dataset card,,train
+backbone/fake/backbone_434.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,test
+backbone/fake/backbone_435.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-amateursnapshotphotos,see source dataset card,,train
+backbone/real/backbone_436.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_437.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_438.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,pony,see source dataset card,,train
+backbone/fake/backbone_439.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,train
+backbone/fake/backbone_440.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,realistic_vision_v5.1_novae,see source dataset card,,train
+backbone/real/backbone_441.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_442.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_443.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,val
+backbone/fake/backbone_444.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux-1.1-pro,see source dataset card,,train
+backbone/fake/backbone_445.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_446.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/fake/backbone_447.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.2-klein-base-4b,see source dataset card,,train
+backbone/real/backbone_448.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_449.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_450.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_451.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_452.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,imagen-4.0,see source dataset card,,train
+backbone/real/backbone_453.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_454.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_455.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train
+backbone/fake/backbone_456.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,test
+backbone/fake/backbone_457.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,val
+backbone/fake/backbone_458.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-1.5-dreamshaper,see source dataset card,,train
+backbone/fake/backbone_459.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train
+backbone/fake/backbone_461.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,test
+backbone/fake/backbone_462.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,train
+backbone/fake/backbone_463.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_464.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-dev,see source dataset card,,test
+backbone/fake/backbone_465.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_466.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train
+backbone/fake/backbone_468.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-touchofrealism,see source dataset card,,train
+backbone/fake/backbone_469.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,stable-diffusion-v1-5,see source dataset card,,test
+backbone/fake/backbone_470.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,train
+backbone/fake/backbone_471.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,test
+backbone/fake/backbone_472.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-epic-realism,see source dataset card,,test
+backbone/fake/backbone_473.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-3.5,see source dataset card,,train
+backbone/real/backbone_474.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/fake/backbone_475.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,cyberrealistic-pony-v14.0,see source dataset card,,test
+backbone/real/backbone_476.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/fake/backbone_477.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sd-2.1,see source dataset card,,train
+backbone/fake/backbone_478.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl,see source dataset card,,val
+backbone/fake/backbone_479.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,grok-2-image-1212,see source dataset card,,train
+backbone/real/backbone_480.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/fake/backbone_482.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,flux.1-schnell,see source dataset card,,train
+backbone/real/backbone_483.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_484.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/fake/backbone_485.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,hidream-i1-full,see source dataset card,,val
+backbone/real/backbone_487.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/fake/backbone_488.jpg,fake,general,hf:ComplexDataLab/OpenFake,,,sdxl-juggernaut,see source dataset card,,train
+backbone/real/backbone_491.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_492.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_495.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_497.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_499.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/real/backbone_500.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_501.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_502.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_503.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_504.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_506.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/real/backbone_507.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_508.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_509.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_512.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_514.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_519.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_521.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_523.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_525.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_526.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_531.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_532.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_537.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_539.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_544.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_546.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_547.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_549.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_550.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_554.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_555.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_558.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_559.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_561.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_562.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_563.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_564.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_567.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,test
+backbone/real/backbone_582.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_584.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_585.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_586.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/real/backbone_589.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/real/backbone_591.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_592.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/real/backbone_594.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_595.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_596.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,val
+backbone/real/backbone_597.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_598.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_599.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_600.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_601.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_602.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+backbone/real/backbone_605.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,test
+backbone/real/backbone_606.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,train
+backbone/real/backbone_607.jpg,real,general,hf:ComplexDataLab/OpenFake,,,laion,see source dataset card,,val
+backbone/real/backbone_609.jpg,real,general,hf:ComplexDataLab/OpenFake,,,pexels,see source dataset card,,train
+sports_real/wikimedia_bb8a21895d3c.jpg,real,sports,wikimedia_commons,Football players,,,public domain,"Cumhuriyet, Son Posta ve Vakit Gazetesi (source: https://upload.wikimedia.org/wikipedia/commons/8/85/1931_10_24_Vakit_Pegnam.jpg)",val
+sports_real/wikimedia_26cd82f2a625.jpg,real,sports,wikimedia_commons,Football players,,,public domain,Akşam Gazetesi (source: https://upload.wikimedia.org/wikipedia/commons/0/09/1932_04_30_Aksam_Refik_Osman_Top.jpg),val
+sports_real/wikimedia_2c05227e6998.jpg,real,sports,wikimedia_commons,Football players,,,public domain,"Akşam, Cumhuriyet ve Son Posta gazeteleri (source: https://upload.wikimedia.org/wikipedia/commons/4/43/1932_05_12_Aksam_Bedri_Gursoy.jpg)",val
+sports_real/wikimedia_8b1ce03e7ec5.jpg,real,sports,wikimedia_commons,Football players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/4/41/A_footballer_close_to_wall.jpg),val
+sports_real/wikimedia_d358b361feda.png,real,sports,wikimedia_commons,Football players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/23/Alan_Curtis.png),val
+sports_real/wikimedia_490bc4046158.jpg,real,sports,wikimedia_commons,Football players,,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/3/36/Alfredo_Paolinetti_figurita_-_restaurada.jpg)",val
+sports_real/wikimedia_0fe11ba77452.jpg,real,sports,wikimedia_commons,Football players,,,public domain,Mass Communication Specialist 1st Class Natalia Murillo (source: https://upload.wikimedia.org/wikipedia/commons/0/09/All-American_Jersey_Presentation_-_Navy_Honors_Ryan_Miret_at_Miami_Southridge_-_251010-N-RF885-1097.jpg),val
+sports_real/wikimedia_b1e65dcc9f8d.jpg,real,sports,wikimedia_commons,Football players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/1/14/Amir_Al-Ammari_Cracovia.jpg),val
+sports_real/wikimedia_e8fd887f3e93.jpg,real,sports,wikimedia_commons,Basketball players,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/60668654@N00"">The Vintage Traveler</a> (source: https://upload.wikimedia.org/wikipedia/commons/b/bb/A_Basketball_Player_%2827375043834%29.jpg)",test
+sports_real/wikimedia_570bb9700d74.jpg,real,sports,wikimedia_commons,Basketball players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/8/82/A_Touch_More_Live_April_6_2024.jpg),test
+sports_real/wikimedia_26c3424ac2d2.jpg,real,sports,wikimedia_commons,Basketball players,,,public domain,VOA (source: https://upload.wikimedia.org/wikipedia/commons/e/ed/Abdoulaye_Harouna.jpg),test
+sports_real/wikimedia_30a281f94133.jpg,real,sports,wikimedia_commons,Tennis players,,,public domain,National Photo Company Collection (source: https://upload.wikimedia.org/wikipedia/commons/a/a8/J.J._Broderick%2C_%287-24-22%29_LOC_npcc.06740.jpg),train
+sports_real/wikimedia_89e84d4ec5d1.jpg,real,sports,wikimedia_commons,Tennis players,,,public domain,Manuel Rosenberg (source: https://upload.wikimedia.org/wikipedia/commons/6/6d/Jose_Alonso_1927.jpg),train
+sports_real/wikimedia_d2702a25f478.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/3b/Michael_Kawooya.jpg),train
+sports_real/wikimedia_6b28d41aa8df.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9a/Michael_Kawooya2.jpg),train
+sports_real/wikimedia_8bb90d6871aa.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/6/62/Oliver_Fanshawe_at_the_2024_Queensland_Tennis_Awards.jpg),train
+sports_real/wikimedia_0092131ec8ac.jpg,real,sports,wikimedia_commons,Tennis players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9f/Practicing_tennis_outdoors_2021_cloudy_day_Apartment_Building_at_2225_N_Street.jpg),train
+sports_real/wikimedia_265c445e4a7d.jpg,real,sports,wikimedia_commons,Sprinters,,,public domain,Le Miroir des sports (source: https://upload.wikimedia.org/wikipedia/commons/b/b1/1888%2C_premier_d%C3%A9part_d%27une_course_de_sprint_%27%C3%A0_l%27am%C3%A9ricaine%27.jpg),val
+sports_real/wikimedia_bee4651e9b7c.jpg,real,sports,wikimedia_commons,Sprinters,,,public domain,"<a href=""//commons.wikimedia.org/wiki/User:Miaow_Miaow"" title=""User:Miaow Miaow"">User:Miaow Miaow</a> (source: https://upload.wikimedia.org/wikipedia/commons/b/b3/200mW_at_Josef_Odlozil_Memorial_in_Prague_14June2010_064.jpg)",val
+sports_real/wikimedia_c7b252e893a2.jpg,real,sports,wikimedia_commons,Sprinters,,,public domain,"<a href=""//commons.wikimedia.org/wiki/User:Miaow_Miaow"" title=""User:Miaow Miaow"">User:Miaow Miaow</a> (source: https://upload.wikimedia.org/wikipedia/commons/0/03/200mW_at_Josef_Odlozil_Memorial_in_Prague_14June2010_065.jpg)",val
+sports_real/wikimedia_60e0801f6780.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/a/ac/ABDELMALICK_LAHOULOU_3e_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val
+sports_real/wikimedia_2dc114c24c39.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/5/59/ABDELMALICK_LAHOULOU_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val
+sports_real/wikimedia_15cc0218c0b1.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/e/e7/BIENVENU_W._SAWADOGO_triste_a_la_finale.jpg),val
+sports_real/wikimedia_9a350eb8333e.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/5/58/ELMEHDI_DEMOCRATI_7e_%C3%A0_la_finale_du_400_m%C3%A8tres_haies.jpg),val
+sports_real/wikimedia_8c463e524662.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/e/e7/ELMEHDI_DEMOCRATI_du_400_m%C3%A8tres_haies.jpg),val
+sports_real/wikimedia_7bf31538a488.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/9/9a/Erriyon_Knighton_%28USA%29_2022.jpg),val
+sports_real/wikimedia_5f7422cda209.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/b/b6/Erriyon_Knighton_%28cropped%29_Eugene_2022.jpg),val
+sports_real/wikimedia_5a172280055f.jpg,real,sports,wikimedia_commons,Sprinters,,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/3/33/Ethel_Smith_Fanny_Rosenfeld_1928_Olympics.jpg)",val
+sports_real/wikimedia_9d5ec3137de9.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/d/d8/Healthy-person-woman-sport_%2824242974791%29.jpg),val
+sports_real/wikimedia_aeb7fb242dae.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/22/Image_from_page_318_of_%22Greek_athletic_sports_and_festivals%22_%281910%29.jpg),val
+sports_real/wikimedia_c612b5918a34.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/a/a2/LINDUKHLE_GORA_sud_africain_finaliste.jpg),val
+sports_real/wikimedia_61663412b8fc.jpg,real,sports,wikimedia_commons,Sprinters,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/34/SHIRLEY_NEKHUBUI_400_METRE_FEMME_FINALE.jpg),val
+sports_real/wikimedia_2e42b86da6cf.jpg,real,sports,wikimedia_commons,Swimmers,,,public domain,"<div class=""fn value"">
 Unknown photographer<span style=""display: none;"">Unknown photographer</span></div> (source: https://upload.wikimedia.org/wikipedia/commons/c/ca/Alki_Beach_swimming_beach_and_bathhouse%2C_West_Seattle%2C_probably_between_1908_and_1930_%28SEATTLE_1994%29.jpg)",train
-sports_real/wikimedia_b014d85f272c.jpg,real,sports,wikimedia_commons,Swimmers,,public domain,Unidentified (source: https://upload.wikimedia.org/wikipedia/commons/7/7b/Five_men_sitting_on_a_log_at_Bugge_Beach%2C_Ketchikan%2C_Alaska%2C_July_27%2C_1930_%28AL%2BCA_7187%29.jpg),train
-sports_real/wikimedia_58e997b894f3.jpg,real,sports,wikimedia_commons,Swimmers,,public domain,Unidentified (source: https://upload.wikimedia.org/wikipedia/commons/2/20/Group_of_people_at_Bugge_Beach%2C_Ketchikan%2C_Alaska%2C_July_27%2C_1930_%28AL%2BCA_7188%29.jpg),train
-sports_real/wikimedia_0d44fbcc6cb4.jpg,real,sports,wikimedia_commons,Swimmers,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/2f/Jack_Kelly.jpg),train
-sports_real/wikimedia_58621b40084b.jpg,real,sports,wikimedia_commons,Swimmers,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/3d/Nadadora_de_%C3%A1guas_abertas_em_Fernando_de_Noronha.jpg),train
-sports_real/wikimedia_c0943c70ea50.jpg,real,sports,wikimedia_commons,Swimmers,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/8/83/Nadadores_em_%C3%A1guas_abertas.jpg),train
-sports_real/wikimedia_1efbbc60a8a7.jpg,real,sports,wikimedia_commons,Volleyball players,,public domain,Stanley Scott Collection (source: https://upload.wikimedia.org/wikipedia/commons/8/85/024_Scott_playing_volleyball_-_USACE-p15141coll5-9519.jpeg),val
-sports_real/wikimedia_534b0767e85a.jpg,real,sports,wikimedia_commons,Volleyball players,,public domain,Stanley Scott Collection (source: https://upload.wikimedia.org/wikipedia/commons/a/ad/026_Scott_playing_volleyball_-_USACE-p15141coll5-9405.jpeg),val
-sports_real/wikimedia_990a6262f9ca.jpg,real,sports,wikimedia_commons,Volleyball players,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/40927340@N03"">Marines</a> from Arlington, VA, United States (source: https://upload.wikimedia.org/wikipedia/commons/7/7e/At_Your_Service_%286922190385%29.jpg)",val
-sports_real/wikimedia_f01b3346a23c.jpg,real,sports,wikimedia_commons,Volleyball players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/7/7a/Costa_Rica_Langosta_Beach_near_Tamarindo_0208.jpg),val
-sports_real/wikimedia_774468b4ff9e.jpg,real,sports,wikimedia_commons,Volleyball players,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/0/07/Early_1900s_image_of_gymnasium_volleyball.jpg)",val
-sports_real/wikimedia_aa8b16c6b857.jpg,real,sports,wikimedia_commons,Volleyball players,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/b/bc/Equipo_de_Volleyball_Femenino_de_Quezaltepeque.jpg),val
-sports_real/wikimedia_77ed54ff3890.jpg,real,sports,wikimedia_commons,Cricketers,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/8/80/Amy-hudson1948-crop.jpg)",val
-sports_real/wikimedia_57d1828cedd5.jpg,real,sports,wikimedia_commons,Cricketers,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/0/03/Benalla_Distric_Cricket_players_practise.jpg),val
-sports_real/wikimedia_61bf5c53d52f.jpg,real,sports,wikimedia_commons,Cricketers,,public domain,"unknown employee of ""Sports and General"" photography agency (source: https://upload.wikimedia.org/wikipedia/commons/c/cf/Dar_Lyon_and_Tom_Lowry.jpg)",val
-sports_real/wikimedia_c7f2f54d0623.jpg,real,sports,wikimedia_commons,Cricketers,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/9364837@N06"">U.S. Department of State</a> from United States (source: https://upload.wikimedia.org/wikipedia/commons/f/fe/Deputy_Secretary_Verma_Hosts_Cricket_Event_%2853788984088%29.jpg)",val
-sports_real/wikimedia_8b354b91fc05.jpg,real,sports,wikimedia_commons,Cricketers,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/9364837@N06"">U.S. Department of State</a> from United States (source: https://upload.wikimedia.org/wikipedia/commons/d/d9/Deputy_Secretary_Verma_Hosts_Cricket_Event_-_53787828247.jpg)",val
-sports_real/wikimedia_c507c5e93c37.png,real,sports,wikimedia_commons,Cricketers,,public domain,Cobcroft Photo (Wellington) (source: https://upload.wikimedia.org/wikipedia/commons/4/41/Jack_Mahony_of_Wellington_FL_29_1_1910.png),val
-sports_fake/synthetic_1000.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1001.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,test
-sports_fake/synthetic_1002.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,test
-sports_fake/synthetic_1003.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1004.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1005.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1006.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1007.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1008.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1009.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,test
-sports_fake/synthetic_1010.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1011.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,test
-sports_fake/synthetic_1012.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1013.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,test
-sports_fake/synthetic_1014.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1015.png,fake,sports,local-diffusion,,mid,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1016.png,fake,sports,local-diffusion,,wide,"N/A (generated, no real subject)",,val
-sports_fake/synthetic_1017.png,fake,sports,local-diffusion,,wide,"N/A (generated, no real subject)",,val
-sports_fake/synthetic_1018.png,fake,sports,local-diffusion,,wide,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1019.png,fake,sports,local-diffusion,,wide,"N/A (generated, no real subject)",,val
-sports_fake/synthetic_1020.png,fake,sports,local-diffusion,,wide,"N/A (generated, no real subject)",,val
-sports_fake/synthetic_1021.png,fake,sports,local-diffusion,,wide,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1022.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,train
-sports_fake/synthetic_1023.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,test
-sports_fake/synthetic_1024.png,fake,sports,local-diffusion,,close-up,"N/A (generated, no real subject)",,test
+sports_real/wikimedia_b014d85f272c.jpg,real,sports,wikimedia_commons,Swimmers,,,public domain,Unidentified (source: https://upload.wikimedia.org/wikipedia/commons/7/7b/Five_men_sitting_on_a_log_at_Bugge_Beach%2C_Ketchikan%2C_Alaska%2C_July_27%2C_1930_%28AL%2BCA_7187%29.jpg),train
+sports_real/wikimedia_58e997b894f3.jpg,real,sports,wikimedia_commons,Swimmers,,,public domain,Unidentified (source: https://upload.wikimedia.org/wikipedia/commons/2/20/Group_of_people_at_Bugge_Beach%2C_Ketchikan%2C_Alaska%2C_July_27%2C_1930_%28AL%2BCA_7188%29.jpg),train
+sports_real/wikimedia_0d44fbcc6cb4.jpg,real,sports,wikimedia_commons,Swimmers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/2/2f/Jack_Kelly.jpg),train
+sports_real/wikimedia_58621b40084b.jpg,real,sports,wikimedia_commons,Swimmers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/3/3d/Nadadora_de_%C3%A1guas_abertas_em_Fernando_de_Noronha.jpg),train
+sports_real/wikimedia_c0943c70ea50.jpg,real,sports,wikimedia_commons,Swimmers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/8/83/Nadadores_em_%C3%A1guas_abertas.jpg),train
+sports_real/wikimedia_1efbbc60a8a7.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,Stanley Scott Collection (source: https://upload.wikimedia.org/wikipedia/commons/8/85/024_Scott_playing_volleyball_-_USACE-p15141coll5-9519.jpeg),val
+sports_real/wikimedia_534b0767e85a.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,Stanley Scott Collection (source: https://upload.wikimedia.org/wikipedia/commons/a/ad/026_Scott_playing_volleyball_-_USACE-p15141coll5-9405.jpeg),val
+sports_real/wikimedia_990a6262f9ca.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/40927340@N03"">Marines</a> from Arlington, VA, United States (source: https://upload.wikimedia.org/wikipedia/commons/7/7e/At_Your_Service_%286922190385%29.jpg)",val
+sports_real/wikimedia_f01b3346a23c.jpg,real,sports,wikimedia_commons,Volleyball players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/7/7a/Costa_Rica_Langosta_Beach_near_Tamarindo_0208.jpg),val
+sports_real/wikimedia_774468b4ff9e.jpg,real,sports,wikimedia_commons,Volleyball players,,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/0/07/Early_1900s_image_of_gymnasium_volleyball.jpg)",val
+sports_real/wikimedia_aa8b16c6b857.jpg,real,sports,wikimedia_commons,Volleyball players,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/b/bc/Equipo_de_Volleyball_Femenino_de_Quezaltepeque.jpg),val
+sports_real/wikimedia_77ed54ff3890.jpg,real,sports,wikimedia_commons,Cricketers,,,public domain,"Unknown author<span style=""display: none;"">Unknown author</span> (source: https://upload.wikimedia.org/wikipedia/commons/8/80/Amy-hudson1948-crop.jpg)",val
+sports_real/wikimedia_57d1828cedd5.jpg,real,sports,wikimedia_commons,Cricketers,,,cc0,None required (CC0) (source: https://upload.wikimedia.org/wikipedia/commons/0/03/Benalla_Distric_Cricket_players_practise.jpg),val
+sports_real/wikimedia_61bf5c53d52f.jpg,real,sports,wikimedia_commons,Cricketers,,,public domain,"unknown employee of ""Sports and General"" photography agency (source: https://upload.wikimedia.org/wikipedia/commons/c/cf/Dar_Lyon_and_Tom_Lowry.jpg)",val
+sports_real/wikimedia_c7f2f54d0623.jpg,real,sports,wikimedia_commons,Cricketers,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/9364837@N06"">U.S. Department of State</a> from United States (source: https://upload.wikimedia.org/wikipedia/commons/f/fe/Deputy_Secretary_Verma_Hosts_Cricket_Event_%2853788984088%29.jpg)",val
+sports_real/wikimedia_8b354b91fc05.jpg,real,sports,wikimedia_commons,Cricketers,,,public domain,"<a rel=""nofollow"" class=""external text"" href=""https://www.flickr.com/people/9364837@N06"">U.S. Department of State</a> from United States (source: https://upload.wikimedia.org/wikipedia/commons/d/d9/Deputy_Secretary_Verma_Hosts_Cricket_Event_-_53787828247.jpg)",val
+sports_real/wikimedia_c507c5e93c37.png,real,sports,wikimedia_commons,Cricketers,,,public domain,Cobcroft Photo (Wellington) (source: https://upload.wikimedia.org/wikipedia/commons/4/41/Jack_Mahony_of_Wellington_FL_29_1_1910.png),val
+sports_fake/synthetic_1000.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1001.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test
+sports_fake/synthetic_1002.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test
+sports_fake/synthetic_1003.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1004.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1005.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1006.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1007.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1008.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1009.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,test
+sports_fake/synthetic_1010.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1011.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,test
+sports_fake/synthetic_1012.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1013.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,test
+sports_fake/synthetic_1014.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1015.png,fake,sports,local-diffusion,,mid,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1016.png,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val
+sports_fake/synthetic_1017.png,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val
+sports_fake/synthetic_1018.png,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1019.png,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val
+sports_fake/synthetic_1020.png,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,val
+sports_fake/synthetic_1021.png,fake,sports,local-diffusion,,wide,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1022.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,train
+sports_fake/synthetic_1023.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test
+sports_fake/synthetic_1024.png,fake,sports,local-diffusion,,close-up,segmind/tiny-sd,"N/A (generated, no real subject)",,test

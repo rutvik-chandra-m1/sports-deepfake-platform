@@ -1,16 +1,29 @@
 """
-Pulls a pilot-sized, balanced subset of Parveshiiii/AI-vs-Real (MIT
-licensed, not gated, 14k real-vs-AI-generated images) as the R2 dataset's
-general backbone -- gets a real, working evaluation baseline (R3) quickly
-without hours of scraping/generation, before the smaller sports-specific
-supplement (fetch_wikimedia_sports.py + generate_synthetic.py) adds
-domain-specific coverage on top.
+Pulls a pilot-sized, balanced subset of a public real-vs-AI-generated image
+dataset as the R2 dataset's general backbone -- giving R3 a real evaluation
+baseline without hours of scraping/generation, before the smaller
+sports-specific supplement (fetch_wikimedia_sports.py +
+generate_synthetic.py) adds domain-specific coverage on top.
 
-Uses HF `datasets` streaming mode so we only transfer as many examples as
-requested, not the full ~2GB dataset.
+Uses HF `datasets` streaming mode so only the requested number of examples
+is transferred, not the whole dataset.
 
-Schema: {"image": PIL.Image, "binary_label": int} where 0 = AI-generated,
-1 = real (per the dataset card).
+DEFAULT SOURCE: ComplexDataLab/OpenFake (a published 2025 research
+benchmark). Chosen after the original pick, Parveshiiii/AI-vs-Real, was
+withdrawn: measured directly, every one of its "real" images was exactly
+178x218 and every "fake" exactly 1024x1024, so class and source were
+perfectly correlated and a width threshold alone scored ROC-AUC 1.0000. See
+docs/dataset.md. OpenFake's classes also differ in resolution (cameras
+shoot bigger than generators emit) but every image is above the 384px
+normalization target, so normalize_dataset.py only ever downsamples and no
+single class picks up upscaling artefacts.
+
+ALWAYS run probe_hf_dataset.py on a candidate before adopting it here, and
+audit_dataset.py after downloading.
+
+Schema (OpenFake): {"image": PIL.Image, "label": "real"|"fake",
+"model": str, "prompt": str, ...}. The generator name is captured into the
+manifest so generator diversity can be reported rather than assumed.
 
 Usage:
     python fetch_hf_backbone.py --per-class 250 --out ../../datasets/backbone
@@ -19,19 +32,42 @@ Usage:
 import argparse
 import csv
 import logging
+from collections import Counter
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-DATASET_ID = "Parveshiiii/AI-vs-Real"
-LABEL_TO_CLASS = {0: "fake", 1: "real"}
+DEFAULT_DATASET_ID = "ComplexDataLab/OpenFake"
+DEFAULT_CONFIG = "core"
+DEFAULT_LABEL_KEY = "label"
+
+# Maps whatever a dataset calls its classes onto this project's vocabulary.
+# Covers integer-coded and string-coded label columns alike.
+LABEL_TO_CLASS = {
+    "real": "real", "fake": "fake",
+    "Real": "real", "Fake": "fake",
+    0: "fake", 1: "real",
+}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--per-class", type=int, default=250)
     parser.add_argument("--out", type=str, default="../../datasets/backbone")
+    parser.add_argument("--dataset", type=str, default=DEFAULT_DATASET_ID)
+    parser.add_argument("--config", type=str, default=DEFAULT_CONFIG)
+    parser.add_argument("--label-key", type=str, default=DEFAULT_LABEL_KEY)
+    parser.add_argument("--seed", type=int, default=42, help="shuffle seed (reproducible sampling)")
+    parser.add_argument(
+        "--shuffle-buffer", type=int, default=2000,
+        help="reservoir size for streaming shuffle; larger = more diverse, more startup latency",
+    )
+    parser.add_argument(
+        "--min-dimension", type=int, default=384,
+        help="skip images whose smaller side is below this; they would need upscaling at "
+             "normalization time, which adds interpolation artefacts to one class only",
+    )
     args = parser.parse_args()
 
     from datasets import load_dataset
@@ -40,23 +76,35 @@ def main() -> None:
     (out_dir / "real").mkdir(parents=True, exist_ok=True)
     (out_dir / "fake").mkdir(parents=True, exist_ok=True)
 
-    logger.info("Opening %s in streaming mode (no full download)...", DATASET_ID)
-    stream = load_dataset(DATASET_ID, split="train", streaming=True)
+    logger.info("Opening %s (config=%s) in streaming mode (no full download)...", args.dataset, args.config)
+    stream = load_dataset(args.dataset, args.config, split="train", streaming=True)
+
+    # Shuffle the stream. Without this the sample is badly unrepresentative:
+    # the underlying parquet is class-sorted (an unshuffled run drew every
+    # "real" from indices 0-249 and every "fake" from a single contiguous
+    # block at 4000-4249), so a whole class could come from one generator or
+    # one source batch. shuffle() fills a reservoir buffer and draws from it,
+    # which costs some startup latency but makes the sample actually diverse.
+    stream = stream.shuffle(seed=args.seed, buffer_size=args.shuffle_buffer)
 
     counts = {"real": 0, "fake": 0}
     manifest_rows = []
-    target_total = args.per_class * 2
+    skipped_too_small = 0
+    generators = Counter()
 
     for i, example in enumerate(stream):
         if counts["real"] >= args.per_class and counts["fake"] >= args.per_class:
             break
 
-        label = example.get("binary_label")
+        label = example.get(args.label_key)
         cls = LABEL_TO_CLASS.get(label)
         if cls is None or counts[cls] >= args.per_class:
             continue
 
         image = example["image"]
+        if min(image.size) < args.min_dimension:
+            skipped_too_small += 1
+            continue
         if image.mode != "RGB":
             image = image.convert("RGB")
 
@@ -64,13 +112,20 @@ def main() -> None:
         dest = out_dir / cls / filename
         image.save(dest, "JPEG", quality=92)
 
+        # Which generator produced a fake (where the dataset records it) --
+        # kept so generator diversity can be reported rather than assumed.
+        generator = example.get("model") or ""
+        if cls == "fake" and generator:
+            generators[generator] += 1
+
         counts[cls] += 1
         manifest_rows.append(
             {
                 "filename": filename,
                 "class": cls,
-                "source": "hf:" + DATASET_ID,
+                "source": f"hf:{args.dataset}",
                 "source_index": i,
+                "generator": generator,
                 "width": image.width,
                 "height": image.height,
             }
@@ -80,7 +135,10 @@ def main() -> None:
 
     manifest_path = out_dir / "manifest.csv"
     with manifest_path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["filename", "class", "source", "source_index", "width", "height"])
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["filename", "class", "source", "source_index", "generator", "width", "height"],
+        )
         writer.writeheader()
         writer.writerows(manifest_rows)
 
@@ -88,6 +146,15 @@ def main() -> None:
         "Done: real=%d fake=%d written under %s (manifest: %s)",
         counts["real"], counts["fake"], out_dir, manifest_path,
     )
+    if skipped_too_small:
+        logger.info(
+            "Skipped %d image(s) with a side below %dpx (would need upscaling at normalization).",
+            skipped_too_small, args.min_dimension,
+        )
+    if generators:
+        logger.info("Generator mix across fakes (%d distinct):", len(generators))
+        for name, count in generators.most_common():
+            logger.info("    %-40s %d", name, count)
     # Dropping the reference (rather than letting it go out of scope at
     # process exit) avoids a benign-but-noisy crash trace on Windows: the
     # streaming iterator's background prefetch thread otherwise sometimes

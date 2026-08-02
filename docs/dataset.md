@@ -1,143 +1,200 @@
 # Dataset Card
 
-> R2 pilot dataset (2026-08-01). This is a **pilot-scale** dataset (~150-300 images/class,
-> per an explicit scope decision — see `docs/milestones.md`), meant to get the R3 evaluation
-> harness and R4 calibration genuinely working end-to-end on real data. It is not the ≥2,000
-> image/class target the original roadmap described for a final submission — scaling up is a
-> documented follow-up (re-run the same scripts with higher `--per-class`/`--n`/`--per-category`
-> values), not a rebuild.
+> R2 pilot dataset (built 2026-08-01, rebuilt 2026-08-02 after the confound audit below).
+> **Pilot scale by explicit scope decision** — meant to get the R3 evaluation harness and R4
+> calibration genuinely working on real data, not to be a final-submission-scale corpus.
+> Scaling up is a documented follow-up (re-run the same scripts with larger arguments), not a
+> rebuild.
 
-## Composition
+**Use `datasets/manifest_normalized.csv` for all evaluation and training.** The unnormalized
+`manifest.csv` is retained only for provenance.
 
-Three sources, merged by `ml/data/build_manifest.py` into `datasets/manifest.csv`:
+## Composition (final, post-normalization)
 
 | Source | Class | Domain | Count | License |
 |---|---|---|---:|---|
-| [`Parveshiiii/AI-vs-Real`](https://huggingface.co/datasets/Parveshiiii/AI-vs-Real) (HF Hub) | real | general | 250 | MIT |
-| [`Parveshiiii/AI-vs-Real`](https://huggingface.co/datasets/Parveshiiii/AI-vs-Real) (HF Hub) | fake | general | 250 | MIT |
-| Wikimedia Commons (`ml/data/fetch_wikimedia_sports.py`) | real | sports | 50 | Per-image: 33 public domain, 17 CC0 (see `datasets/sports_real/attribution.csv`) |
-| `segmind/tiny-sd` local generation (`ml/data/generate_synthetic.py`) | fake | sports | 25 | creativeml-openrail-m (model license) — wholly synthetic images, no real subject |
+| [`ComplexDataLab/OpenFake`](https://huggingface.co/datasets/ComplexDataLab/OpenFake) (`core`) | real | general | 218 | See dataset card |
+| [`ComplexDataLab/OpenFake`](https://huggingface.co/datasets/ComplexDataLab/OpenFake) (`core`) | fake | general | 221 | See dataset card |
+| Wikimedia Commons (`ml/data/fetch_wikimedia_sports.py`) | real | sports | 40 | Per-image: public domain / CC0 only, see `datasets/sports_real/attribution.csv` |
+| `segmind/tiny-sd` local generation (`ml/data/generate_synthetic.py`) | fake | sports | 25 | creativeml-openrail-m (model); images wholly synthetic, no real subject |
 
-**Total: 575 images.** Final train/val/test split (from the actual `build_manifest.py` run, hash-based per the grouping rules below, so re-running reproduces it exactly):
+**Total: 504 images** (575 fetched, 71 rejected by the normalization filters below).
 
 | Split | real | fake | total |
 |---|---:|---:|---:|
-| train | 177 | 186 | 363 |
-| val | 84 | 43 | 127 |
-| test | 39 | 46 | 85 |
+| train | 155 | 163 | 318 |
+| val | 65 | 48 | 113 |
+| test | 38 | 35 | 73 |
 
-The val/test real:fake ratio isn't perfectly even (e.g. val skews real-heavy, test skews fake-heavy) — an expected consequence of hash-based grouping with a small number of groups at pilot scale (7 Wikimedia categories, 22 synthetic prompts, 2 backbone classes), not a bug. Don't read too much into per-split class balance until R2 is scaled up.
+### Generator diversity
 
-**Real counts, not the requested per-category targets — read before assuming a bug.**
-Wikimedia yielded 50 of a nominal 105 (15 × 7 categories): `Category:Football players` (8),
-`Category:Basketball players` (3), `Category:Tennis players` (6), `Category:Sprinters` (15),
-`Category:Swimmers` (6), `Category:Volleyball players` (6), `Category:Cricketers` (6).
-`Category:Track and field athletes` was tried first and returned zero — it turned out to contain
-only subcategories, no files directly attached; `Category:Sprinters` was substituted after
-verifying it has real file members. The shortfall in the other categories is the candidate-pool
-filter (license + format + minimum-size checks) removing more candidates than expected, not a
-script defect — every image that *did* pass is correctly attributed in `attribution.csv`.
+**51 distinct generators** across the 246 fake images that carry generator metadata — including
+DALL·E 3, Midjourney 6, FLUX (1-dev / 1.1-pro / schnell), Stable Diffusion 1.5/2.1/3.5/XL,
+Ideogram 3.0, Imagen 3.0, Grok-2-image, Qwen-Image, and Playground v2.5. Recorded per-image in
+the `generator` column so R3 can report per-generator performance rather than assuming uniform
+difficulty. This matters: a detector that only recognises one generator's fingerprint would look
+strong on a single-generator set and fail in the wild.
 
-**Model swap, also read before assuming a bug.** The original plan was `stabilityai/sd-turbo`.
-Checked against real Hugging Face file-size metadata (not the repo's aggregate "storage used"
-figure, which includes ONNX/OpenVINO/single-file exports never actually downloaded by
-`diffusers.from_pretrained`): sd-turbo's diffusers-format weights are ~2.5GB (fp16) to ~4.9GB
-(fp32) — projected at 5-9 hours on this machine's connection. `segmind/tiny-sd` — an
-architecturally distilled SD1.5 variant (fewer UNet blocks, not just lower precision) — is ~1GB;
-the actual download took ~5 minutes (this connection's throughput varies a lot run to run, see
-`docs/installation.md`), far under the earlier ~2h projection. Swapped before starting any bulk
-generation.
+The 25 sports fakes are the exception — all from `segmind/tiny-sd`, since they were generated
+locally. Treat any sports-domain result as generator-specific.
 
-Two other things hit during setup, neither a data-quality problem:
-- `diffusers==0.35.2`'s `AutoPipelineForText2Image` failed to import at all under
-  `transformers==5.14.1` (eagerly imports its whole pipeline registry, including an unrelated
-  HunyuanDiT pipeline that references a class transformers 5.x removed) — worked around by
-  importing `StableDiffusionPipeline` directly in `ml/data/generate_synthetic.py`, which needs no
-  auto-detection since the model architecture was already known.
-- `segmind/tiny-sd`'s `unet/` and `vae/` components ship only as legacy pickle (`.bin`) weights,
-  not `.safetensors` (unlike `text_encoder/`) — `diffusers` logged "Defaulting to unsafe
-  serialization" and loaded them via `torch.load`'s pickle path. Pickle deserialization from an
-  untrusted source is a real code-execution risk in general; accepted here because this is
-  Segmind's own official repo (a known AI company, not a third-party re-upload) and this is a
-  one-time local generation script, not something that runs against untrusted input. Worth
-  revisiting if this model is ever loaded in a context with a weaker trust boundary.
+---
 
-Measured generation cost: 25 images averaged 226.6s/image (steps=20, guidance_scale=7.5, 512x512,
-CPU-only on an Intel i7-8665U) — about 94 minutes total for the batch, after a one-time ~5 min
-model load. Scaling this supplement up later costs roughly 3.8 minutes of CPU time per additional
-image, not counting the (now-cached) model download.
+## ⚠️ Confound audit — read this before trusting any metric
 
-**Why this split:** the general backbone (`Parveshiiii/AI-vs-Real`) gets real evaluation numbers
-fast with zero generation/scraping time. The sports-specific supplement directly targets the gap
-flagged in the original engineering review — the platform's DL detector is trained on face
-imagery, not the sports action/crowd/broadcast content this project actually targets — so R3's
-evaluation harness can report accuracy separately for `domain=general` vs `domain=sports` and
-make that mismatch visible with numbers instead of a documented guess.
+**The first build of this dataset was perfectly separable without looking at a single pixel.**
+
+`ml/data/audit_dataset.py` fits a classifier on *container properties only* — width, height,
+aspect ratio, squareness, file format — deliberately excluding all image content. On a sound
+dataset that should score ~0.50 ROC-AUC (chance). The first build scored **1.0000**: a single
+threshold (`width > 640`) classified the general subset perfectly.
+
+Going straight to evaluation would have produced a ~99%-accuracy report measuring **file
+dimensions, not AI-generation detection** — a number that looks like a triumph and means nothing.
+This is textbook shortcut learning (cf. Geirhos et al., *Shortcut Learning in Deep Neural
+Networks*, 2020), and it is invisible unless explicitly tested for.
+
+Inspecting images directly (not just counting them) surfaced label-quality problems no
+count-based check would catch: the Wikimedia pull included **1930s black-and-white newsprint
+scans** and a **line drawing of ancient Greek athletes from a 1910 book**, all labelled "real".
+Those are neither photographs nor AI-generated images.
+
+### The original backbone was withdrawn
+
+`Parveshiiii/AI-vs-Real` was the first choice. Measured directly, after downloading 700 images
+with shuffled sampling:
+
+| Class | Distinct sizes across 350 images | Size |
+|---|---:|---|
+| real | **1** | every image exactly 178×218 |
+| fake | **1** | every image exactly 1024×1024 |
+
+Completely disjoint. The "real" half is a thumbnail scrape, the "fake" half a generation dump —
+class and source perfectly correlated. **Not fixable by normalization**: equalizing sizes requires
+upscaling the reals 178→384, stamping interpolation artefacts onto exactly one class, trading one
+confound for another. (An earlier *unshuffled* pull from the same dataset returned reals at
+640×426 — a different region of the file entirely, so the dataset is internally heterogeneous too:
+any sample is unrepresentative in a way that depends on where you happen to read.)
+
+Replaced with **OpenFake**, a published 2025 research benchmark. Its classes also differ in
+resolution — cameras shoot bigger than generators emit — but **every image is above the 384px
+normalization target**, so normalization only ever downsamples and no single class picks up
+upscaling artefacts. That size gap is the realistic camera-vs-generator difference, not careless
+construction.
+
+`ml/data/probe_hf_dataset.py` now vets any candidate dataset **before** bulk download, and
+distinguishes "needs upscaling ⇒ unfixable" from "downsample-only ⇒ fixable by normalization".
+
+### The fix
+
+`ml/data/normalize_dataset.py` puts every image through one identical chain
+(RGB → centre-crop square → 384×384 LANCZOS → JPEG q90) and drops non-photographs. The target is
+deliberately *smaller than every source*: if it matched the 512×512 synthetics, those would pass
+through unresampled while real photos were downsampled, and the resampling artefact would become
+a new leak pointing the other way.
+
+Rejection filters (71 images dropped, all logged with reasons at run time):
+- **too small** — would need upscaling to reach 384
+- **effectively greyscale** — mean channel spread < 8 (B&W newsprint scans)
+- **not a photograph** — quantized-colour entropy < 4.0 bits (line art, diagrams)
+
+### Measured result
+
+| Tier | Before | After | Requirement |
+|---|---:|---:|---|
+| **Container** — ALL | 1.0000 | **0.5000** | ~0.50 |
+| **Container** — general | 1.0000 | **0.5000** | ~0.50 |
+| **Container** — sports | 1.0000 | **0.5000** | ~0.50 |
+| **Content-stats** — ALL | — | 0.5797 | baseline to beat |
+| **Content-stats** — general | 0.7751 | **0.6071** | baseline to beat |
+| **Content-stats** — sports | 0.8350 | 0.8350 | baseline to beat |
+| **Duplicate leakage** | untested | **0** | zero |
+
+Container features now carry exactly +0.0000 permutation importance — they are constant across
+classes, so there is nothing left to exploit. Full JSON in `reports/dataset_audit_normalized.json`.
+
+### How to read the three tiers
+
+They mean different things and must not be conflated:
+
+1. **Container** (dimensions, aspect, squareness, format) — carries zero information about whether
+   a scene was photographed or generated. Must be ~0.50. Higher = dataset defect to fix, not a
+   result.
+2. **Content statistics** (saturation, brightness, compressibility) — generated imagery genuinely
+   *does* skew more saturated, more evenly exposed and smoother. Real but very shallow signal, so
+   this is **the trivial baseline R3 must beat**. R3 should report detector performance against
+   this number, not against 0.50.
+3. **Near-duplicate leakage** (perceptual difference-hash, robust to resize/re-encode) — verifies
+   no image appears in both train and test, and no duplicate carries contradictory labels.
+
+### Cost of the fix, stated plainly
+
+Uniform downsampling and re-encoding **attenuates exactly the evidence `frequency_analysis.py`
+and `compression_analysis.py` rely on** — high-frequency generator fingerprints and JPEG
+compression history. Those two signals should be expected to underperform on this normalized set
+relative to native-resolution data. Accepted because the alternative — leaving a perfectly
+separable confound in place — makes every downstream number meaningless rather than merely
+weaker. Uniform preprocessing is standard for detection benchmarks, and images circulating in the
+real world have generally been resized and re-encoded anyway, so the normalized set is arguably
+closer to the deployment condition than raw generator output.
+
+---
 
 ## What "fake" means here — read before drawing conclusions
 
-This is a **wholly-AI-generated-image** dataset, matching the PPT's actual framing ("Detection
-of AI-Generated Sportsman Images") — not a deepfake/face-swap dataset. No image in the `fake`
-class depicts a real, identifiable athlete manipulated or reenacted. The sports-domain fake
-images are entirely fictional scenes generated by `segmind/tiny-sd` from generic prompts
-(e.g. "a soccer player kicking a ball on a grass field, photorealistic") — no real person, team,
-league, or venue is named in any prompt. Visually spot-checked (not just counted): generations
-include convincing close-up, mid-action, and wide-stadium shots across the prompt set — see
-`datasets/sports_fake/*.png`. The general-domain fake images (from the HF backbone)
-were not generated by this project and their exact provenance is whatever
-`Parveshiiii/AI-vs-Real`'s own construction process used (see that dataset's card).
+This is a **wholly-AI-generated-image** dataset, matching the PPT's actual framing ("Detection of
+AI-Generated Sportsman Images") — **not** a deepfake/face-swap dataset. No image in the `fake`
+class is a real, identifiable athlete manipulated or reenacted. The sports fakes are entirely
+fictional scenes from generic prompts (e.g. "a soccer player kicking a ball on a grass field,
+photorealistic") — no real person, team, league or venue named in any prompt. Visually
+spot-checked: generations include convincing close-up, mid-action and wide-stadium shots.
 
-**This means the trained/evaluated detector's real-world scope is bounded accordingly**: it is
-evidence about detecting wholly-synthetic sportsman imagery, not about detecting face-swapped or
-reenacted footage of real athletes (that would need consenting-subject data like the original
-FaceForensics++, which requires a registration/access-approval process this pass did not pursue
-— see `docs/models.md`).
+**The evaluated detector's scope is bounded accordingly**: this is evidence about detecting
+wholly-synthetic imagery, not about detecting face-swapped or reenacted footage of real athletes.
+That would need consenting-subject data such as FaceForensics++, which requires a
+registration/access-approval process this pass did not pursue.
 
 ## Licensing and attribution
 
-- **HF backbone**: MIT-licensed dataset, no per-image attribution required.
-- **Wikimedia Commons real photos**: every file's exact license (CC0, Public Domain, CC-BY, or
-  CC-BY-SA — no other license was accepted) and required attribution is recorded per-image in
-  `datasets/sports_real/attribution.csv`, generated at download time by
-  `ml/data/fetch_wikimedia_sports.py`. CC-BY/CC-BY-SA images require attribution to the listed
-  artist if this dataset or derived images are redistributed; CC0/PD images do not.
-- **Synthetic sports images**: no real subject, no attribution obligation. Generation prompt,
-  seed, and model are recorded per-image in `datasets/sports_fake/generation_manifest.csv` for
-  reproducibility.
+- **OpenFake backbone** — see the dataset's own card for terms and the provenance of its real and
+  generated halves. This project did not independently re-verify its construction.
+- **Wikimedia Commons sports photos** — only public-domain and CC0 images were accepted (the
+  fetcher also permits CC-BY/CC-BY-SA but none survived filtering). Per-image licence, source URL
+  and artist are recorded in `datasets/sports_real/attribution.csv`.
+- **Synthetic sports images** — no real subject, no attribution obligation. Prompt, seed and model
+  recorded per-image in `datasets/sports_fake/generation_manifest.csv` for reproducibility.
 
 ## Splits
 
-Train/val/test = 70/15/15, assigned deterministically by a hash of a **group key** rather than
-per-file, to avoid the leakage the roadmap flagged as a risk:
+Train/val/test = 70/15/15, assigned deterministically by hashing a **group key** rather than
+per-file, to avoid leakage:
 
-- Backbone images: grouped by filename (these are already independent, pre-shuffled dataset
-  entries, not a photoshoot burst — per-file grouping doesn't leak here).
-- Wikimedia images: grouped by Commons category (e.g. all `Category:Swimmers` photos land in the
-  same split), so the same photographer/event isn't split across train and test.
-- Synthetic images: grouped by prompt (all images generated from one prompt template — i.e. one
-  synthetic "scene" — land in the same split).
+- **Backbone** — grouped by filename (independent dataset entries, not a photoshoot burst).
+- **Wikimedia** — grouped by Commons category, so the same photographer/event can't straddle
+  train and test.
+- **Synthetic** — grouped by prompt, so all images of one synthetic "scene" stay together.
 
-Re-running `build_manifest.py` on the same source manifests reproduces the same split (the hash
-is a pure function of the group key, nothing is randomly sampled).
+Re-running `build_manifest.py` reproduces the same split exactly (pure function of the group key,
+nothing randomly sampled). Verified empirically: Tier-3 audit reports zero cross-split duplicates.
 
 ## Known limitations
 
-- **Pilot scale.** Numbers from R3 on this dataset are directionally useful, not a final
-  accuracy claim — expect wide confidence intervals at this sample size.
-- **Sports-domain fake images have no real photographic counterfactual** — there's no "the same
-  scene, but real" pair, so the fake/real distinction the detector learns for the sports subset
-  may partly reflect diffusion-model rendering artifacts (composition, hands, text-like blur)
-  rather than sports-specific manipulation cues. Worth an explicit ablation in R3.
-- **Wikimedia sports photos skew toward well-photographed professional/Olympic-level events** —
-  Commons' CC-licensed sports coverage is not a representative sample of all sports photography
-  (e.g. amateur/local sports, broadcast screenshots are underrepresented).
-- **General backbone provenance is inherited, not verified** — this project did not independently
-  confirm how `Parveshiiii/AI-vs-Real`'s images were sourced or generated; see that dataset's own
-  card for its methodology.
+- **Pilot scale.** The test split is 73 images. Confidence intervals will be wide; R3 numbers are
+  directional, not final accuracy claims.
+- **Sports subset is small (n=65) and single-generator.** All 25 sports fakes come from
+  `segmind/tiny-sd`, and its content-stats baseline is high (0.835 ± 0.131 — note the large
+  standard deviation at this size). Any sports-domain conclusion is weak and generator-specific.
+- **No real photographic counterfactual for the sports fakes** — there is no "same scene, but
+  real" pair, so the sports real/fake distinction may partly reflect diffusion rendering
+  characteristics rather than sports-specific cues. Worth an explicit ablation in R3.
+- **Wikimedia sports coverage skews** toward well-photographed professional/Olympic events;
+  amateur sport and broadcast screenshots are underrepresented.
+- **Backbone provenance is inherited, not verified** — see OpenFake's own card.
+- **Streaming shuffle is windowed.** `--shuffle-buffer` randomizes within a reservoir, not
+  globally, so on a class-sorted source it improves sample diversity but does not fully mix
+  classes.
 
 ## Reproducing
-
-Exact commands used to produce the numbers in this card:
 
 ```bash
 cd ml
@@ -145,16 +202,38 @@ python -m venv .venv && .venv\Scripts\Activate.ps1   # or source .venv/bin/activ
 pip install -r requirements.txt
 
 cd data
-python fetch_hf_backbone.py --per-class 250 --out ../../datasets/backbone
-python fetch_wikimedia_sports.py --per-category 15 --out ../../datasets/sports_real
-python generate_synthetic.py --n 25 --out ../../datasets/sports_fake
-python build_manifest.py --datasets-dir ../../datasets --out ../../datasets/manifest.csv
+# 1. Vet any candidate backbone BEFORE downloading it in bulk
+python probe_hf_dataset.py --dataset ComplexDataLab/OpenFake --config core --n 60
+
+# 2. Acquire
+python fetch_hf_backbone.py --per-class 250
+python fetch_wikimedia_sports.py --per-category 15
+python generate_synthetic.py --n 25       # slow on CPU: ~227s/image measured
+
+# 3. Merge, normalize, and verify the confound is gone
+python build_manifest.py
+python audit_dataset.py --json-out ../../reports/dataset_audit.json
+python normalize_dataset.py
+python audit_dataset.py --manifest manifest_normalized.csv \
+                        --json-out ../../reports/dataset_audit_normalized.json
 ```
 
-**Scaling up** (documented follow-up, not a rebuild): re-run any of the three fetch/generate
-scripts with a higher `--per-class` / `--per-category` / `--n`, then re-run `build_manifest.py`.
-Existing files aren't deleted, so `fetch_hf_backbone.py` and `generate_synthetic.py` (which
-index/seed sequentially from 0 / `--seed-start`) will overwrite and extend in place; increase
-`--seed-start` for `generate_synthetic.py` to add new images without regenerating existing ones.
-`fetch_wikimedia_sports.py` re-fetches its whole category list each run (cheap — the API calls are
-fast, only the actual image downloads are slower), overwriting `attribution.csv`.
+**Scaling up**: raise `--per-class` / `--per-category` / `--n` and re-run. Increase
+`--seed-start` on `generate_synthetic.py` to add synthetic images without regenerating existing
+ones. Always re-run the audit afterwards — a larger sample can reintroduce confounds a smaller
+one didn't have.
+
+## Tooling notes
+
+Two dependency issues hit while building this, fixed rather than worked around:
+- `diffusers==0.35.2`'s `AutoPipelineForText2Image` fails to import under `transformers==5.14.1`
+  (it eagerly imports its whole pipeline registry, including a HunyuanDiT pipeline referencing a
+  class transformers 5.x removed). Fixed by importing `StableDiffusionPipeline` directly — no
+  auto-detection needed since the architecture is known.
+- `segmind/tiny-sd` ships its `unet/` and `vae/` as legacy pickle `.bin` weights, not
+  safetensors, so `diffusers` loads them via `torch.load`'s pickle path. Pickle deserialization
+  is a code-execution risk in general; accepted here because it is Segmind's own official repo and
+  this is a one-time local script, not a path exposed to untrusted input.
+
+Measured generation cost: **226.6s/image** (steps=20, guidance 7.5, 512×512, CPU-only on an Intel
+i7-8665U) — ~94 minutes for 25 images, after a one-time ~5 min model download.
