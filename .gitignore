@@ -44,6 +44,11 @@ reports/*
 # behind docs/dataset.md's confound claims. Per-analysis user reports
 # (Milestone 13/R13 output) stay ignored.
 !reports/dataset_audit*.json
+# Evaluation results are the project's core evidence -- tracked deliberately.
+!reports/evaluation/
+!reports/evaluation/*.json
+!reports/evaluation/*.csv
+!reports/evaluation/*.png
 
 # ===== AI Models (large binaries, fetched via download script) =====
 models/pretrained/*

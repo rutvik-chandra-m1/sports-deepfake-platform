@@ -2,14 +2,27 @@
 Runs the full analysis pipeline for a single Analysis record: load media ->
 extract frames -> DL detector + forensic analysis -> fuse -> persist.
 
-Designed to run as a FastAPI BackgroundTask, which executes *after* the
-request/response cycle -- so it opens its own DB session rather than reusing
-the request-scoped one from `get_db()`, which may already be closed.
+Two layers, deliberately separated:
+
+* `analyze_frames()` -- PURE detection. Takes frames, returns the fused
+  verdict + explanation. Knows nothing about the database, HTTP, or the
+  Analysis model. This is the layer the offline evaluation harness
+  (ml/eval/) calls to score the pipeline over a labelled dataset; welding
+  detection to persistence would have made measuring it impossible without
+  standing up a database and inventing fake records.
+* `run_analysis_pipeline()` -- the FastAPI BackgroundTask entrypoint. Loads
+  the record, calls `analyze_frames()`, persists the outcome, and owns all
+  the status/error bookkeeping.
+
+The background task executes *after* the request/response cycle, so it opens
+its own DB session rather than reusing the request-scoped one from
+`get_db()`, which may already be closed.
 """
 
 import json
 import logging
 import time
+from dataclasses import dataclass
 from datetime import datetime, timezone
 
 import cv2
@@ -31,8 +44,23 @@ from app.services.sports_intel import run_sports_intelligence
 logger = logging.getLogger(__name__)
 
 
+@dataclass
+class AnalysisOutcome:
+    """Everything `analyze_frames` produces, with no persistence concerns.
+
+    `breakdown` is the JSON-serializable per-signal detail (raw scores,
+    weights, availability, plus the rendered explanation) that the API
+    stores on `Analysis.detector_breakdown` and the evaluation harness
+    reads per-signal scores out of.
+    """
+
+    fusion: fusion_engine.FusionResult
+    report: explainability.ExplanationReport
+    breakdown: dict
+
+
 def _run_dl_detection(
-    frames_bgr: list, analysis_id: int
+    frames_bgr: list, analysis_id: int | None = None
 ) -> tuple[ImageDetectionResult | None, ForensicSignal]:
     """
     Single image -> one predict() call, no temporal signal (not applicable).
@@ -77,6 +105,40 @@ def _run_dl_detection(
     return dl_result, temporal_consistency_signal(video_result)
 
 
+def analyze_frames(frames_bgr: list, analysis_id: int | None = None) -> AnalysisOutcome:
+    """
+    The whole detection pipeline as a pure function: frames in, verdict out.
+
+    No database, no HTTP, no Analysis model -- so it can be called directly
+    by the offline evaluation harness over a labelled dataset, and by tests,
+    without any persistence scaffolding.
+
+    `analysis_id` is optional and used only to make log lines traceable back
+    to a record when this is called from the background task.
+
+    Raises fusion_engine.FusionError if no signal at all was applicable.
+    """
+    dl_result, temporal_signal = _run_dl_detection(frames_bgr, analysis_id)
+
+    forensic_signals = run_forensic_analysis(frames_bgr)
+    forensic_signals.append(temporal_signal)
+    sports_signals = run_sports_intelligence(frames_bgr)
+
+    result = fusion_engine.fuse(dl_result, forensic_signals, sports_signals)
+    report = explainability.generate_report(
+        result.detector_breakdown, result.verdict, result.risk_level
+    )
+
+    breakdown = dict(result.detector_breakdown)
+    breakdown["technical_summary"] = result.explanation
+    breakdown["explanation_report"] = report.render()
+    breakdown["headline"] = report.headline
+    breakdown["reasons"] = report.reasons
+    breakdown["notes"] = report.notes
+
+    return AnalysisOutcome(fusion=result, report=report, breakdown=breakdown)
+
+
 def run_analysis_pipeline(analysis_id: int) -> None:
     db = SessionLocal()
     try:
@@ -96,23 +158,8 @@ def run_analysis_pipeline(analysis_id: int) -> None:
             processed = process_media(record.file_path, record.media_type)
             frames_bgr = [f.image for f in processed.frames]
 
-            dl_result, temporal_signal = _run_dl_detection(frames_bgr, analysis_id)
-
-            forensic_signals = run_forensic_analysis(frames_bgr)
-            forensic_signals.append(temporal_signal)
-            sports_signals = run_sports_intelligence(frames_bgr)
-
-            result = fusion_engine.fuse(dl_result, forensic_signals, sports_signals)
-            report = explainability.generate_report(
-                result.detector_breakdown, result.verdict, result.risk_level
-            )
-
-            breakdown = dict(result.detector_breakdown)
-            breakdown["technical_summary"] = result.explanation
-            breakdown["explanation_report"] = report.render()
-            breakdown["headline"] = report.headline
-            breakdown["reasons"] = report.reasons
-            breakdown["notes"] = report.notes
+            outcome = analyze_frames(frames_bgr, analysis_id)
+            result, report, breakdown = outcome.fusion, outcome.report, outcome.breakdown
 
             record.verdict = result.verdict
             record.confidence_score = result.confidence_score

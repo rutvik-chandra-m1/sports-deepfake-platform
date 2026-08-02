@@ -14,7 +14,9 @@ ml/
 │   ├── build_manifest.py          # merges the three sources into datasets/manifest.csv with splits
 │   ├── audit_dataset.py           # confound audit -- RUN THIS BEFORE TRUSTING ANY METRIC
 │   └── normalize_dataset.py       # uniform transform chain + non-photograph filtering
-├── eval/                # R3: evaluation harness (not yet built)
+├── eval/                # R3: evaluation harness
+│   ├── run_inference.py           # scores the dataset with the REAL pipeline -- BACKEND venv
+│   └── evaluate.py                # metrics, ablations, plots -- ML venv
 └── train/               # R6: fine-tuning (not yet built)
 ```
 
@@ -64,6 +66,21 @@ would have produced a ~99%-accuracy report that measured *nothing but file dimen
 - **Tier 2, content statistics** (saturation, brightness, compressibility) — generated imagery
   genuinely *does* skew more saturated, more evenly exposed and smoother. This is real but
   extremely shallow signal, so it is the **trivial baseline R3 must beat**, not a defect.
+
+## Evaluating the pipeline (R3)
+
+Two venvs, because inference needs the backend's torch/opencv and metrics need scikit-learn:
+
+```bash
+cd eval
+../../backend/.venv/Scripts/python.exe run_inference.py     # ~0.4s/image warm
+../.venv/Scripts/python.exe evaluate.py --split test
+```
+
+`run_inference.py` calls the production `analyze_frames()` directly rather than reimplementing
+it, so the numbers describe the shipping system. Results: **`docs/evaluation.md`** — read that
+before drawing any conclusion about detection quality. Current headline is a negative result
+(test ROC-AUC 0.433, CI 0.301–0.579, below the 0.580 content-statistics baseline).
 
 `normalize_dataset.py` is the fix for Tier 1: every image goes through an identical chain
 (RGB → centre-crop square → 384×384 LANCZOS → JPEG q90), and non-photographs are dropped

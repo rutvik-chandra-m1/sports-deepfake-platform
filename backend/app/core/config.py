@@ -10,11 +10,35 @@ elsewhere in the codebase — add a field here instead.
 from functools import lru_cache
 from pathlib import Path
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # backend/app/core/config.py -> backend/
 BACKEND_DIR = Path(__file__).resolve().parent.parent.parent
 PROJECT_ROOT = BACKEND_DIR.parent
+
+_SQLITE_PREFIX = "sqlite:///"
+
+
+def _resolve_relative_path(value: str) -> str:
+    """Anchor a possibly-relative path to `backend/` rather than the current
+    working directory.
+
+    `.env` ships relative paths (`../models/pretrained`, `../uploads`, ...)
+    which Python otherwise resolves against CWD -- so where uploads, reports,
+    model weights and the database actually landed depended on which
+    directory the process was launched from. Running a script from `ml/eval/`
+    instead of `backend/` silently created a second `models/pretrained` tree
+    and re-downloaded ~330MB of weights into it.
+
+    BACKEND_DIR is the right anchor (not PROJECT_ROOT) because those `../`
+    prefixes are written relative to the documented working directory --
+    `cd backend && uvicorn app.main:app` -- so `../models/pretrained` is
+    meant to mean PROJECT_ROOT/models/pretrained, matching the absolute
+    defaults below.
+    """
+    path = Path(value)
+    return str(path if path.is_absolute() else (BACKEND_DIR / path).resolve())
 
 
 class Settings(BaseSettings):
@@ -105,6 +129,23 @@ class Settings(BaseSettings):
 
     # ----- Security -----
     secret_key: str = "change-me-in-production"
+
+    @field_validator("upload_dir", "reports_dir", "models_dir")
+    @classmethod
+    def _anchor_storage_dirs(cls, value: str) -> str:
+        return _resolve_relative_path(value)
+
+    @field_validator("database_url")
+    @classmethod
+    def _anchor_sqlite_path(cls, value: str) -> str:
+        """Same anchoring for the SQLite file. Non-SQLite URLs (Postgres etc.)
+        and `:memory:` are passed through untouched."""
+        if not value.startswith(_SQLITE_PREFIX):
+            return value
+        raw = value[len(_SQLITE_PREFIX):]
+        if not raw or raw.startswith(":memory:"):
+            return value
+        return _SQLITE_PREFIX + _resolve_relative_path(raw)
 
     @property
     def cors_origins_list(self) -> list[str]:
