@@ -72,6 +72,16 @@ class Analysis(Base):
     # detection just to produce human-readable reasons.
     detector_breakdown: Mapped[str | None] = mapped_column(Text, nullable=True)
 
+    # Provenance of the verdict (R11). A verification platform that cannot say
+    # WHICH model produced a stored verdict cannot be audited: retrain the
+    # probe and every historical result silently refers to a model that no
+    # longer exists. `fusion_method` records whether the learned calibration
+    # or the legacy weighted mean decided it -- previously only discoverable
+    # by parsing the detector_breakdown JSON blob.
+    model_version: Mapped[str | None] = mapped_column(String(128), nullable=True)
+    pipeline_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    fusion_method: Mapped[str | None] = mapped_column(String(32), nullable=True)
+
     processing_duration_ms: Mapped[int | None] = mapped_column(Integer, nullable=True)
 
     created_at: Mapped[datetime] = mapped_column(

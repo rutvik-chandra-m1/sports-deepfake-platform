@@ -19,11 +19,35 @@ cp .env.example .env
 
 ## 2. Backend
 
-> **Note (Milestone 9):** the `Analysis` table gained a new column
-> (`detector_breakdown`). Tables are created via `Base.metadata.create_all()`, which only
-> creates *missing* tables — it won't add columns to one that already exists. If you have a
-> `database/app.db` from before Milestone 9, delete it (`rm database/app.db`) and restart the
-> backend to let it recreate with the current schema.
+> **Schema changes (R11): never delete your database.** This project uses Alembic migrations.
+> An older version of this guide told you to `rm database/app.db` after a schema change, because
+> `Base.metadata.create_all()` only creates *missing tables* and will never add a column to an
+> existing one. That was data loss as documented procedure. To bring any database up to date:
+>
+> ```bash
+> cd backend
+> alembic upgrade head
+> ```
+>
+> **Migrating a database created before R11** (one that predates Alembic and so has no version
+> stamp): tell Alembic the baseline schema is already present, then upgrade.
+>
+> ```bash
+> cd backend
+> cp ../database/app.db ../database/app.db.backup    # always back up first
+> alembic stamp 5106d5905b68      # baseline == what create_all produced
+> alembic upgrade head
+> ```
+>
+> Verified on a real 7-row database: all rows preserved, new columns added.
+>
+> **After changing a model**, generate the matching migration — `tests/test_migrations.py` fails
+> if you forget:
+>
+> ```bash
+> alembic revision --autogenerate -m "what changed"
+> alembic upgrade head
+> ```
 
 ```bash
 cd backend

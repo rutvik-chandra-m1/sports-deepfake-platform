@@ -45,6 +45,21 @@ from app.services.sports_intel import run_sports_intelligence
 
 logger = logging.getLogger(__name__)
 
+# Bumped when the detector set or fusion strategy changes in a way that makes
+# old verdicts non-comparable to new ones.
+PIPELINE_VERSION = "r6-probe+r4-calibration"
+
+
+def _probe_version(breakdown: dict) -> str | None:
+    """Identify the trained model behind this verdict, from the probe signal's
+    own details. Returns None when the probe was unavailable."""
+    for signal in breakdown.get("forensic_signals", []):
+        if signal.get("name") == "trained_probe" and signal.get("applicable"):
+            details = signal.get("details") or {}
+            backbone = details.get("backbone") or "unknown-backbone"
+            return f"probe/{backbone}"
+    return None
+
 
 @dataclass
 class AnalysisOutcome:
@@ -179,6 +194,13 @@ def run_analysis_pipeline(analysis_id: int) -> None:
 
             outcome = analyze_frames(frames_bgr, analysis_id)
             result, report, breakdown = outcome.fusion, outcome.report, outcome.breakdown
+
+            # Verdict provenance (R11): record WHICH model and combiner
+            # produced this, so a stored verdict stays auditable after the
+            # probe is retrained or the fusion strategy changes.
+            record.model_version = _probe_version(breakdown)
+            record.pipeline_version = PIPELINE_VERSION
+            record.fusion_method = breakdown.get("fusion", {}).get("method")
 
             record.verdict = result.verdict
             record.confidence_score = result.confidence_score

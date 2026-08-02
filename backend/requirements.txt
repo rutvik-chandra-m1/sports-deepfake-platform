@@ -17,6 +17,11 @@ pydantic-settings==2.14.2
 python-dotenv==1.0.1
 
 # ===== Database =====
+# Alembic (R11): before this, schema changes meant deleting the database --
+# Base.metadata.create_all() only creates MISSING tables and will never add a
+# column to one that already exists, so docs literally instructed users to
+# `rm database/app.db`. That is data loss as documented procedure.
+alembic==1.18.5
 # Bumped from 2.0.35 (R1): 2.0.35 has no compiled wheel for Python 3.14
 # either (falls back to the slower pure-Python py3-none-any wheel). 2.0.51
 # is the latest 2.0.x patch with a compiled cp314 wheel -- same minor

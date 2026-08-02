@@ -53,7 +53,18 @@ def get_db() -> Session:
 
 
 def init_db() -> None:
-    """Create all tables that don't exist yet. Called once on app startup."""
+    """Create any missing tables. Called once on app startup.
+
+    NOT the schema-change mechanism -- `create_all` only ever creates MISSING
+    tables and will never add a column to an existing one. Alembic owns schema
+    evolution (R11):
+
+        cd backend && alembic upgrade head
+
+    This is kept because it makes a fresh database (and every test run) instant
+    without applying the full migration chain. `tests/test_migrations.py`
+    asserts the two produce identical schemas, so they cannot silently drift.
+    """
     # Import models here (not at module top-level) so they register on
     # Base.metadata before create_all runs, without causing circular imports.
     from app.db.base import Base

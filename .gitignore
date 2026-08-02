@@ -73,3 +73,8 @@ Thumbs.db
 
 # ===== Docker =====
 *.pid
+# Alembic scratch DBs from local migration testing
+backend/_alembic_baseline.db
+backend/_eval_scratch.db
+database/*.backup
+database/*.pre-alembic-backup
