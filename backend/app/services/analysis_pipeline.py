@@ -41,6 +41,7 @@ from app.services.detection import (
 )
 from app.services.detection.types import ForensicSignal, ImageDetectionResult
 from app.services.media_processing import MediaReadError, process_media
+from app.services.provenance import run_provenance_analysis
 from app.services.sports_intel import run_sports_intelligence
 
 logger = logging.getLogger(__name__)
@@ -122,7 +123,9 @@ def _run_dl_detection(
     return dl_result, temporal_consistency_signal(video_result)
 
 
-def analyze_frames(frames_bgr: list, analysis_id: int | None = None) -> AnalysisOutcome:
+def analyze_frames(
+    frames_bgr: list, analysis_id: int | None = None, file_path: str | None = None
+) -> AnalysisOutcome:
     """
     The whole detection pipeline as a pure function: frames in, verdict out.
 
@@ -132,6 +135,12 @@ def analyze_frames(frames_bgr: list, analysis_id: int | None = None) -> Analysis
 
     `analysis_id` is optional and used only to make log lines traceable back
     to a record when this is called from the background task.
+
+    `file_path` is optional and enables the R5 provenance checks (EXIF, C2PA).
+    Those read the FILE, because metadata lives in the container and is gone
+    the moment an image is decoded into a pixel array -- so frames alone
+    cannot carry it. Callers MUST have validated containment first. Omitting
+    it simply skips provenance rather than failing.
 
     Raises fusion_engine.FusionError if no signal at all was applicable.
     """
@@ -150,6 +159,11 @@ def analyze_frames(frames_bgr: list, analysis_id: int | None = None) -> Analysis
         logger.warning("Trained probe failed for analysis id=%s: %s", analysis_id, exc)
 
     sports_signals = run_sports_intelligence(frames_bgr)
+
+    # Provenance (R5). Appended to the forensic list so the fusion engine
+    # consumes it uniformly; its own weight pool is keyed by signal name.
+    if file_path:
+        forensic_signals.extend(run_provenance_analysis(file_path))
 
     result = fusion_engine.fuse(dl_result, forensic_signals, sports_signals)
     report = explainability.generate_report(
@@ -192,7 +206,7 @@ def run_analysis_pipeline(analysis_id: int) -> None:
             processed = process_media(safe_path, record.media_type)
             frames_bgr = [f.image for f in processed.frames]
 
-            outcome = analyze_frames(frames_bgr, analysis_id)
+            outcome = analyze_frames(frames_bgr, analysis_id, file_path=safe_path)
             result, report, breakdown = outcome.fusion, outcome.report, outcome.breakdown
 
             # Verdict provenance (R11): record WHICH model and combiner

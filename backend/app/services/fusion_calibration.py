@@ -88,6 +88,65 @@ def load_calibration() -> dict | None:
         return calibration
 
 
+# --------------------------------------------------------------------------
+# Provenance evidence (R5) -- applied as a log-odds adjustment ON TOP of the
+# calibrated probability, not as another fitted feature.
+#
+# WHY IT CANNOT BE A FITTED FEATURE: the calibration is fitted on this
+# project's dataset, and that dataset has no metadata -- normalisation strips
+# EXIF, and the source images largely arrived stripped already. There is
+# literally nothing to fit a coefficient against.
+#
+# WHY A LOG-ODDS SHIFT IS THE RIGHT SHAPE: adding to the logit is the
+# standard way to combine an independent piece of evidence with an existing
+# probability (it is Bayes' rule for log-likelihood ratios). It also behaves
+# sensibly at the extremes -- it cannot push a probability outside [0, 1],
+# and it moves a confident estimate less than an uncertain one.
+#
+# THESE MAGNITUDES ARE A DOCUMENTED DESIGN CHOICE, NOT FITTED VALUES. They
+# are deliberately bounded so provenance strongly influences but never
+# single-handedly dictates a verdict: +2.2 logits is about a 9x odds shift.
+# An explicit self-declaration ("this was made by Stable Diffusion") or a
+# cryptographically broken manifest is far stronger evidence than any pixel
+# heuristic here, which is why it outweighs them -- but a forged tag should
+# not be able to fully override the image itself.
+_PROVENANCE_LOGIT_ADJUSTMENTS = {
+    # Strong evidence FOR synthetic origin.
+    "provenance_ai_metadata": 2.2,
+    # Signed and intact -> toward authentic; failed validation -> toward
+    # tampered. Sign is chosen from the signal's own score, below.
+    "provenance_c2pa": 2.2,
+    # Camera EXIF is trivially forged, so only a small nudge.
+    "provenance_camera_metadata": 0.5,
+}
+
+# A signal is treated as evidence only when its score is decisive; mid-range
+# scores are inconclusive and contribute nothing.
+_PROVENANCE_HIGH = 0.65
+_PROVENANCE_LOW = 0.35
+
+
+def _provenance_adjustment(scores: dict[str, float]) -> tuple[float, dict]:
+    """Total log-odds shift from applicable provenance signals, plus detail."""
+    total = 0.0
+    applied: dict[str, float] = {}
+
+    for name, magnitude in _PROVENANCE_LOGIT_ADJUSTMENTS.items():
+        score = scores.get(name)
+        if score is None:
+            continue
+        if score >= _PROVENANCE_HIGH:
+            shift = +magnitude          # evidence of synthetic / tampering
+        elif score <= _PROVENANCE_LOW:
+            shift = -magnitude          # evidence of authentic provenance
+        else:
+            continue                    # inconclusive
+        total += shift
+        applied[name] = round(shift, 4)
+
+    return total, applied
+
+
 def apply_calibration(scores: dict[str, float]) -> tuple[float, float, dict] | None:
     """
     Applies the learned combiner to a name -> score mapping.
@@ -112,12 +171,25 @@ def apply_calibration(scores: dict[str, float]) -> tuple[float, float, dict] | N
         contributions[name] = round(contribution, 6)
         logit += contribution
 
+    calibrated_logit = logit
+
+    # Provenance is layered on AFTER the fitted model, because it is evidence
+    # of a different kind and could not be fitted (see the note above the
+    # adjustment table). Without this the checks ran, appeared in the
+    # breakdown with a weight, produced a reason line -- and changed the
+    # verdict by exactly nothing, which is worse than not having them.
+    provenance_shift, provenance_applied = _provenance_adjustment(scores)
+    logit += provenance_shift
+
     probability = 1.0 / (1.0 + math.exp(-logit))
     detail = {
         "method": "learned_calibration",
         "logit": round(logit, 6),
+        "calibrated_logit": round(calibrated_logit, 6),
         "contributions": contributions,
         "weights": dict(zip(calibration["features"], calibration["weights"], strict=False)),
         "operating_threshold": calibration["operating_threshold"],
+        "provenance_logit_shift": round(provenance_shift, 4),
+        "provenance_applied": provenance_applied,
     }
     return probability, calibration["operating_threshold"], detail

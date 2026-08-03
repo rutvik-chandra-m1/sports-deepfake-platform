@@ -1,5 +1,62 @@
 # AI Models
 
+## Metadata provenance & C2PA (R5)
+
+Closes the PPT objective *"integrate metadata provenance verification"*, which had **no
+implementation at all** before this. Unlike everything else on this page, these checks read the
+**file container**, not decoded pixels -- metadata is destroyed the instant an image is decoded to
+an array, which is why the pipeline passes a path rather than frames.
+
+| Signal | Fires when | Evidence |
+|---|---|---|
+| `provenance_ai_metadata` | IPTC `digitalSourceType=trainedAlgorithmicMedia`, or a generator named in EXIF `Software` / PNG text chunks | Strong, FOR synthetic |
+| `provenance_c2pa` | A C2PA manifest exists | Valid → FOR authenticity; **failed validation → strong evidence of tampering** |
+| `provenance_camera_metadata` | Camera Make/Model + capture fields present | Weak, FOR capture (EXIF is forgeable) |
+
+### The governing rule
+
+**Absence of metadata is never treated as evidence of manipulation.** Measured on this project's
+own dataset: **0 of 6 sampled genuine photographs carry any EXIF** — platforms, CDNs and dataset
+pipelines strip it routinely, and this project's own `normalize_dataset.py` strips it too. Scoring
+"no EXIF" as suspicious would flag ordinary real photographs, which for a tool that publicly
+accuses people of faking images is the worst available failure mode. Every check therefore reports
+`applicable=False` unless it finds *positive* evidence, contributing nothing rather than a
+made-up 0.5.
+
+### How it combines with the fitted model
+
+Provenance is applied as a **log-odds adjustment on top of** the calibrated probability, not as
+another fitted feature. It could not be fitted: the calibration is trained on this project's
+dataset, and that dataset has no metadata to fit a coefficient against. Adding to the logit is the
+standard way to fold in an independent piece of evidence (Bayes' rule for log-likelihood ratios),
+it cannot push the probability outside [0, 1], and it moves an uncertain estimate more than a
+confident one.
+
+**The magnitudes are a documented design choice, not fitted values** (±2.2 logits ≈ a 9× odds
+shift for a self-declaration or a broken signature; ±0.5 for camera EXIF). They are deliberately
+bounded so a forged tag cannot single-handedly flip a confident image-based judgement — verified
+by test.
+
+Measured end-to-end on identical pixels: fused score **0.786 → 0.971** when the file declares
+itself AI-generated.
+
+### Two bugs found by testing this against real files
+
+- A genuine **Nikon D810 photograph was flagged as AI-generated**, because its XMP contained
+  `aux:imagenumber="177034"` and `imagen` is a generator marker. Fixed by matching markers as
+  whole tokens and searching only software-identifying fields, not 12KB of camera settings.
+- Provenance initially **changed the verdict by exactly nothing** — it ran, appeared in the
+  breakdown with a weight, produced a reason line, and was silently ignored by the fitted
+  combiner. Caught by comparing two files with identical pixels and different metadata.
+
+### Limitations
+
+- **Unmeasured on this dataset**, by construction: there is no metadata in it to evaluate against.
+  Tested instead against synthesised files with known markers.
+- Metadata is trivially forged or stripped; this raises no bar against a motivated adversary. It
+  is corroborating evidence, never proof.
+- C2PA adoption is early; expect `not applicable` on nearly all real uploads.
+
 ## Trained linear probe — this project's own classifier (R6)
 
 **The primary detector.** Everything else on this page is a third-party model or a

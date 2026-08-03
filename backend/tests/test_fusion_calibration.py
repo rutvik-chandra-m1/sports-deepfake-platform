@@ -99,3 +99,57 @@ def test_calibration_is_monotonic_in_the_probe():
     low_p, _, _ = fusion_calibration.apply_calibration(low)
     high_p, _, _ = fusion_calibration.apply_calibration(high)
     assert high_p > low_p
+
+
+# --------------------------------------------------------------------------
+# Provenance layering (R5)
+# --------------------------------------------------------------------------
+
+def test_provenance_actually_changes_the_verdict():
+    """REGRESSION: provenance checks initially ran, appeared in the breakdown
+    with a weight, and produced a reason line -- while changing the fused
+    score by EXACTLY nothing, because the fitted calibration only consumes its
+    own 7 features and silently ignored everything else. A feature that looks
+    like it works but doesn't is worse than an absent one."""
+    base = {name: 0.5 for name in _calibration()["features"]}
+
+    plain, _, plain_detail = fusion_calibration.apply_calibration(base)
+    declared, _, declared_detail = fusion_calibration.apply_calibration(
+        {**base, "provenance_ai_metadata": 0.95}
+    )
+
+    assert declared > plain, "an explicit AI self-declaration must raise suspicion"
+    assert plain_detail["provenance_logit_shift"] == 0.0
+    assert declared_detail["provenance_logit_shift"] > 0
+
+
+def test_valid_provenance_lowers_suspicion():
+    """Intact Content Credentials are evidence FOR authenticity, so the shift
+    must be able to go negative -- not just upward."""
+    base = {name: 0.5 for name in _calibration()["features"]}
+    signed, _, detail = fusion_calibration.apply_calibration({**base, "provenance_c2pa": 0.15})
+
+    plain, _, _ = fusion_calibration.apply_calibration(base)
+    assert signed < plain
+    assert detail["provenance_logit_shift"] < 0
+
+
+def test_inconclusive_provenance_contributes_nothing():
+    base = {name: 0.5 for name in _calibration()["features"]}
+    _, _, detail = fusion_calibration.apply_calibration({**base, "provenance_c2pa": 0.5})
+    assert detail["provenance_logit_shift"] == 0.0
+
+
+def test_provenance_cannot_single_handedly_override_the_model():
+    """Bounded on purpose: a forged metadata tag must not be able to flip a
+    confident image-based judgement on its own."""
+    features = _calibration()["features"]
+    # Image evidence says strongly REAL.
+    strongly_real = {name: 0.0 for name in features}
+    baseline, _, _ = fusion_calibration.apply_calibration(strongly_real)
+
+    with_tag, _, _ = fusion_calibration.apply_calibration(
+        {**strongly_real, "provenance_ai_metadata": 1.0}
+    )
+    assert with_tag > baseline           # it does move the needle
+    assert with_tag < 0.99               # but does not become a certainty

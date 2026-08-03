@@ -25,6 +25,18 @@ from app.models.analysis import RiskLevel, Verdict
 # "low" = reassuring reading supporting authenticity. Signals scoring in
 # between ("medium") are treated as inconclusive and not surfaced.
 _REASON_TEMPLATES: dict[str, dict[str, str]] = {
+    "provenance_ai_metadata": {
+        "high": "The file's own metadata identifies it as AI-generated.",
+        "low": "The file's metadata contains no AI-generation marker.",
+    },
+    "provenance_c2pa": {
+        "high": "Content Credentials (C2PA) failed validation — the file was altered after signing.",
+        "low": "Valid Content Credentials confirm an intact provenance chain.",
+    },
+    "provenance_camera_metadata": {
+        "high": "Camera metadata is present but inconsistent.",
+        "low": "Camera metadata is present and consistent with a real photograph.",
+    },
     "trained_probe": {
         "high": "Our trained image classifier rates this as likely AI-generated.",
         "low": "Our trained image classifier found no signs of AI generation.",
@@ -76,6 +88,21 @@ _REASON_TEMPLATES: dict[str, dict[str, str]] = {
 }
 
 _UNAVAILABLE_NOTE_TEMPLATES: dict[str, str] = {
+    # These deliberately say "no information", never "looks genuine" --
+    # absence of metadata is the norm for real photographs (measured: 0 of 6
+    # sampled genuine photos in this project's own dataset carry EXIF), so
+    # implying otherwise would push real images toward a fake verdict.
+    "provenance_ai_metadata": (
+        "No AI-generation marker found in the file's metadata — this is normal and does "
+        "NOT indicate the image is genuine, as such markers are easily stripped."
+    ),
+    "provenance_c2pa": (
+        "No Content Credentials (C2PA) attached — the norm for most images, and NOT "
+        "evidence of manipulation."
+    ),
+    "provenance_camera_metadata": (
+        "No camera metadata present — expected, since platforms strip EXIF on upload."
+    ),
     "trained_probe": (
         "Our trained classifier was unavailable for this run — the verdict relies on weaker "
         "signals and should be treated with low confidence."

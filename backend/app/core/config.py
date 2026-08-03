@@ -120,6 +120,12 @@ class Settings(BaseSettings):
     # even stable across splits -- both are kept as corroboration at low
     # weight rather than removed, so their contribution stays visible in the
     # breakdown, but neither can now dominate a verdict.
+    # Provenance (R5) is weighted meaningfully because when it fires it is
+    # near-conclusive -- a signed manifest or an explicit generator tag beats
+    # any pixel heuristic. It is simply absent most of the time, and the
+    # renormalise-across-applicable-signals behaviour means an absent pool
+    # costs nothing.
+    fusion_provenance_weight: float = 0.35
     fusion_trained_weight: float = 0.60
     fusion_dl_weight: float = 0.15
     fusion_forensic_weight: float = 0.15

@@ -57,6 +57,17 @@ FORENSIC_SIGNAL_NAMES = (
     "temporal_consistency",
 )
 
+# Metadata provenance (R5). Its own pool because it is categorically
+# different evidence from pixel forensics: a cryptographic signature or an
+# explicit generator tag is a DECLARATION about the file, not an inference
+# from its content. When present it is strong; it is simply absent most of
+# the time, and renormalisation across applicable signals handles that.
+PROVENANCE_SIGNAL_NAMES = (
+    "provenance_ai_metadata",
+    "provenance_c2pa",
+    "provenance_camera_metadata",
+)
+
 SPORTS_SIGNAL_NAMES = (
     "jersey_color_consistency",
     "scene_consistency",
@@ -92,6 +103,10 @@ def _nominal_weights(settings: Settings) -> dict[str, float]:
     per_forensic = settings.fusion_forensic_weight / len(FORENSIC_SIGNAL_NAMES)
     for name in FORENSIC_SIGNAL_NAMES:
         weights[name] = per_forensic
+
+    per_provenance = settings.fusion_provenance_weight / len(PROVENANCE_SIGNAL_NAMES)
+    for name in PROVENANCE_SIGNAL_NAMES:
+        weights[name] = per_provenance
 
     per_sports = settings.fusion_sports_weight / len(SPORTS_SIGNAL_NAMES)
     for name in SPORTS_SIGNAL_NAMES:
