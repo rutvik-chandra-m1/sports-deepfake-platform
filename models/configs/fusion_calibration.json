@@ -1,7 +1,7 @@
 {
   "_comment": "Learned fusion. Apply as: p = sigmoid(dot(weights, [probe, deep_learning, frequency_analysis, compression_analysis, lighting_analysis, broadcast_overlay_analysis, crowd_texture_analysis]) + intercept). Requires ALL listed signals to be applicable; if any is missing the backend falls back to the legacy weighted mean.",
   "features": [
-    "probe",
+    "trained_probe",
     "deep_learning",
     "frequency_analysis",
     "compression_analysis",

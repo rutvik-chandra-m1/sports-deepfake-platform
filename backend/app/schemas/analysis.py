@@ -60,6 +60,11 @@ class AnalysisRead(BaseModel):
     risk_level: RiskLevel | None
     explanation: str | None
     detector_breakdown: str | None
+    # Verdict provenance (R11) -- exposed because auditability is the point:
+    # a stored verdict must say which model and combiner produced it.
+    model_version: str | None
+    pipeline_version: str | None
+    fusion_method: str | None
     processing_duration_ms: int | None
     created_at: datetime
     completed_at: datetime | None

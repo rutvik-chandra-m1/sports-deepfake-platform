@@ -54,6 +54,10 @@ export interface AnalysisRecord {
   risk_level: RiskLevel | null;
   explanation: string | null;
   detector_breakdown: string | null;
+  /** Verdict provenance (R11): which model and combiner produced this. */
+  model_version: string | null;
+  pipeline_version: string | null;
+  fusion_method: string | null;
   processing_duration_ms: number | null;
   created_at: string;
   completed_at: string | null;

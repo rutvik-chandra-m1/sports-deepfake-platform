@@ -36,6 +36,10 @@ import numpy as np
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
+# Name of the trained-probe signal as the BACKEND emits it
+# (app.services.detection.probe_detector.PROBE_SIGNAL_NAME).
+PROBE_SIGNAL_NAME = "trained_probe"
+
 # Signals that actually fire on still images (R3 found the other five are
 # video-only and never populate for an image dataset).
 CLASSICAL_SIGNALS = [
@@ -97,7 +101,7 @@ def main() -> None:
         path = row["path"]
         if path not in probe_by_path:
             continue
-        vector = [probe_by_path[path]]
+        vector = [probe_by_path[path]]  # first feature == PROBE_SIGNAL_NAME
         usable = True
         for name in CLASSICAL_SIGNALS:
             raw = row.get(f"signal_{name}", "")
@@ -117,7 +121,12 @@ def main() -> None:
     y = np.array(labels)
     splits = np.array(splits)
     domains = np.array(domains)
-    feature_names = ["probe"] + CLASSICAL_SIGNALS
+    # MUST match the signal names the fusion engine emits. Naming this
+    # "probe" while the engine emits "trained_probe" made apply_calibration()
+    # silently fall back to the legacy weighted mean on every request --
+    # the learned combiner was never actually used in serving.
+    # tests/test_fusion_calibration.py locks this contract.
+    feature_names = [PROBE_SIGNAL_NAME] + CLASSICAL_SIGNALS
 
     val_mask, test_mask = splits == "val", splits == "test"
     logger.info(

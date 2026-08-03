@@ -1,7 +1,7 @@
 {
   "fitted_on": "val",
   "features": [
-    "probe",
+    "trained_probe",
     "deep_learning",
     "frequency_analysis",
     "compression_analysis",
@@ -10,7 +10,7 @@
     "crowd_texture_analysis"
   ],
   "coefficients": {
-    "probe": 2.908,
+    "trained_probe": 2.908,
     "deep_learning": -0.5403,
     "frequency_analysis": -0.0289,
     "compression_analysis": -0.1109,
@@ -47,7 +47,7 @@
     }
   },
   "per_signal_direction": {
-    "probe": {
+    "trained_probe": {
       "standalone_test_auc": 0.7534,
       "auc_if_flipped": 0.2466,
       "learned_coefficient": 2.908,
