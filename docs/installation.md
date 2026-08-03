@@ -1,7 +1,8 @@
 # Installation Guide
 
-> Grows with each milestone. Currently the backend (Milestone 2) and frontend (Milestone 3)
-> skeletons are runnable end to end; the AI pipeline, uploads, and history are not built yet.
+> Everything described here is built and running: uploads, the full detection pipeline
+> (trained probe + forensics + sports intelligence + metadata provenance), history, and the
+> results dashboard. See `docs/evaluation.md` for measured detection performance.
 
 ## Prerequisites
 
@@ -55,6 +56,7 @@ python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 cp .env.example .env           # optional — defaults already work for local dev
+alembic upgrade head           # create/update the schema
 uvicorn app.main:app --reload
 ```
 

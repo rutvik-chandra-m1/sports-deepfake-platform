@@ -4,7 +4,7 @@
 what the project is, what actually works (with measured numbers), the decisions already made and
 why, the traps already hit, and what remains.
 
-Last updated: 2026-08-02, after R4/R6 (commit `e73b848`).
+Last updated: 2026-08-02, after R15. Completed: R0, R1, R2, R2.5, R3, R4, R5, R6, R9, R11, R12, R15 (12 of 16).
 
 ---
 
@@ -18,18 +18,18 @@ authentic/suspicious verdict with per-signal explanation.
 
 ### ⚠️ The PPT and the code describe different projects
 
-This gap is real and must be reconciled before submission (part of R15):
+| PPT commits to | Repo actually does | Status |
+|---|---|---|
+| **CNN** (ResNet/Xception lineage) | **Vision Transformer** (ViT-B/16) | Defended in **ADR 0001** |
+| **TensorFlow** | **PyTorch** | Defended in **ADR 0001** |
+| **C2PA metadata provenance** | Implemented in R5 | ✅ **Resolved** |
+| Data collection → feature extraction → classification | Real dataset + trained probe | ✅ **Resolved** |
+| Images only | Images **and** video | Video is unevaluated and reported as such |
 
-| PPT commits to | Repo actually does |
-|---|---|
-| Images only | Images **and** video |
-| **CNN** (ResNet/Xception lineage) | **Vision Transformer** (ViT-B/16) |
-| **TensorFlow** | **PyTorch** |
-| **C2PA metadata provenance** — a stated objective with a cited reference | **Not implemented at all** (R5) |
-| Data collection → feature extraction → CNN classification | Now real: dataset + trained probe (R2/R6) |
-
-ViT-over-CNN and PyTorch-over-TensorFlow are defensible substitutions to argue in a viva.
-**The missing C2PA work is not** — it is an explicit objective with zero implementation.
+**Read `docs/adr/0001-vit-pytorch-instead-of-cnn-tensorflow.md` before the viva.** It carries the
+argument, the anticipated questions, and two acceptable resolutions to agree with the guide:
+revise the PPT, or add a CNN baseline (the stronger submission — the dataset, splits and harness
+already exist, so only a training script is new).
 
 ---
 
@@ -127,6 +127,19 @@ venv. Getting this wrong produces confusing ImportErrors.
    directly.
 10. **Mocked pipeline tests must pin the probe.** It carries the largest fusion weight; unmocked
     it runs the real model and legitimately outvotes the mocked signals.
+11. **Artifacts crossing a process boundary degrade SILENTLY.** Three separate features looked
+    like they worked and did nothing. None were caught by tests; all were caught by running the
+    system and comparing outputs:
+    - the calibration named its first feature `"probe"` while the engine emitted
+      `"trained_probe"` → the learned fusion **never ran in production**
+    - provenance ran, appeared in the breakdown with a weight, produced a reason line → and
+      changed the fused score by **exactly nothing**, because the fitted combiner consumes only
+      its own features
+    - **Always verify a new signal changes the output**, e.g. score two files with identical
+      pixels and different metadata. `tests/test_fusion_calibration.py` now locks both contracts.
+12. **Substring matching over metadata produces false accusations.** A genuine Nikon D810 photo
+    was flagged AI-generated because its XMP contained `aux:imagenumber="177034"` and `imagen` is
+    a generator marker. Match whole tokens, and only in software-identifying fields.
 
 ---
 
@@ -199,7 +212,12 @@ cd ../eval
 | R2.5 | **Confound audit** | caught AUC 1.0000 leak; built audit/normalize/probe tooling |
 | R3 | Evaluation harness | first real number: **0.4331, below chance** |
 | R6 | Trained probe | 0.491 → **0.7534** |
-| R4 | Learned fusion | **0.7715** |
+| R4 | Learned fusion | **0.7715** on its own inputs; **0.7402** end-to-end |
+| R9 | Security hardening | arbitrary file read + 6 more findings closed; 19 regression tests |
+| R11 | Alembic migrations | schema changes no longer destroy the database |
+| R12 | CI, lint, coverage | 162 tests now actually run; lint 41→0; 91% coverage |
+| R5 | Provenance & C2PA | closes a stated PPT objective that had zero implementation |
+| R15 | Documentation | README/milestones/architecture/installation/api reconciled; ADR 0001 written |
 
 ### Remaining, in priority order
 

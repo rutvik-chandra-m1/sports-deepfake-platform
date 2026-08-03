@@ -2,6 +2,22 @@
 
 Base URL: `http://localhost:8000/api/v1`
 
+## Authentication (R9)
+
+When `API_KEY` is set, every `/media` and `/analysis` endpoint requires an `X-API-Key` header;
+otherwise they return **401**. An empty `API_KEY` disables auth, which is convenient locally but
+is **rejected at startup** whenever `APP_ENV` is not a development/test value — "unset" can never
+silently mean "open to the internet". See `docs/security.md`.
+
+```bash
+curl -H "X-API-Key: $API_KEY" http://localhost:8000/api/v1/analysis
+```
+
+## Rate limits
+
+60 requests/min per client; **10/min for uploads**, which run the whole detection pipeline.
+Exceeding either returns **429** with a `Retry-After` header.
+
 Interactive docs (Swagger UI) are always available live at `/docs` once the backend is running.
 
 ## Health
@@ -34,8 +50,12 @@ Response: `201 Created` with the created `AnalysisRead` record — still `pendin
 time (the pipeline runs in the background; the response doesn't wait for it).
 
 Errors:
-- `400` — unsupported file extension, or no file provided
+- `400` — unsupported extension, no file provided, **or file content that does not match its
+  extension** (R9: magic bytes are checked on the first chunk, so a ZIP renamed `.jpg` is
+  rejected before reaching OpenCV's decoders)
+- `401` — missing/invalid `X-API-Key` when auth is enabled
 - `413` — file exceeds the configured size limit
+- `429` — upload rate limit exceeded
 
 ## Analysis
 
@@ -62,14 +82,16 @@ Request body (`AnalysisCreate`):
 ```
 
 Response: `201 Created` with the full `AnalysisRead` record (adds `id`, `detector_breakdown`,
-`created_at`, `completed_at`). `explanation` (Milestone 10) is a natural-language verdict +
+`created_at`, `completed_at`, and the R11 verdict-provenance fields `model_version`,
+`pipeline_version`, `fusion_method` — so a stored verdict says which model and which combiner
+produced it). `explanation` (Milestone 10) is a natural-language verdict +
 reasons report, not a raw score dump — see `docs/models.md`.
 
 ### `GET /analysis`
 
 List analyses, newest first.
 
-Query params: `offset` (default 0), `limit` (default 50), `search` (case-insensitive filename
+Query params: `offset` (default 0), `limit` (default 50, **clamped to `MAX_PAGE_SIZE`=200**; an over-large request returns the maximum page rather than an error), `search` (case-insensitive filename
 substring match, Milestone 14), `verdict` (`authentic`/`suspicious`), `status`
 (`pending`/`processing`/`completed`/`failed`). All filters are optional and combine with AND.
 
