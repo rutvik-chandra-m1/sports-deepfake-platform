@@ -15,6 +15,8 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
+from starlette.middleware.base import RequestResponseEndpoint
+from starlette.responses import Response
 
 from app.api.v1.router import api_router
 from app.core.config import get_settings
@@ -92,7 +94,7 @@ def create_app() -> FastAPI:
     )
 
     @app.middleware("http")
-    async def rate_limit_and_harden(request: Request, call_next):
+    async def rate_limit_and_harden(request: Request, call_next: RequestResponseEndpoint) -> Response:
         key = client_key(request)
         is_upload = request.url.path.endswith("/media/upload")
         limiter = upload_limiter if is_upload else general_limiter

@@ -37,7 +37,7 @@ natural-language explanation; see app/services/explainability/.
 import json
 from dataclasses import asdict, dataclass, field
 
-from app.core.config import get_settings
+from app.core.config import Settings, get_settings
 from app.models.analysis import RiskLevel, Verdict
 from app.services import fusion_calibration
 from app.services.detection.types import ForensicSignal, ImageDetectionResult
@@ -82,7 +82,7 @@ class FusionResult:
         return json.dumps(self.detector_breakdown)
 
 
-def _nominal_weights(settings) -> dict[str, float]:
+def _nominal_weights(settings: Settings) -> dict[str, float]:
     weights = {"deep_learning": settings.fusion_dl_weight}
 
     per_trained = settings.fusion_trained_weight / len(TRAINED_SIGNAL_NAMES)

@@ -1,0 +1,132 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  # A newer push supersedes an in-flight run on the same ref.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ---------------------------------------------------------------------
+  # Fast feedback. Deliberately does NOT install torch/mediapipe (~2.5GB,
+  # several minutes on a runner) -- the heavy ML deps are stubbed so the
+  # bulk of the suite runs in well under a minute. The slow job below
+  # covers what genuinely needs them.
+  # ---------------------------------------------------------------------
+  backend-fast:
+    name: Backend (lint, types, unit tests)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements-dev.txt
+
+      - name: Install light dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Everything except the ~2.5GB ML stack. Detection modules import
+          # torch lazily, so the API, schema, security and migration tests
+          # all run without it.
+          pip install \
+            fastapi==0.115.0 'uvicorn[standard]==0.30.6' python-multipart==0.0.9 \
+            pydantic==2.12.5 pydantic-settings==2.14.2 python-dotenv==1.0.1 \
+            SQLAlchemy==2.0.51 alembic==1.18.5 \
+            opencv-python-headless==4.10.0.84 numpy==2.3.5 \
+            pytest==8.3.3 pytest-cov==5.0.0 httpx==0.27.2 ruff==0.7.4
+
+      - name: Lint (ruff)
+        run: ruff check app tests
+
+      - name: Format check (ruff)
+        run: ruff format --check app tests
+        continue-on-error: true # advisory until the codebase is fully formatted
+
+      - name: Migration drift guard
+        # Fails if the ORM models and the migrations disagree -- the failure
+        # mode where tests pass (they use create_all) but a real deployment
+        # is missing a column.
+        run: pytest tests/test_migrations.py -v
+
+      # Verified locally with torch/transformers/mediapipe/torchvision made
+      # unimportable: 131 tests pass in ~12s. The three ignored files are the
+      # only ones that genuinely need the ML stack.
+      - name: Unit tests (excluding those needing the ML stack)
+        run: |
+          pytest -v --cov=app --cov-report=term-missing \
+            --ignore=tests/test_image_detector.py \
+            --ignore=tests/test_video_detection.py \
+            --ignore=tests/test_landmark_analysis.py \
+            -k "not real_upload_completes_end_to_end"
+        # The coverage gate (fail_under = 85) lives in pyproject.toml so local
+        # runs and CI enforce the identical threshold from one source.
+
+  # ---------------------------------------------------------------------
+  # The full suite, including everything that needs torch/transformers/
+  # mediapipe. Slow, so it does not gate every push.
+  # ---------------------------------------------------------------------
+  backend-full:
+    name: Backend (full suite with ML stack)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/master'
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements-dev.txt
+
+      - name: Install full dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # CPU-only torch: the default wheel pulls ~2GB of CUDA the runner
+          # cannot use.
+          pip install torch==2.13.0 torchvision==0.28.0 \
+            --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements-dev.txt
+
+      - name: Full test suite
+        run: pytest -v --cov=app --cov-report=term-missing
+
+  frontend:
+    name: Frontend (lint, types, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Type check
+        run: npx tsc -b --noEmit
+      - name: Build
+        run: npm run build

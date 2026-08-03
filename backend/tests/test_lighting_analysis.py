@@ -1,13 +1,13 @@
 import numpy as np
 import pytest
 
+import app.services.detection.lighting_analysis as lighting_module
 from app.services.detection.face_detection import FaceDetectorLoadError
 from app.services.detection.lighting_analysis import (
     _face_vs_background,
     _quadrant_fallback,
     analyze_lighting,
 )
-import app.services.detection.lighting_analysis as lighting_module
 
 
 def test_face_vs_background_scores_zero_for_uniform_lighting():

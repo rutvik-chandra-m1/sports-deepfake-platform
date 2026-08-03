@@ -6,6 +6,7 @@ aborting the whole batch.
 """
 
 import logging
+from collections.abc import Callable
 
 import numpy as np
 
@@ -18,7 +19,7 @@ from app.services.sports_intel.scene_analysis import analyze_scene_consistency
 logger = logging.getLogger(__name__)
 
 
-def _safe(name: str, fn, *args) -> ForensicSignal:
+def _safe(name: str, fn: Callable[..., ForensicSignal], *args) -> ForensicSignal:
     try:
         return fn(*args)
     except Exception as exc:  # noqa: BLE001 - any detector failure becomes a non-applicable signal

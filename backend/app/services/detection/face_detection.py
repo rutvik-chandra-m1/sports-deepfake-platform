@@ -15,6 +15,7 @@ import urllib.request
 from pathlib import Path
 
 import cv2
+import numpy as np
 
 from app.core.config import get_settings
 
@@ -64,7 +65,7 @@ def _get_cascade() -> cv2.CascadeClassifier:
     return cascade
 
 
-def detect_largest_face(image_bgr) -> tuple[int, int, int, int] | None:
+def detect_largest_face(image_bgr: np.ndarray) -> tuple[int, int, int, int] | None:
     """Returns (x, y, w, h) of the largest detected face, or None if no face found."""
     cascade = _get_cascade()
     gray = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY)

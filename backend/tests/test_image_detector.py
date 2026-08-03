@@ -11,8 +11,8 @@ import numpy as np
 import pytest
 from transformers import ViTConfig, ViTForImageClassification, ViTImageProcessor
 
-from app.services.detection.image_detector import ModelLoadError, _run_inference, predict
 import app.services.detection.image_detector as image_detector_module
+from app.services.detection.image_detector import ModelLoadError, _run_inference, predict
 
 
 def _tiny_vit(id2label: dict[int, str]):

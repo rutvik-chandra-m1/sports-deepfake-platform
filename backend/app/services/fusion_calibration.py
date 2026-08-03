@@ -74,7 +74,9 @@ def load_calibration() -> dict | None:
                 raise ValueError("features/weights length mismatch")
         except (KeyError, ValueError, TypeError) as exc:
             if not _load_failed_logged:
-                logger.warning("Fusion calibration at %s is malformed (%s) -- using legacy weights.", path, exc)
+                logger.warning(
+                    "Fusion calibration at %s is malformed (%s) -- using legacy weights.", path, exc
+                )
                 _load_failed_logged = True
             return None
 
@@ -105,7 +107,7 @@ def apply_calibration(scores: dict[str, float]) -> tuple[float, float, dict] | N
 
     logit = calibration["intercept"]
     contributions = {}
-    for name, weight in zip(calibration["features"], calibration["weights"]):
+    for name, weight in zip(calibration["features"], calibration["weights"], strict=False):
         contribution = weight * scores[name]
         contributions[name] = round(contribution, 6)
         logit += contribution
@@ -115,7 +117,7 @@ def apply_calibration(scores: dict[str, float]) -> tuple[float, float, dict] | N
         "method": "learned_calibration",
         "logit": round(logit, 6),
         "contributions": contributions,
-        "weights": dict(zip(calibration["features"], calibration["weights"])),
+        "weights": dict(zip(calibration["features"], calibration["weights"], strict=False)),
         "operating_threshold": calibration["operating_threshold"],
     }
     return probability, calibration["operating_threshold"], detail

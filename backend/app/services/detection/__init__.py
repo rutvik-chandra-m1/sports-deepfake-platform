@@ -6,9 +6,11 @@ from app.services.detection.forensic_analysis import run_forensic_analysis
 from app.services.detection.frequency_analysis import analyze_frequency
 from app.services.detection.image_detector import (
     ModelLoadError,
-    predict as predict_image,
     predict_video,
     temporal_consistency_signal,
+)
+from app.services.detection.image_detector import (
+    predict as predict_image,
 )
 from app.services.detection.landmark_analysis import analyze_landmark_instability
 from app.services.detection.lighting_analysis import analyze_lighting

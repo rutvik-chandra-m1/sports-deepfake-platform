@@ -1,12 +1,12 @@
 import numpy as np
 import pytest
 
+import app.services.detection.landmark_analysis as landmark_module
 from app.services.detection.landmark_analysis import (
     LandmarkerLoadError,
     _jitter_from_landmark_sets,
     analyze_landmark_instability,
 )
-import app.services.detection.landmark_analysis as landmark_module
 
 
 def test_identical_landmarks_across_frames_have_zero_jitter():

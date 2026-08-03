@@ -59,7 +59,7 @@ def analyze_scene_consistency(frames_bgr: list[np.ndarray]) -> ForensicSignal:
     histograms = [_background_histogram(f) for f in frames_bgr]
     distances = [
         float(cv2.compareHist(prev, curr, cv2.HISTCMP_BHATTACHARYYA))
-        for prev, curr in zip(histograms, histograms[1:])
+        for prev, curr in zip(histograms, histograms[1:], strict=False)
     ]
 
     max_distance = max(distances)

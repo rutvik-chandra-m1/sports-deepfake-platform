@@ -15,7 +15,6 @@ from app.services.detection.image_detector import ModelLoadError
 from app.services.detection.types import ForensicSignal, ImageDetectionResult
 from app.services.media_processing import ExtractedFrame, MediaMetadata, MediaReadError, ProcessedMedia
 
-
 _TEST_UPLOAD_DIR: str | None = None
 
 

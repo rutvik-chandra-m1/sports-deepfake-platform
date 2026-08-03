@@ -17,13 +17,12 @@ from app.core.config import Settings
 from app.core.security import (
     INSECURE_SECRET_KEY,
     PathNotAllowedError,
-    UnsupportedFileContentError,
     SlidingWindowRateLimiter,
+    UnsupportedFileContentError,
     assert_content_matches_extension,
     assert_within_upload_dir,
     validate_production_settings,
 )
-
 
 # --------------------------------------------------------------------------
 # Finding 1 (HIGH): arbitrary server-side file read

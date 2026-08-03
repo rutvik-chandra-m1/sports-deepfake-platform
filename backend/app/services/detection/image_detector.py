@@ -29,7 +29,6 @@ import threading
 from typing import Any
 
 import numpy as np
-import torch
 
 from app.core.config import get_settings
 from app.services.detection.types import ForensicSignal, ImageDetectionResult, VideoDetectionResult
@@ -81,6 +80,13 @@ def _run_inference(
     """The actual forward pass + label normalization — separated from
     `predict()` so tests can exercise it against a small locally-constructed
     model without needing network access or real pretrained weights."""
+    # torch imported lazily, matching the transformers import below: a
+    # module-level `import torch` meant that importing ANY part of the app --
+    # the API, the schemas, the migrations -- dragged in ~2GB of ML stack, so
+    # nothing could be tested or started without it. Verified: `import
+    # app.main` no longer loads torch.
+    import torch
+
     inputs = processor(images=image_rgb_uint8, return_tensors="pt")
     with torch.no_grad():
         logits = model(**inputs).logits

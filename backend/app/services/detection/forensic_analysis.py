@@ -7,21 +7,22 @@ signal rather than aborting the whole batch — the fusion engine (Milestone
 """
 
 import logging
+from collections.abc import Callable
 
 import cv2
 import numpy as np
 
 from app.services.detection.compression_analysis import analyze_compression
 from app.services.detection.frequency_analysis import analyze_frequency
-from app.services.detection.lighting_analysis import analyze_lighting
 from app.services.detection.landmark_analysis import analyze_landmark_instability
+from app.services.detection.lighting_analysis import analyze_lighting
 from app.services.detection.optical_flow_analysis import analyze_optical_flow
 from app.services.detection.types import ForensicSignal
 
 logger = logging.getLogger(__name__)
 
 
-def _safe(name: str, fn, *args) -> ForensicSignal:
+def _safe(name: str, fn: Callable[..., ForensicSignal], *args) -> ForensicSignal:
     try:
         return fn(*args)
     except Exception as exc:  # noqa: BLE001 - any detector failure becomes a non-applicable signal

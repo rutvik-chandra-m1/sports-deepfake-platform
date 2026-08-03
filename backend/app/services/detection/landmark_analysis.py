@@ -113,7 +113,7 @@ def _jitter_from_landmark_sets(landmark_sets: list[np.ndarray]) -> tuple[float, 
     (mean_normalized_displacement, num_frame_pairs_used).
     """
     displacements = []
-    for prev, curr in zip(landmark_sets, landmark_sets[1:]):
+    for prev, curr in zip(landmark_sets, landmark_sets[1:], strict=False):
         if prev.shape != curr.shape:
             continue
         scale = _inter_ocular_distance(prev)
