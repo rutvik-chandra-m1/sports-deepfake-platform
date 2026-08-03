@@ -10,9 +10,12 @@ Future milestones append their routers here, e.g.:
 
 from fastapi import APIRouter
 
-from app.api.v1 import analysis, health, media
+from app.api.v1 import analysis, evidence, health, media
 
 api_router = APIRouter()
 api_router.include_router(health.router)
 api_router.include_router(media.router)
 api_router.include_router(analysis.router)
+# Registered after `analysis` so its more specific paths
+# (/{id}/media, /{id}/evidence/...) are matched by their own handlers.
+api_router.include_router(evidence.router)

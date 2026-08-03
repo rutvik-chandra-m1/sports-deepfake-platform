@@ -34,8 +34,12 @@ The platform is a client-server application with a clear separation between:
 - **services/detection/** — the core deepfake forensics pipeline. `image_detector.py` (Milestone 7) wraps a real pretrained ViT deepfake classifier, extended in Milestone 11 (`predict_video`) to reason across multiple sampled video frames rather than just the first. `frequency_analysis.py`, `compression_analysis.py`, `lighting_analysis.py`, `landmark_analysis.py` (Milestone 8), and `optical_flow_analysis.py` (Milestone 11) are classical CV forensic signals with no trained weights; `forensic_analysis.py` orchestrates all of them, degrading individual failures to a non-applicable signal rather than aborting the batch. See `docs/models.md` for exact techniques, cited metrics (where applicable), licenses, and limitations.
 - **services/media_processing/** — shared, model-agnostic input stage used by every detector: frame extraction (single frame for images, evenly-spaced sampling across the full duration for video), metadata (dimensions/fps/duration), and generic preprocessing (resize + RGB + [0,1] scaling). Detector-specific normalization happens in the detectors themselves, not here.
 - **services/sports_intel/** — sports-specific verification (Milestone 12): jersey/clothing color consistency, background scene consistency, broadcast overlay tampering, and crowd-texture duplication. All classical CV, no sports-specific pretrained models (none exist off-the-shelf). Checks internal self-consistency of the uploaded media, not identification against real teams/stadiums/broadcasters. See `docs/models.md` for scope and what was deliberately left out (athlete identity verification, match context verification — both need external reference data this project doesn't have).
-- **services/explainability/** — turns raw detector outputs into human-readable explanations.
-  **NOT YET IMPLEMENTED: visual evidence.** This document previously claimed "highlighted-frame evidence"; no heatmap, bounding box or annotated frame is produced. The layer is text-only. Tracked as R7.
+- **services/explainability/** — turns raw detector outputs into human-readable explanations
+  (`reasoning.py`) and **visual evidence** (`visual.py`, R7): attention-rollout heatmaps over the
+  ViT backbone, plus renders of the raw forensic artefacts (ELA map, FFT spectrum) the detectors
+  previously computed and discarded. Served by `api/v1/evidence.py`. Attention shows *where the
+  model looked*, not *why it decided* — a disclaimer ships with every heatmap so the caption
+  cannot drift from what the maths supports.
 - **services/provenance/** — metadata provenance (R5): EXIF/IPTC generator markers and C2PA
   Content Credentials. Reads the FILE, not decoded frames, because metadata lives in the
   container and is destroyed on decode. Absence of metadata is never treated as evidence of

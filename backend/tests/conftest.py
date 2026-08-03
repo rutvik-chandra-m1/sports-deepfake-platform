@@ -13,6 +13,21 @@ import tempfile
 _tmp_dir = tempfile.mkdtemp(prefix="sports-deepfake-tests-")
 os.environ["DATABASE_URL"] = f"sqlite:///{os.path.join(_tmp_dir, 'test.db')}"
 
+# Raise the R9 rate limits far above anything the suite will hit.
+#
+# The limiter is in-process and its state is shared across the WHOLE session,
+# so it does not reset between tests. With the production budget (10
+# uploads/min) the suite silently began failing with 429s the moment enough
+# upload-based tests existed -- and the failures landed on unrelated tests
+# that merely happened to run later, which is a confusing way to learn about
+# a limit.
+#
+# Rate-limiting behaviour is still covered: tests/test_security.py exercises
+# SlidingWindowRateLimiter directly, where the budget can be set per test
+# without a shared-state problem.
+os.environ["RATE_LIMIT_REQUESTS"] = "100000"
+os.environ["UPLOAD_RATE_LIMIT_REQUESTS"] = "100000"
+
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
 

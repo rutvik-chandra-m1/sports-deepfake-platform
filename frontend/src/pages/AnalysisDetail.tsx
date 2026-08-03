@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { StatusPill } from "@/components/status/StatusPill";
 import { VerdictHeader } from "@/components/results/VerdictHeader";
 import { SignalChart } from "@/components/results/SignalChart";
+import { EvidenceViewer } from "@/components/results/EvidenceViewer";
 import { ReasonsList } from "@/components/results/ReasonsList";
 import { NotesList } from "@/components/results/NotesList";
 import { useAnalysis } from "@/hooks/useAnalysis";
@@ -108,6 +109,8 @@ export function AnalysisDetail() {
             <div className="rounded-lg border border-border bg-surface p-6">
               <div className="flex flex-col gap-8">
                 <ReasonsList reasons={breakdown.reasons} />
+
+                <EvidenceViewer analysisId={id} />
 
                 <div>
                   <h2 className="font-display text-sm font-semibold uppercase tracking-wide text-text-muted">
