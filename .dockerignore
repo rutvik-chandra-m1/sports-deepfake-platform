@@ -1,0 +1,30 @@
+# Build context is the project root, so this has to exclude a lot.
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+**/node_modules/
+**/dist/
+**/htmlcov/
+**/.coverage
+.git/
+**/.env
+
+# Data, not code. Mounted as volumes at runtime.
+uploads/
+reports/
+database/
+datasets/
+
+# The pretrained cache (332MB) is re-fetched inside the image by
+# scripts/warm_model_cache.py -- shipping it through the build context
+# instead would push a third of a gigabyte to the daemon on every build.
+models/pretrained/
+
+# Local artefacts
+*.log
+*.db
+ml/runs/
+ml/.venv/

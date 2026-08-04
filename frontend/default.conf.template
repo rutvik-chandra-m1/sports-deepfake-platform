@@ -1,0 +1,93 @@
+server {
+    listen 80;
+    server_name _;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # Uploads are capped at 200MB by the backend (MAX_UPLOAD_SIZE_MB). nginx
+    # defaults to 1MB and would reject a large video with a bare 413 before
+    # the request ever reached FastAPI, so the limit has to be raised here to
+    # match -- with a little headroom for multipart overhead.
+    client_max_body_size 210M;
+
+    # Analysis is CPU-bound (ViT forward pass + optical flow) and can take
+    # tens of seconds on a video. nginx's 60s default would cut the
+    # connection mid-analysis and surface as a 504 for work that actually
+    # succeeded.
+    proxy_read_timeout 300s;
+    proxy_send_timeout 300s;
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1024;
+
+    # Docker's embedded DNS. Needed because the upstreams below are written as
+    # variables -- see the note in `location /api/`.
+    resolver 127.0.0.11 valid=10s ipv6=off;
+
+    location /api/ {
+        # A literal `proxy_pass http://backend:8000` is resolved ONCE, at
+        # nginx startup, and nginx refuses to start at all if the name does
+        # not resolve ("host not found in upstream"). That turns a backend
+        # that is merely restarting into a dead frontend too, and makes this
+        # image unrunnable on its own.
+        #
+        # Writing the upstream as a variable defers resolution to request
+        # time: nginx starts regardless, and a missing backend degrades to a
+        # 502 that recovers by itself. $request_uri is explicit because a
+        # variable proxy_pass does not append the matched URI automatically.
+        set $backend_upstream http://backend:8000;
+        proxy_pass $backend_upstream$request_uri;
+        proxy_http_version 1.1;
+
+        # The SPA does not (and must not) hold the API key. Vite inlines env
+        # vars into the bundle at build time, so a VITE_API_KEY would be
+        # readable by anyone who opens devtools -- a "secret" shipped to every
+        # browser is not a secret. nginx holds it instead and attaches it to
+        # proxied requests, so it never leaves the container.
+        #
+        # This is the Backend-For-Frontend pattern, and it means what the
+        # README already says: the shared key authenticates the CLIENT (here,
+        # nginx), not a user. Anyone who can reach this nginx can use the API.
+        # What it still buys is that the backend rejects direct traffic that
+        # bypasses this proxy, and the key is never exposed to the browser.
+        # Per-user auth is a documented open gap, not something this solves.
+        proxy_set_header X-API-Key "${SDP_API_KEY}";
+        proxy_set_header Host              $host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        # NOTE: the backend only honours X-Forwarded-For when
+        # TRUST_PROXY_HEADERS=true. Leave that false unless this nginx is the
+        # only way in -- otherwise a client can spoof the header and walk
+        # straight past the rate limiter.
+    }
+
+    # Convenience alias so `curl http://localhost:8080/health` works from the
+    # host. The real route is /api/v1/health (inside the versioned router).
+    location = /health {
+        set $health_upstream http://backend:8000;
+        proxy_pass $health_upstream/api/v1/health;
+        proxy_set_header X-API-Key "${SDP_API_KEY}";
+    }
+
+    # Hashed build assets are immutable; index.html must never be cached or
+    # users keep loading a stale shell that references deleted chunks.
+    location /assets/ {
+        # One directive, not `expires 1y` plus an add_header -- those emit two
+        # separate Cache-Control response headers, which is ambiguous and was
+        # visible in the response until this was collapsed.
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    location = /index.html {
+        add_header Cache-Control "no-store";
+    }
+
+    # SPA fallback: React Router owns /analysis/123, and nginx would
+    # otherwise 404 it on a hard refresh or a shared link.
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}

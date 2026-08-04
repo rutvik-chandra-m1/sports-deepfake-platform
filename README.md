@@ -59,9 +59,24 @@ upload → path containment + magic-byte validation → frame extraction
 | AI / CV | PyTorch, Transformers (ViT), OpenCV, MediaPipe |
 | ML tooling | scikit-learn, HF Datasets, Diffusers *(separate venv — see `ml/`)* |
 | Provenance | Pillow (EXIF/XMP), c2pa |
-| Quality | pytest (**162 tests, 91% coverage**), ruff, GitHub Actions |
+| Deployment | Docker, Compose, nginx |
+| Quality | pytest (**183 tests, 91% coverage**), ruff, GitHub Actions |
 
 ## Quick start
+
+### Docker (whole stack)
+
+```bash
+cp .env.docker.example .env   # then set API_KEY and SECRET_KEY
+```
+
+```bash
+docker compose up --build
+```
+
+App at http://localhost:8080. Full guide: [`docs/deployment.md`](docs/deployment.md).
+
+### Local development
 
 ```bash
 # Backend
@@ -113,18 +128,22 @@ See [`docs/dataset.md`](docs/dataset.md).
 | [`models.md`](docs/models.md) | Every model, with limitations |
 | [`security.md`](docs/security.md) | 13 findings: 7 fixed, 6 open, plus threat model |
 | [`architecture.md`](docs/architecture.md) | System design and data flow |
-| [`api.md`](docs/api.md) · [`installation.md`](docs/installation.md) · [`deployment.md`](docs/deployment.md) | Reference guides |
+| [`deployment.md`](docs/deployment.md) | **Docker Compose deployment**, config reference, scaling limits |
+| [`api.md`](docs/api.md) · [`installation.md`](docs/installation.md) | Reference guides |
 | [`milestones.md`](docs/milestones.md) | Build log |
 
 ## Known gaps
 
 Recorded rather than hidden — see [`PROJECT_STATE.md`](docs/PROJECT_STATE.md) for the full list.
 
-- **Sports-domain performance is effectively unmeasured** (n=10).
+- **Sports-domain performance is effectively unmeasured** (n=10). The pose-plausibility signal that
+  would address it is deliberately deferred until the data can measure it — see
+  [ADR 0002](docs/adr/0002-defer-pose-plausibility-signal.md).
 - **No per-user authentication** — a shared API key authenticates the client, not a user.
 - Model supply chain is unpinned (no revision SHA or checksum on downloaded weights).
 - Uploaded files are never deleted; no retention policy.
-- No Docker deployment yet; no visual explanation (heatmaps) yet.
+- Single-host only: SQLite serialises writes and the rate limiter is in-process, so neither is
+  correct across replicas. Migration path in [`deployment.md`](docs/deployment.md#scaling-limits).
 
 ## License
 

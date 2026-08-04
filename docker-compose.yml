@@ -1,0 +1,88 @@
+# Sports Deepfake Detection & Verification Platform -- full stack.
+#
+#   cp .env.docker.example .env
+#   # edit .env: set API_KEY and SECRET_KEY (the backend refuses to start in
+#   # production without them -- see app/core/security.validate_production_settings)
+#   docker compose up --build
+#
+# Then open http://localhost:8080
+#
+# The backend is deliberately NOT published on the host. Everything goes
+# through nginx on 8080, which keeps a single ingress point and means the
+# rate limiter and API-key check cannot be bypassed by hitting :8000 directly.
+# Uncomment the backend `ports` block if you need to curl the API in isolation.
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: sdp-backend:latest
+    restart: unless-stopped
+    environment:
+      APP_ENV: production
+      DEBUG: "false"
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      # Required in production -- startup fails loudly if either is missing.
+      API_KEY: ${API_KEY:?set API_KEY in .env}
+      SECRET_KEY: ${SECRET_KEY:?set SECRET_KEY in .env}
+      # nginx is the only ingress and it serves the app from the same origin,
+      # so no cross-origin browser request should exist at all.
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+      # Safe here because nginx is the sole route in and it overwrites
+      # X-Forwarded-For. Do NOT enable this if the container is reachable
+      # directly -- the header is client-settable.
+      TRUST_PROXY_HEADERS: "true"
+      MAX_CONCURRENT_ANALYSES: ${MAX_CONCURRENT_ANALYSES:-2}
+    volumes:
+      # Named volumes, not bind mounts: the container runs as uid 10001 and
+      # bind-mounted host directories routinely arrive root-owned, which
+      # fails at the first write with a permission error that looks like an
+      # application bug.
+      - uploads:/data/uploads
+      - reports:/data/reports
+      - dbdata:/data/db
+    # ports:
+    #   - "8000:8000"
+    healthcheck:
+      # Path is /api/v1/health, not /health -- the health route lives inside
+      # the versioned router. Getting this wrong makes a perfectly healthy
+      # container report `unhealthy` forever and blocks `depends_on`.
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      # Generous: importing torch and loading the ViT takes a while on a cold
+      # start, and a short start_period just restart-loops a healthy service.
+      start_period: 90s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          # Torch + the ViT + OpenCV need real headroom; below ~2GB the
+          # process gets OOM-killed mid-analysis.
+          memory: 4G
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        # Relative, so the bundle works at whatever host it is served from.
+        VITE_API_BASE_URL: /api/v1
+    image: sdp-frontend:latest
+    restart: unless-stopped
+    environment:
+      # Injected into proxied requests by nginx at request time. Deliberately
+      # NOT a build arg -- a build arg would bake the key into the image layer
+      # and into `docker history`.
+      SDP_API_KEY: ${API_KEY:?set API_KEY in .env}
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  uploads:
+  reports:
+  dbdata:

@@ -218,30 +218,25 @@ cd ../eval
 | R12 | CI, lint, coverage | 162 tests now actually run; lint 41→0; 91% coverage |
 | R5 | Provenance & C2PA | closes a stated PPT objective that had zero implementation |
 | R15 | Documentation | README/milestones/architecture/installation/api reconciled; ADR 0001 written |
+| R7 | Visual XAI | attention rollout + per-signal overlays; fixed a cubic-overshoot bug that rendered the hottest regions **dark** |
+| R10 | Job system | bounded pool, stale-record recovery, frontend geometric backoff with a 5-min ceiling |
+| R13 | Reports & export | PDF + JSON; limitations render on **page 1, before the verdict** |
+| R14 | Deployment | backend + frontend images, compose, nginx; both images built and exercised |
 
-### Remaining, in priority order
+### Remaining
 
-1. **R9 — Security hardening (HIGHEST).** Still fully open from the original review:
-   - **arbitrary server-side file read**: `AnalysisCreate.file_path` is client-supplied and
-     unvalidated, then read by the pipeline
-   - **no authentication at all**; `DELETE /analysis/{id}` is unauthenticated
-   - extension-only upload validation (no magic bytes), no rate limiting
-   - `debug=True` and `secret_key="change-me-in-production"` are shipped defaults
-2. **R11 — Alembic migrations.** Documented procedure for schema change is currently *delete the
-   database*. Needed before any data is worth keeping.
-3. **R12 — CI.** 117 tests exist; nothing runs them automatically. `.github/workflows/` is empty.
-4. **R5 — C2PA/EXIF provenance.** Closes a stated PPT objective; high value-per-effort.
-5. **R7 — Visual XAI.** `architecture.md` claims "highlighted-frame evidence" that does not
-   exist. Also no endpoint to view the uploaded image.
-6. **R8 — Sports intelligence phase 2** (pose plausibility is the best candidate).
-7. **R10 — Job system.** Records can stick in `processing` forever; frontend polls indefinitely.
-8. **R13 — Reports/export.** `reports/` exists; nothing writes user-facing reports.
-9. **R14 — Docker.** 3-line stub today.
-10. **R15 — Docs + PPT reconciliation.** Several docs still stale (README says "Milestone 1 in
-    progress"); the PPT/code divergence in §1 must be resolved with the guide.
+**Only R8 remains, and it is deliberately deferred — see
+[ADR 0002](adr/0002-defer-pose-plausibility-signal.md).**
+
+**R8 — Sports intelligence phase 2 (pose plausibility).** Not implemented. The sports test split
+is **n=10** (3 real / 7 fake) with a bootstrap 95% CI of 0.000–0.556, so any change it produced
+would be indistinguishable from noise. Worse, fusion renormalises across applicable signals, so
+adding an unvalidated signal would take weight away from `trained_probe` — the only component with
+a measured above-chance result. The gate to unblock it is written down in the ADR: ≥200 sports test
+images, passing the confound audit at both tiers, with fakes from ≥2 generators.
 
 **Highest-value single action for detection quality: more training data.** Everything else is
-engineering, not research risk.
+engineering, not research risk. That conclusion has survived every milestone since R3.
 
 ---
 
