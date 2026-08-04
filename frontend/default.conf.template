@@ -1,5 +1,11 @@
 server {
     listen 80;
+    # Explicit IPv6 listener. The base image's 10-listen-on-ipv6-by-default.sh
+    # only patches the config it ships, and skips ours ("differs from the
+    # packaged version"), so without this nginx is IPv4-only -- and `localhost`
+    # inside the container resolves to ::1 first, which made the healthcheck
+    # fail with "connection refused" against a container that served fine.
+    listen [::]:80;
     server_name _;
 
     root /usr/share/nginx/html;
