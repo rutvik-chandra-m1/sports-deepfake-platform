@@ -32,6 +32,7 @@ from app.services.explainability.visual import (
     build_attention_overlay,
     build_signal_visualisation,
 )
+from app.services.reporting import ReportError, build_report_json, build_report_pdf
 
 logger = logging.getLogger(__name__)
 
@@ -156,3 +157,40 @@ def get_signal_visualisation(
         media_type="image/png",
         headers={"X-Content-Type-Options": "nosniff"},
     )
+
+
+@router.get("/{analysis_id}/report.pdf", summary="Downloadable verification report")
+def get_report_pdf(analysis_id: int, db: Session = Depends(get_db)) -> Response:
+    """A PDF a user can keep or forward.
+
+    Because it will travel beyond whoever ran the analysis, the measured
+    error rate and the "not admissible as proof" statement are rendered on
+    the first page, before the verdict is elaborated.
+    """
+    record = analysis_service.get_analysis(db, analysis_id)
+    if record is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analysis not found")
+
+    try:
+        pdf = build_report_pdf(record)
+    except ReportError as exc:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc)) from exc
+
+    return Response(
+        content=pdf,
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f'attachment; filename="verification-report-{analysis_id}.pdf"',
+            "X-Content-Type-Options": "nosniff",
+        },
+    )
+
+
+@router.get("/{analysis_id}/report.json", summary="Machine-readable verification report")
+def get_report_json(analysis_id: int, db: Session = Depends(get_db)) -> dict:
+    """Same content as the PDF, including the limitations -- an integrator
+    must not be able to consume a verdict without the caveats."""
+    record = analysis_service.get_analysis(db, analysis_id)
+    if record is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analysis not found")
+    return build_report_json(record)

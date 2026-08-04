@@ -52,3 +52,12 @@ mediapipe==0.10.35
 # NOTE: MediaPipe (facial landmarks) added in Milestone 8.
 # NOTE: Testing/lint/type-check tools moved to requirements-dev.txt (R0) —
 # they have no place in a production install.
+
+# ===== Reporting (R13) =====
+# Pure-Python wheel, so it installs cleanly on Python 3.14 where many
+# compiled packages still lack wheels.
+reportlab==5.0.0
+
+# ===== Provenance (R5) =====
+# Native Rust binding for C2PA Content Credentials; ships a py3-none wheel.
+c2pa-python==0.37.2

@@ -151,6 +151,12 @@ export function AnalysisDetail() {
             >
               {rerunning ? "Restarting..." : "Re-run analysis"}
             </button>
+            <a
+              href={`${import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api/v1"}/analysis/${id}/report.pdf`}
+              className="rounded-md border border-border-strong px-3 py-1.5 text-sm text-text transition-colors hover:bg-surface-hover"
+            >
+              Download report (PDF)
+            </a>
             <Link
               to="/upload"
               className="rounded-md border border-border-strong px-3 py-1.5 text-sm text-text transition-colors hover:bg-surface-hover"
