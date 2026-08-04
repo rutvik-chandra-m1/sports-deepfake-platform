@@ -177,10 +177,13 @@ reports/evaluation/                     predictions.csv, metrics JSON, plots
 ## 6. Commands that work
 
 ```bash
-# Tests (117 passing)
+# Tests (183 passing, ~91% coverage)
 cd backend && .venv/Scripts/python.exe -m pytest -q
 
-# Run the app
+# Whole stack in Docker -- needs API_KEY + SECRET_KEY in ./.env
+docker compose up --build     # UI on http://localhost:8080
+
+# Run the app (local dev)
 cd backend && .venv/Scripts/python.exe -m uvicorn app.main:app --port 8000
 cd frontend && npm run dev            # http://localhost:5173
 
