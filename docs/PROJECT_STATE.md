@@ -4,7 +4,13 @@
 what the project is, what actually works (with measured numbers), the decisions already made and
 why, the traps already hit, and what remains.
 
-Last updated: 2026-08-02, after R15. Completed: R0, R1, R2, R2.5, R3, R4, R5, R6, R9, R11, R12, R15 (12 of 16).
+Last updated: 2026-08-04, after R14. **All 16 roadmap items are resolved**: R0–R7 and R9–R15 are
+implemented and verified; **R8 is deliberately deferred** with a written gate
+([ADR 0002](adr/0002-defer-pose-plausibility-signal.md)) because the sports test split (n=10)
+cannot measure it.
+
+State: 183 tests passing, ruff clean, ~91% coverage, both Docker images built and the full stack
+exercised end to end.
 
 ---
 
