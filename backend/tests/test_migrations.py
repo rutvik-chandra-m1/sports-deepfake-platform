@@ -71,9 +71,16 @@ def test_migrations_round_trip(tmp_path):
     executed is not a downgrade path."""
     db_url = f"sqlite:///{tmp_path / 'roundtrip.db'}"
 
-    assert _run_alembic("upgrade", "head", db_url=db_url).returncode == 0
-    assert _run_alembic("downgrade", "base", db_url=db_url).returncode == 0
-    assert _run_alembic("upgrade", "head", db_url=db_url).returncode == 0
+    # Assert WITH stderr. This test flaked once in a full-suite run and the
+    # bare `== 0` assertion carried no information about why -- three
+    # subprocesses, no clue which failed or how. Alembic's own error is the
+    # only thing that makes an intermittent failure actionable.
+    for step in (("upgrade", "head"), ("downgrade", "base"), ("upgrade", "head")):
+        result = _run_alembic(*step, db_url=db_url)
+        assert result.returncode == 0, (
+            f"alembic {' '.join(step)} failed (exit {result.returncode})"
+            f"\nstdout:\n{result.stdout}\nstderr:\n{result.stderr}"
+        )
 
 
 def test_existing_data_survives_migration(tmp_path):
