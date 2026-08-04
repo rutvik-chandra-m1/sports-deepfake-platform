@@ -9,7 +9,7 @@ via `POST /analysis` rather than through a real upload.
 
 import logging
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
@@ -18,7 +18,7 @@ from app.db.session import get_db
 from app.models.analysis import AnalysisStatus, Verdict
 from app.schemas.analysis import AnalysisCreate, AnalysisList, AnalysisRead
 from app.services import analysis_service
-from app.services.analysis_pipeline import run_analysis_pipeline
+from app.services.jobs import submit_analysis
 
 logger = logging.getLogger(__name__)
 
@@ -63,7 +63,7 @@ def get_analysis(analysis_id: int, db: Session = Depends(get_db)) -> AnalysisRea
 
 @router.post("/{analysis_id}/run", response_model=AnalysisRead, status_code=status.HTTP_202_ACCEPTED)
 def run_analysis(
-    analysis_id: int, background_tasks: BackgroundTasks, db: Session = Depends(get_db)
+    analysis_id: int, db: Session = Depends(get_db)
 ) -> AnalysisRead:
     record = analysis_service.get_analysis(db, analysis_id)
     if record is None:
@@ -78,7 +78,7 @@ def run_analysis(
     db.commit()
     db.refresh(record)
 
-    background_tasks.add_task(run_analysis_pipeline, analysis_id)
+    submit_analysis(analysis_id)
     return record
 
 

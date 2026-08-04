@@ -143,6 +143,19 @@ class Settings(BaseSettings):
     explanation_low_threshold: float = 0.35  # score <= this -> reassuring ("no X detected")
     explanation_high_threshold: float = 0.65  # score >= this -> concerning ("X detected")
 
+    # ----- Background jobs (R10) -----
+    # Analysis is CPU-bound (ViT forward pass + MediaPipe + optical flow).
+    # More workers than cores just thrashes; this machine has 4.
+    max_concurrent_analyses: int = 2
+    # A PENDING/PROCESSING record older than this at startup is treated as
+    # orphaned by a dead process and failed with an explanation.
+    stale_analysis_seconds: int = 300
+    # Run analyses inline instead of on the pool. Used by the test suite so
+    # assertions are deterministic without sleeping -- previously guaranteed
+    # for free by TestClient running BackgroundTasks synchronously, which a
+    # real thread pool no longer does.
+    analysis_synchronous: bool = False
+
     # ----- Security (R9) -----
     secret_key: str = "change-me-in-production"
 

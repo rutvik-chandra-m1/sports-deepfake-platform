@@ -22,7 +22,7 @@ function parseBreakdown(raw: string | null): DetectorBreakdown | null {
 export function AnalysisDetail() {
   const params = useParams<{ id: string }>();
   const id = Number(params.id);
-  const { analysis, loading, error, refetch } = useAnalysis(id);
+  const { analysis, loading, error, timedOut, refetch } = useAnalysis(id);
   const [rerunning, setRerunning] = useState(false);
   const [rerunError, setRerunError] = useState<string | null>(null);
 
@@ -67,7 +67,24 @@ export function AnalysisDetail() {
 
   return (
     <div className="flex flex-col gap-8">
-      {(analysis.status === "pending" || analysis.status === "processing") && (
+      {timedOut && (analysis.status === "pending" || analysis.status === "processing") && (
+        <div className="rounded-lg border border-suspicious/30 bg-suspicious-dim p-8">
+          <h1 className="font-display text-lg font-semibold text-text">Analysis is taking too long</h1>
+          <p className="mt-2 text-sm text-text-muted">
+            This analysis has not finished after several minutes, so we stopped checking. The
+            server may have restarted while it was running.
+          </p>
+          <button
+            onClick={handleRerun}
+            disabled={rerunning}
+            className="mt-4 rounded-md border border-border-strong px-3 py-1.5 text-sm text-text transition-colors hover:bg-surface-hover disabled:opacity-50"
+          >
+            {rerunning ? "Restarting..." : "Re-run analysis"}
+          </button>
+        </div>
+      )}
+
+      {!timedOut && (analysis.status === "pending" || analysis.status === "processing") && (
         <div className="scan-sweep rounded-lg border border-border bg-surface p-8">
           <div className="flex items-center justify-between">
             <div>

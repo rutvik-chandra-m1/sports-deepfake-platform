@@ -28,6 +28,12 @@ os.environ["DATABASE_URL"] = f"sqlite:///{os.path.join(_tmp_dir, 'test.db')}"
 os.environ["RATE_LIMIT_REQUESTS"] = "100000"
 os.environ["UPLOAD_RATE_LIMIT_REQUESTS"] = "100000"
 
+# Run analyses inline (R10). TestClient used to execute BackgroundTasks
+# synchronously, so "upload then assert completed" worked for free. The
+# bounded pool is genuinely asynchronous, so without this every such test
+# would race the worker.
+os.environ["ANALYSIS_SYNCHRONOUS"] = "true"
+
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
 

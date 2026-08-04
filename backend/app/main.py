@@ -27,6 +27,7 @@ from app.core.security import (
     validate_production_settings,
 )
 from app.db.session import init_db
+from app.services.jobs import recover_stale_records, shutdown_executor
 
 logger = logging.getLogger(__name__)
 
@@ -56,9 +57,18 @@ async def lifespan(app: FastAPI):
 
     settings.ensure_runtime_directories()
     init_db()
+
+    # Reconcile anything a previous process left mid-flight (R10). Must run
+    # before the pool accepts work, while "nothing is legitimately running"
+    # still holds.
+    recover_stale_records()
+
     logger.info("Starting %s v%s (%s)", settings.app_name, settings.app_version, settings.app_env)
     yield
     # ----- Shutdown -----
+    # Don't wait: a long analysis must not hang shutdown. Whatever is
+    # mid-flight gets recovered on the next startup.
+    shutdown_executor(wait=False)
     logger.info("Shutting down %s", settings.app_name)
 
 

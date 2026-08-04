@@ -10,7 +10,7 @@ GET /analysis/{id} to watch it move to "processing" then "completed"/"failed".
 
 import logging
 
-from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 from sqlalchemy.orm import Session
 
 from app.core.security import UnsupportedFileContentError, require_api_key
@@ -18,7 +18,7 @@ from app.db.session import get_db
 from app.models.analysis import AnalysisStatus
 from app.schemas.analysis import AnalysisCreateInternal, AnalysisRead
 from app.services import analysis_service, storage_service
-from app.services.analysis_pipeline import run_analysis_pipeline
+from app.services.jobs import submit_analysis
 from app.utils.file_validation import FileTooLargeError, UnsupportedFileTypeError
 
 logger = logging.getLogger(__name__)
@@ -28,7 +28,6 @@ router = APIRouter(prefix="/media", tags=["Media"], dependencies=[Depends(requir
 
 @router.post("/upload", response_model=AnalysisRead, status_code=status.HTTP_201_CREATED)
 async def upload_media(
-    background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
 ) -> AnalysisRead:
@@ -60,6 +59,8 @@ async def upload_media(
     )
     logger.info("Upload registered as analysis id=%s (%d bytes)", record.id, size_bytes)
 
-    background_tasks.add_task(run_analysis_pipeline, record.id)
+    # Bounded pool, not BackgroundTasks: analysis is CPU-bound and would
+    # otherwise contend with every sync endpoint for the shared threadpool.
+    submit_analysis(record.id)
 
     return record
