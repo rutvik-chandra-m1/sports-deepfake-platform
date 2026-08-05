@@ -58,6 +58,13 @@ mediapipe==0.10.35
 # compiled packages still lack wheels.
 reportlab==5.0.0
 
+# `from PIL import Image` appears directly in the evidence, provenance and
+# reporting services, so Pillow is a DIRECT dependency and is pinned here.
+# It was previously satisfied only transitively (via reportlab/transformers),
+# which meant the version was whatever those happened to pull -- and it went
+# missing entirely in the CI job that installs without the ML stack.
+pillow==12.3.0
+
 # ===== Provenance (R5) =====
 # Native Rust binding for C2PA Content Credentials; ships a py3-none wheel.
 c2pa-python==0.37.2

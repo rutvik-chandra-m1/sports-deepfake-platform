@@ -40,12 +40,22 @@ jobs:
           # Everything except the ~2.5GB ML stack. Detection modules import
           # torch lazily, so the API, schema, security and migration tests
           # all run without it.
+          # This list is deliberately explicit rather than `-r requirements.txt`:
+          # its whole purpose is to prove the API, schema, security, provenance
+          # and reporting paths work with NO torch/transformers/mediapipe
+          # installed. Installing the requirements file would defeat that.
+          #
+          # The cost is that it must be updated when a non-ML dependency is
+          # added. It drifted once already -- Pillow, reportlab, pypdf and c2pa
+          # arrived with R5/R7/R13 and were missing here, so three test modules
+          # failed at collection with ModuleNotFoundError.
           pip install \
             fastapi==0.115.0 'uvicorn[standard]==0.30.6' python-multipart==0.0.9 \
             pydantic==2.12.5 pydantic-settings==2.14.2 python-dotenv==1.0.1 \
             SQLAlchemy==2.0.51 alembic==1.18.5 \
             opencv-python-headless==4.10.0.84 numpy==2.3.5 \
-            pytest==8.3.3 pytest-cov==5.0.0 httpx==0.27.2 ruff==0.7.4
+            pillow==12.3.0 reportlab==5.0.0 c2pa-python==0.37.2 \
+            pytest==8.3.3 pytest-cov==5.0.0 httpx==0.27.2 ruff==0.7.4 pypdf==6.1.1
 
       - name: Lint (ruff)
         run: ruff check app tests
@@ -61,8 +71,9 @@ jobs:
         run: pytest tests/test_migrations.py -v
 
       # Verified locally with torch/transformers/mediapipe/torchvision made
-      # unimportable: 131 tests pass in ~12s. The three ignored files are the
-      # only ones that genuinely need the ML stack.
+      # unimportable (stub modules that raise ImportError, first on PYTHONPATH):
+      # 168 pass, 1 skips, coverage 87.69% -- above the 85% gate. The three
+      # ignored files are the only ones that genuinely need the ML stack.
       - name: Unit tests (excluding those needing the ML stack)
         run: |
           pytest -v --cov=app --cov-report=term-missing \
